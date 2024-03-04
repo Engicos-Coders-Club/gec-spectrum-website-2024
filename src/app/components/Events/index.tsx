@@ -28,7 +28,8 @@ const EventCard = () => {
         <div
           className={`grid grid-rows-2 grid-cols-3 gap-10 ${Space.className} lg:grid-cols-7 lg:gap-4`}
         >
-          <Link
+          <Link 
+            
             href="/"
             className="bg-yellow-500 p-3  rounded-full rounded-tl-none overflow-hidden"
           >
