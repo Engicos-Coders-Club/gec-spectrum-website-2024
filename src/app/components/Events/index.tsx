@@ -17,8 +17,6 @@ const eventsData = [
   { title: 'Civil', department: 'Civil', event: 'Pratikriya' },
 ];
 
-
-
 const EventCardItem = () => (
   <div className='bg-orange-600 rounded-xl rounded-tl-none overflow-hidden p-2'>
     <Image src={SampleEvent} alt='random' className='rounded-xl rounded-tl-none' />
@@ -47,9 +45,9 @@ const EventCard = () => {
       <div className='w-full flex justify-center mt-10 p-3 overflow-hidden'>
       <div className={`grid grid-rows-2 p-5 grid-cols-3 sticky top-0 gap-10  ${Space.className} lg:grid-cols-7 lg:gap-4`}>  
       <Link href='/' className='bg-yellow-500 p-3 rounded-full rounded-tl-none overflow-hidden'>
-  <span className='text-black text-xs sm:text-base'>ALL</span> <br />
-  <p className='text-purple-700 text-xs sm:text-base'>Departments</p>
-</Link>
+        <span className='text-black text-sm sm:text-base'>ALL</span> <br />
+        <p className='text-purple-700 text-sm sm:text-base'>Departments</p>
+      </Link>
            {
             eventsData.map((events, index) =>(
               <div key={index}>
