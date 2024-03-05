@@ -34,7 +34,7 @@ const EventCard = () => {
   return (
     <div className='bg-black w-screen h-full overflow-hidden'>
       <div className='flex   justify-between'> 
-        <h1 className={`font-bold ml-5 text-3xl md:text-6xl sm:text-4xl h-[96px] flex items-center font-panchang-bold`}>E V E N T S</h1>
+        <h1 className={`font-bold ml-5 text-3xl md:text-5xl sm:text-4xl lg:text-6xl h-[96px] flex items-center font-panchang-bold`}>E V E N T S</h1>
         <Image
           src={LineImage}
           alt='line image'
@@ -44,8 +44,8 @@ const EventCard = () => {
       
       <div className='w-full flex justify-center mt-10 p-3 overflow-hidden'>
       <div className={`grid grid-rows-2 p-5 grid-cols-3 sticky top-0 gap-10  ${Space.className} lg:grid-cols-7 lg:gap-4`}>  
-      <Link href='/' className='bg-yellow-500 p-3 rounded-full rounded-tl-none overflow-hidden'>
-        <span className='text-black text-sm sm:text-base'>ALL</span> <br />
+      <Link href='/' className='bg-yellow-500 p-3 rounded-full rounded-tl-none overflow-hidden w-32'>
+        <p className='text-black text-sm sm:text-base'>ALL</p> 
         <p className='text-purple-700 text-sm sm:text-base'>Departments</p>
       </Link>
            {
