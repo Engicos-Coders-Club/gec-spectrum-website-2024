@@ -14,7 +14,7 @@ const space = Space_Grotesk({
 const Footer = () => {
   return (
     <div className="h-screen w-screen relative flex flex-col justify-center items-center bg-[#18181880]">
-      <div className="sm:flex-row flex flex-col-reverse justify-center items-center sm:h-[70vh] w-[80vw] rounded-3xl bg-[#18181880] backdrop-blur-sm">
+      <div className="sm:flex-row flex flex-col-reverse sm:justify-center justify-normal mt-5 sm:mt-0 items-center sm:h-[70vh] w-[80vw] rounded-3xl bg-[#18181880] backdrop-blur-sm">
         <div className=" h-full sm:w-[40%] w-60 sm:border-r bordercolor sm:p-14">
           <div className="flex flex-col h-full w-full gap-10 sm:items-center">
             <div className="sm:h-auto sm:w-full w-48 flex justify-center ml-6">
@@ -25,7 +25,7 @@ const Footer = () => {
                 <iframe
                   src="https://www.google.com/maps/embed/v1/place?q=Goa+College+of+Engineering,+Ponda,+Goa,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                   alt="Goa College of Engineering"
-                  className="h-full w-full object-cover rounded-3xl"
+                  className="sm:h-full h-[90%] w-full object-cover rounded-3xl"
                 />
               </div>
             </div>
@@ -102,7 +102,7 @@ const Footer = () => {
         </div>
         <div className="absolute h-[60vh] w-full top-[70] bottom-0 -z-10 footgrad"></div>
         <p
-          className={`mt-20 text-[#FEFEFE] ${space.className} font-normal text-base leading-5`}
+          className={`sm:mt-20 mt-5 text-[#FEFEFE] ${space.className} font-normal text-base leading-5`}
         >
           GEC Spectrum © 2024 All Rights Reserved.
         </p>
