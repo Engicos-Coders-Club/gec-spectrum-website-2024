@@ -1,10 +1,9 @@
 // ExploreTile.tsx
-import { FC } from 'react';
 import Tile from './tile/Tile';
 
 interface ExploreTileProps {}
 
-const ExploreTile: FC<ExploreTileProps> = () => {
+const ExploreTile: React.FC<ExploreTileProps> = () => {
   return (
     <div className="">
       <div className='flex flex-row items-center space-y-0 space-x-9'>
