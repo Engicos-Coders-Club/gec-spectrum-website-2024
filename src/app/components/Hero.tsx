@@ -18,7 +18,7 @@ const Hero = () => {
   return (
     <div className='h-fit w-fit flex flex-col items-center justify-center' style={{backgroundImage:'url("/Vector.svg")'}}>
         <div className='md:h-[80vh] h-[60vh] w-screen flex flex-col items-center justify-center text-center'>
-            <motion.h1 className={`${panchang.className} md:text-9xl text-4xl font-bold line-clamp-1`}
+            <motion.h1 className={`${panchang.className} xl:text-9xl text-5xl font-bold line-clamp-1 md:text-7xl sm:text-6xl lg:text-8xl`}
             initial={{ opacity:0}}
             animate={{ opacity: 1 }}
             transition={{ duration:2, damping: 10}}
