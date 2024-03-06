@@ -31,3 +31,10 @@ body {
     text-wrap: balance;
   }
 }
+
+.dotted-border {
+  
+  background: linear-gradient(265.4deg, rgba(232, 232, 232, 0.139772) 0.16%, #E8E8E8 56.79%, rgba(232, 232, 232, 0) 107.45%);
+
+
+}
