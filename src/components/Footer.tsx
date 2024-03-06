@@ -85,16 +85,16 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 sm:mx-0 mx-10">
                 <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
-                  <RiInstagramFill className="size-5" />
+                  <Link href="/"><RiInstagramFill className="size-5" /></Link>
                 </div>
                 <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
-                  <FaFacebookF className="size-5" />
+                <Link href="/"><FaFacebookF className="size-5" /></Link>
                 </div>
                 <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
-                  <FaLinkedinIn className="size-5" />
+                <Link href="/"><FaLinkedinIn className="size-5" /></Link>
                 </div>
                 <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
-                  <FaXTwitter className="size-5 text-white bg-black" />
+                <Link href="/"><FaXTwitter className="size-5 text-white bg-black" /></Link>
                 </div>
               </div>
             </div>
