@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Hero/>
-      <div className="overflow-hidden">
+      <div className="overflow-hidden mt-20 p-2">
         <EventCard/>
       </div>
       <Expo/>
