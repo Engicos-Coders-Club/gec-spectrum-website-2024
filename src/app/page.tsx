@@ -5,11 +5,17 @@ import Expo from "./components/Expo";
 export default function Home() {
   return (
     <>
-      <Hero/>
-      <div className="overflow-hidden mt-20 p-2">
+    <section className="overflow-hidden">
+    <Hero/>
+
+    </section>
+      <section className="overflow-hidden mt-20 p-2">
         <EventCard/>
-      </div>
+      </section>
+      <section className="overflow-hidden">
       <Expo/>
+      </section>
+     
     </>
   );
 }
