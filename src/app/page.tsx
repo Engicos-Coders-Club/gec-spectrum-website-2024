@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import EventCard from "./components/Events";
+import Expo from "./components/Expo";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <div className="overflow-hidden">
         <EventCard/>
       </div>
+      <Expo/>
     </>
   );
 }
