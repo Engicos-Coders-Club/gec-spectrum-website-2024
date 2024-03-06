@@ -1,14 +1,13 @@
-import Image from "next/image";
+import Hero from "./components/Hero";
 import EventCard from "./components/Events";
 
 export default function Home() {
   return (
-   <>
-   <div className="overflow-hidden">
-    <EventCard/>
-   </div>
-    
-
-   </>
+    <>
+      <Hero/>
+      <div className="overflow-hidden">
+        <EventCard/>
+      </div>
+    </>
   );
 }

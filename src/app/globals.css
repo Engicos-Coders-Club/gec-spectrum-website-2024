@@ -45,3 +45,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.gradient-five-colors {
+  background: linear-gradient(to right, #FF0000 0%, #FFD809 10%, #FFD809 20%, #00FF29 30%, #00FF29 40%, #4200FF 50%, #4200FF 60%, #BD00FF 70%, #BD00FF 80%, #FF00C7 100%);
+}
