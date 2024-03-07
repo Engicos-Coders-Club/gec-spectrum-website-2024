@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import EventCard from "./components/Events";
 import Expo from "./components/Expo";
+import Sponsors from "./components/Sponsors";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -16,6 +17,7 @@ export default function Home() {
       </section>
       <section className="overflow-hidden">
         <Expo/>
+        <Sponsors />
       </section>
       <Footer />
     </main>
