@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import EventCard from "./components/Events";
 import Expo from "./components/Expo";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <section className="overflow-hidden">
       <Expo/>
       </section>
-     
+     <Footer />
     </>
   );
 }
