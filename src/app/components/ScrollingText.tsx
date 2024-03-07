@@ -34,7 +34,7 @@ const ScrollingText: React.FC<ScrollingTextProps> = ({ text }) => {
             key={index}
           >
             <span className="mx-2">{word}</span>
-            <span className="mx-2">//</span>
+            <span className="mx-2">{"//"}</span>
           </p>
         ))}
       </motion.div>
@@ -55,7 +55,7 @@ const ScrollingText: React.FC<ScrollingTextProps> = ({ text }) => {
             key={index}
           >
             <span className="mx-2">{word}</span>
-            <span className="mx-2">//</span>
+            <span className="mx-2">{"//"}</span>
           </p>
         ))}
       </motion.div>
