@@ -4,6 +4,7 @@ import Image from "next/image"
 import Logo from "@/assets/logo.png"
 import { useState } from "react"
 import Link from "next/link"
+import FullWidth from "./FullWidth"
 function Navbar() {
   const [open, setOpen] = useState(false)
 
@@ -30,15 +31,12 @@ function Navbar() {
         <div className="flex items-center gap-5">
             {
                 !open ?
-                <svg className="mb-2" width="45" height="18" viewBox="0 0 45 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg onClick={()=>setOpen((prev)=>!prev)} className="mb-2" width="45" height="18" viewBox="0 0 45 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line y1="1" x2="45" y2="1" stroke="white"/>
                     <line y1="9" x2="45" y2="9" stroke="white"/>
                     <line y1="17" x2="45" y2="17" stroke="white"/>
                 </svg> :
-                <svg width="30" height="30" viewBox="0 0 97 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="1.06066" y1="1.93934" x2="95.5937" y2="96.4724" stroke="#FA5622" strokeWidth="3"/>
-                    <line y1="-1.5" x2="133.69" y2="-1.5" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 0 97.5331)" stroke="#FA5622" strokeWidth="3"/>
-                </svg>
+                <FullWidth close={setOpen}/>
             }
             <div>
                 <Image 
