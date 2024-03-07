@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Panchang-Bold';
+  src: url('../../public/fonts/Panchang-Bold.woff') format('woff2'),
+       url('../../public/fonts/Panchang-Bold.woff') format('woff'),
+       url('../../public/fonts/Panchang-Bold.ttf') format('truetype');
+       font-weight: 700;
+       font-display: swap;
+       font-style: normal;
+}
+
+.font-panchang-bold {
+  font-family: 'Panchang-Bold', sans-serif;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -37,4 +51,19 @@ body {
   background: linear-gradient(265.4deg, rgba(232, 232, 232, 0.139772) 0.16%, #E8E8E8 56.79%, rgba(232, 232, 232, 0) 107.45%);
 
 
+}
+.gradient-five-colors {
+  background: linear-gradient(to right, #FF0000 0%, #FFD809 10%, #FFD809 20%, #00FF29 30%, #00FF29 40%, #4200FF 50%, #4200FF 60%, #BD00FF 70%, #BD00FF 80%, #FF00C7 100%);
+}
+
+.footgrad {
+  background: linear-gradient(358.58deg, #00083B 1.28%, #002535 18.67%, #002D0D 35.67%, #232200 52.68%, #170000 67.8%, #000000 95.77%);
+
+}
+@media (min-width: 640px){
+  .bordercolor {
+    border-right: solid;
+    border-image-source: linear-gradient(#FF0000 0%, #FFD809 25%, #00FF29 45%, #4200FF 65.4%, #BD00FF 82.9%, #FF00C7 100%);
+    border-image-slice: 1;
+  }
 }
