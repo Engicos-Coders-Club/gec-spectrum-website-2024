@@ -2,9 +2,9 @@
 
 import { Space_Grotesk } from 'next/font/google';
 import Image from 'next/image';
-import LineImage from '../assets/line.png';
+import LineImage from '@/assets/line.png';
 import Link from 'next/link';
-import SampleEvent from '../assets/sample-event.jpg'
+import SampleEvent from '@/assets/sample-event.jpg'
 import EventsButton from './Button';
 const Space = Space_Grotesk({ subsets : ['latin'], weight: ['700', '600']});
 
