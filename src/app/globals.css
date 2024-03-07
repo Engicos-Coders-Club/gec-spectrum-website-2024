@@ -67,3 +67,16 @@ body {
     border-image-slice: 1;
   }
 }
+
+.entrance{
+  animation: appear 0.3s ;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -29,7 +29,6 @@ const Footer = () => {
               <div className="w-full h-52 rounded-3xl">
                 <iframe
                   src="https://www.google.com/maps/embed/v1/place?q=Goa+College+of+Engineering,+Ponda,+Goa,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
-                  alt="Goa College of Engineering"
                   className="sm:h-full h-[90%] w-full object-cover rounded-3xl"
                 />
               </div>

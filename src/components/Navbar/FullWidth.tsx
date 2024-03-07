@@ -2,8 +2,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { IoHomeOutline } from 'react-icons/io5'
-import { MdArrowOutward } from 'react-icons/md'
+import { MdArrowOutward, MdOutlineLocalHotel } from 'react-icons/md'
 import GECLogo from "@/assets/geclogo.png"
+import { AiOutlineQuestion, AiOutlineTeam } from 'react-icons/ai'
+import { GoClock, GoPersonAdd } from 'react-icons/go'
+import { FiPhone } from 'react-icons/fi'
+import { BsTrophy } from 'react-icons/bs'
+import { PiGlobeLight, PiTicketThin } from 'react-icons/pi'
 
 let links = [
   {
@@ -12,48 +17,48 @@ let links = [
     link:"/"
   },
   {
-    name:"HOME",
-    icon:<IoHomeOutline color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    name:"ABOUT",
+    icon:<AiOutlineQuestion color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
-    name:"HOME",
-    icon:<IoHomeOutline color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    name:"SCHEDULE",
+    icon:<GoClock color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
-    name:"HOME",
-    icon:<IoHomeOutline color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    name:"COMPETITIONS",
+    icon:<BsTrophy color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
-    name:"HOME",
-    icon:<IoHomeOutline color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    name:"EVENTS",
+    icon:<PiTicketThin color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
-    name:"HOME",
-    icon:<IoHomeOutline color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    name:"EXPO",
+    icon:<PiGlobeLight color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
-    name:"HOME",
-    icon:<IoHomeOutline color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    name:"SPONSORS",
+    icon:<GoPersonAdd color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
-    name:"HOME",
-    icon:<IoHomeOutline color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    name:"ACCOMODATION",
+    icon:<MdOutlineLocalHotel color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
-    name:"HOME",
-    icon:<IoHomeOutline color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    name:"TEAM",
+    icon:<AiOutlineTeam color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
-    name:"HOME",
-    icon:<IoHomeOutline color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    name:"CONTACT",
+    icon:<FiPhone color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   
@@ -61,7 +66,7 @@ let links = [
 
 function FullWidth({close}:any) {
   return (
-    <div className="h-screen w-screen flex fixed top-0 left-0 bg-black z-10">
+    <div className="h-screen w-screen entrance flex fixed top-0 left-0 bg-black z-10">
       <div className="flex-1 flex flex-col h-full">
           {
             links.map((link,i)=>(

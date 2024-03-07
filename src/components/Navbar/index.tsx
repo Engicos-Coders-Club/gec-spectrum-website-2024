@@ -59,9 +59,9 @@ function Navbar() {
                 ))
             }
             
-            <div className="bg-primary p-2 px-5 rounded-full rounded-tl-none">
+            <button className="bg-primary p-2 px-5 rounded-full rounded-tl-none">
                 BROCHURE
-            </div>
+            </button>
         </div>
     </nav>
   )
