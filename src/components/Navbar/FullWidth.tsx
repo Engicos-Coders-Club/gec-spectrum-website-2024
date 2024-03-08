@@ -70,7 +70,7 @@ function FullWidth({close}:any) {
       <div className="flex-1 flex flex-col h-full">
           {
             links.map((link,i)=>(
-              <Link key={i} href={link.link} className="hover:bg-white flex-1 group border border-[#FA5622] flex items-center justify-between duration-500 hover:text-black text-3xl  px-12 hover:font-semibold">
+              <Link key={i} href={link.link} className="hover:bg-white flex-1 group border border-[#FA5622] flex items-center justify-between duration-500 hover:text-black text-2xl md:text-3xl  px-12 hover:font-semibold">
                 <div className='flex gap-10 items-center'>
                   {link.icon}
                   <p>{link.name}</p>

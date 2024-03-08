@@ -27,18 +27,18 @@ function Navbar() {
     }
   ]
   return (
-    <nav className="bg-[#06050a] px-16 py-5 flex justify-between items-center">
-        <div className="flex items-center gap-5">
+    <nav className="bg-[#06050a] px-10 sm:px-16 py-5 flex justify-between items-center">
+        <div className="flex items-center justify-between flex-1 lg:flex-auto lg:justify-start gap-5">
             {
                 !open ?
-                <svg onClick={()=>setOpen((prev)=>!prev)} className="mb-2" width="45" height="18" viewBox="0 0 45 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg onClick={()=>setOpen((prev)=>!prev)} className="order-2 lg:order-1 mb-2" width="45" height="18" viewBox="0 0 45 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line y1="1" x2="45" y2="1" stroke="white"/>
                     <line y1="9" x2="45" y2="9" stroke="white"/>
                     <line y1="17" x2="45" y2="17" stroke="white"/>
                 </svg> :
                 <FullWidth close={setOpen}/>
             }
-            <div>
+            <div className="order-1 lg:order-2W">
                 <Image 
                     src={Logo.src}
                     width={Logo.width}
@@ -48,7 +48,7 @@ function Navbar() {
                 />
             </div>
         </div>
-        <div className="flex items-center gap-5">
+        <div className="items-center gap-5 hidden lg:flex">
             {
                 links.map((link, i)=>(
                     <Link href={link.to} key={i} className=" hover:bg-dotted-border bg-[#06050a] relative flex justify-center rounded-full overflow-hidden">
