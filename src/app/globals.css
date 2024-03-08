@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: 'Panchang'; /* Adjustable name */
+  src: url('/fonts/panchang-Regular.otf') format('truetype'); /* Regular font */
+  font-weight: 400;
+}
+
+@font-face {
   font-family: 'Panchang-Bold';
   src: url('../../public/fonts/Panchang-Bold.woff') format('woff2'),
        url('../../public/fonts/Panchang-Bold.woff') format('woff'),
@@ -10,6 +16,22 @@
        font-weight: 700;
        font-display: swap;
        font-style: normal;
+}
+
+.panchang-font {
+  font-family: 'Panchang', sans-serif; /* Include a fallback font */
+}
+
+.gradient-border {
+  background-image: linear-gradient(
+    to right,
+    #FF0000 0%,
+    #FFD809 25%,
+    #00FF29 45%,
+    #4200FF 65.4%,
+    #BD00FF 82.9%,
+    #FF00C7 100%
+  );
 }
 
 .font-panchang-bold {

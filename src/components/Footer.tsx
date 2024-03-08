@@ -15,8 +15,8 @@ const space = Space_Grotesk({
 
 const Footer = () => {
   return (
-    <div className="h-screen w-screen relative flex flex-col justify-center items-center bg-[#18181880] overflow-hidden">
-      <motion.div className="z-10 sm:flex-row flex flex-col-reverse sm:justify-center justify-normal mt-5 sm:mt-0 items-center sm:h-[70vh] w-[80vw] rounded-3xl bg-[#18181880] backdrop-blur-sm "
+    <div className="h-screen w-screen relative flex flex-col justify-center items-center bg-[#06050a] overflow-hidden">
+      <motion.div className="z-10 sm:flex-row flex flex-col-reverse sm:justify-center justify-normal mt-5 sm:mt-0 items-center sm:h-[70vh] w-[90vw] rounded-3xl bg-[#18181880] backdrop-blur-sm "
       initial={{opacity: 0}}
       whileInView={{opacity: 1}}
       transition={{duration: 0.5}}>
@@ -25,8 +25,8 @@ const Footer = () => {
             <div className="sm:h-auto sm:w-full w-48 flex justify-center ml-6">
               <img src="image 3.png" alt="logo" className="size-full" />
             </div>
-            <div className="w-full h-56 rounded-3xl">
-              <div className="w-full h-52 rounded-3xl">
+            <div className="w-full h-72 rounded-3xl">
+              <div className="w-full h-72 rounded-3xl">
                 <iframe
                   src="https://www.google.com/maps/embed/v1/place?q=Goa+College+of+Engineering,+Ponda,+Goa,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                   className="sm:h-full h-[90%] w-full object-cover rounded-3xl"
@@ -98,7 +98,7 @@ const Footer = () => {
                 <Link href="/"><FaLinkedinIn className="size-5" /></Link>
                 </div>
                 <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
-                <Link href="/"><FaXTwitter className="size-5 text-white bg-black" /></Link>
+                <Link href="/"><FaXTwitter className="size-5 text-white" /></Link>
                 </div>
               </div>
             </div>

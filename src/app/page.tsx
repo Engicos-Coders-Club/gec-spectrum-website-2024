@@ -4,6 +4,7 @@ import Expo from "./components/Expo";
 import Sponsors from "./components/Sponsors";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import ExploreTile from "@/components/explore-tile/ExploreTile";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <section className="overflow-hidden">
         <Expo/>
         <Sponsors />
+        <ExploreTile/>
       </section>
       <Footer />
     </main>
