@@ -27,7 +27,7 @@ function Navbar() {
     }
   ]
   return (
-    <nav className="bg-black px-16 py-5 flex justify-between items-center">
+    <nav className="bg-[#06050a] px-16 py-5 flex justify-between items-center">
         <div className="flex items-center gap-5">
             {
                 !open ?
@@ -51,8 +51,8 @@ function Navbar() {
         <div className="flex items-center gap-5">
             {
                 links.map((link, i)=>(
-                    <Link href={link.to} key={i} className=" hover:bg-dotted-border bg-black relative flex justify-center rounded-full overflow-hidden">
-                        <div className="bg-black m-[1px] p-2 px-5 outline-dotted rounded-full outline-2 outline-black">
+                    <Link href={link.to} key={i} className=" hover:bg-dotted-border bg-[#06050a] relative flex justify-center rounded-full overflow-hidden">
+                        <div className="bg-[#06050a] m-[1px] p-2 px-5 outline-dotted rounded-full outline-2 outline-black">
                             {link.name}
                         </div>
                     </Link>

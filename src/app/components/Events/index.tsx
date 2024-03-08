@@ -32,7 +32,7 @@ const EventCard = () => {
   const events = new Array(9).fill(0); // replace with actual data
 
   return (
-    <div className='bg-black w-screen h-full overflow-hidden mt-20 p-2'>
+    <div className='bg-[#06050a] w-screen h-full overflow-hidden mt-20 p-2'>
       <div className='flex   justify-between'> 
         <h1 className={`font-bold ml-5 text-3xl md:text-5xl sm:text-4xl lg:text-6xl h-[96px] flex items-center font-panchang-bold`}>E V E N T S</h1>
         <Image

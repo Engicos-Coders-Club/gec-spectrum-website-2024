@@ -66,7 +66,7 @@ let links = [
 
 function FullWidth({close}:any) {
   return (
-    <div className="h-screen w-screen entrance flex fixed top-0 left-0 bg-black z-10">
+    <div className="h-screen w-screen entrance flex fixed top-0 left-0 bg-[#06050a] z-10">
       <div className="flex-1 flex flex-col h-full">
           {
             links.map((link,i)=>(
