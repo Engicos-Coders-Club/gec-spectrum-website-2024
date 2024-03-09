@@ -14,8 +14,8 @@ export default function Home() {
       <section className="overflow-hidden">
         <Navbar/>
         <Hero/>
-        <Tagline/>
       </section>
+      <Tagline/>
       <section className="overflow-hidden mt-20 p-2">
         <EventCard/>
       </section>
