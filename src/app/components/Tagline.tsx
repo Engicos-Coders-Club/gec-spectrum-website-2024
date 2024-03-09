@@ -18,7 +18,7 @@ const Tagline = () => {
       </div>
 
       <div className={`${space.className} text-2xl text-center`} >
-          “EMBACE THE UNKNOWN & GLIDE <br /> WITH US THROUGH  THE COSMIC <br /> SPECTRUM”
+          “EMBRACE THE UNKNOWN & GLIDE <br /> WITH US THROUGH  THE COSMIC <br /> SPECTRUM”
         </div>
     </div>
   );
