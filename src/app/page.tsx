@@ -8,7 +8,7 @@ import ExploreTile from "@/components/explore-tile/ExploreTile";
 
 export default function Home() {
   return (
-    <main className="max-w-screen overflow-hidden">
+    <main>
       <section className="overflow-hidden">
         <Navbar/>
         <Hero/>

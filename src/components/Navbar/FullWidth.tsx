@@ -67,11 +67,11 @@ let links = [
 function FullWidth({close}:any) {
   return (
     <div className="h-screen w-screen entrance flex fixed top-0 left-0 bg-[#06050a] z-10">
-      <div className="flex-1 flex flex-col h-full">
+      <div className="flex-[0.996] flex flex-col h-full">
           {
             links.map((link,i)=>(
-              <Link key={i} href={link.link} className="hover:bg-white flex-1 group border border-[#FA5622] flex items-center justify-between duration-500 hover:text-black text-2xl md:text-3xl  px-12 hover:font-semibold">
-                <div className='flex gap-10 items-center'>
+              <Link key={i} href={link.link} className="hover:bg-white flex-1 group border border-[#FA5622] flex items-center justify-between duration-500 hover:text-black text-lg sm:text-2xl md:text-3xl pl-5 pr-0  md:px-12 hover:font-semibold">
+                <div className='flex gap-4 md:gap-10 items-center'>
                   {link.icon}
                   <p>{link.name}</p>
                 </div>
@@ -82,8 +82,8 @@ function FullWidth({close}:any) {
           
       </div>
       <div className='flex flex-col h-full'>
-        <button onClick={()=>close(false)} className='border-t border-b-2 border-r border-[#FA5622] h-[76px] flex items-center justify-center'>
-          <svg width="97" height="35" viewBox="0 0 97 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <button onClick={()=>close(false)} className='border-t  border-r border-[#FA5622] h-[76px] flex items-center justify-center'>
+          <svg className='h-6 sm:h-[35px]' width="97" height="35" viewBox="0 0 97 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="1.06066" y1="1.93934" x2="95.5937" y2="96.4724" stroke="#FA5622" stroke-width="3"/>
             <line y1="-1.5" x2="133.69" y2="-1.5" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 0 97.5331)" stroke="#FA5622" stroke-width="3"/>
           </svg>

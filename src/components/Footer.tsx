@@ -15,7 +15,7 @@ const space = Space_Grotesk({
 
 const Footer = () => {
   return (
-    <div className="h-screen w-screen relative flex flex-col justify-center items-center bg-[#06050a] overflow-hidden">
+    <div className="h-screen max-w-screen relative flex flex-col justify-center items-center bg-[#06050a] overflow-hidden">
       <motion.div className="z-10 sm:flex-row flex flex-col-reverse sm:justify-center justify-normal mt-5 sm:mt-0 items-center sm:h-[70vh] w-[90vw] rounded-3xl bg-[#18181880] backdrop-blur-sm "
       initial={{opacity: 0}}
       whileInView={{opacity: 1}}
