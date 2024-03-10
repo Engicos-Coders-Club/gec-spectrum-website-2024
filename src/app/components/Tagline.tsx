@@ -1,8 +1,6 @@
 "use client"
 import { motion } from "framer-motion";
 import { Space_Grotesk } from "next/font/google";
-import { useEffect, useRef } from "react";
-import { useInView } from "react-intersection-observer";
 
 const space = Space_Grotesk({
   weight: ["700"],
@@ -11,31 +9,6 @@ const space = Space_Grotesk({
 });
 
 const Tagline = () => {
-  const { ref, inView } = useInView();
-  const textRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (textRef.current) {
-      textRef.current.style.opacity = "0";
-    }
-
-    return () => {
-      if (textRef.current) {
-        textRef.current.style.opacity = "0";
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (inView && textRef.current) {
-      textRef.current.style.opacity = "1";
-    } else {
-      if (textRef.current) {
-        textRef.current.style.opacity = "0";
-      }
-    }
-  }, [inView]);
-
   return (
     <div className="relative h-[50vh] ">
       <div
@@ -43,8 +16,8 @@ const Tagline = () => {
         style={{ backgroundImage: 'url("/Vector.svg")' }}
       ></div>
       <motion.div
-        initial={{ x: -200, y: 200, opacity: 0 }}
-        animate={inView ? { x: 0, y: -100, opacity: 1 } : {}}
+        initial={{ x: -200, y: 200,opacity:0}}
+        whileInView={{ x: 0, y: -100,opacity:1}}
         transition={{ duration: 2, delay: 0.2 }}
       >
         <img
@@ -55,7 +28,7 @@ const Tagline = () => {
       </motion.div>
       <motion.div
         initial={{ x: 300, y: 300, opacity: 0 }}
-        animate={inView ? { x: 0, y: -100, opacity: 1 } : {}}
+        whileInView={{ x: 0, y: -100, opacity: 1 }}
         transition={{ duration: 2, delay: 0.2 }}
       >
         <img
@@ -65,15 +38,17 @@ const Tagline = () => {
         />
       </motion.div>
       <motion.div
-        ref={ref}
         initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : {}}
-        transition={{ duration: 3, delay: 0.2 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 2, delay: 0.2 }}
         className={`${space.className} text-3xl text-center relative`}
-        style={{ opacity: 0 }}
       >
-        <div className="h-[0.1rem] gradient-five-colors w-full absolute top-1/2 -z-10"></div>
-        <p className="z-10" ref={textRef}>
+        <motion.div className="h-[0.1rem] gradient-five-colors w-full absolute top-1/2 -z-10"
+        initial={{opacity:0}}
+        whileInView={{opacity:1}}
+        transition={{duration: 2, delay: 0.2}}
+        ></motion.div>
+        <p className="z-10">
           “EMBRACE THE UNKNOWN & GLIDE <br /> WITH US THROUGH THE COSMIC <br />{" "}
           SPECTRUM”
         </p>
