@@ -19,6 +19,7 @@ const Tagline = () => {
         initial={{ x: -200, y: 200,opacity:0}}
         whileInView={{ x: 0, y: -100,opacity:1}}
         transition={{ duration: 2, delay: 0.2 }}
+        className="z-20"
       >
         <img
           className="absolute h-[15rem] w-[auto] top-[-6vh] rotate-[25deg] xl:left-[-10vw] lg:left-[-10vw] md:left-[-15vw] sm:left-[-20vw] left-[-30vw]"
@@ -30,9 +31,10 @@ const Tagline = () => {
         initial={{ x: 300, y: 300, opacity: 0 }}
         whileInView={{ x: 0, y: -100, opacity: 1 }}
         transition={{ duration: 2, delay: 0.2 }}
+        className="z-20"
       >
         <img
-          className="absolute  sm:h-[40rem] z-[-5] sm:top-[-5vh]  rotate-[-26deg] w-[auto]  lg:right-[-30vw] md:right-[-44vw] sm:right-[-47vw] right-[-50vw]"
+          className="absolute  sm:h-[40rem] sm:top-[-5vh]  rotate-[-26deg] w-[auto]  lg:right-[-30vw] md:right-[-44vw] sm:right-[-47vw] right-[-50vw]"
           src="https://s3-alpha-sig.figma.com/img/9882/f4b1/44b540a3c892da5a247649855a71b660?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XC~zYr7FZoXBqiUy3nSKTMh0k6P02xWpePUWY-INcdawNDTwhaHj6Xyrab~zI9TOfsnAOg8AZMBOQbZCF-bVe1NGEQJ0ykwoOHnViqJ2QNDotkbUV7fZFc0YHFcHgA6wSpZ4W6ACUMHBAsTgyHaL8N~6ExnRBOX0wK-CTzGKRbWhADy~jdhnj~EHXy1cEnvkUeqKBgb9Ly2uo6jwgeGZjEKm9-sGbXLbpMLesfSuoWL03DrEUQ0vhjannPU-QUFoxXPkVkaA75s3tZX30N3vmq~dmhM17bOmS7j3xaqC2KAqyfHAmxJvr3VdWZL3xkOohP5DsIQuJxn5Z4KlHPkmag__"
           alt="robot"
         />
@@ -41,14 +43,14 @@ const Tagline = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 2, delay: 0.2 }}
-        className={`${space.className} text-3xl text-center relative`}
+        className={`${space.className} text-3xl text-center relative -z-10`}
       >
         <motion.div className="h-[0.1rem] gradient-five-colors w-full absolute top-1/2 -z-10"
         initial={{opacity:0}}
         whileInView={{opacity:1}}
         transition={{duration: 2, delay: 0.2}}
         ></motion.div>
-        <p className="z-10">
+        <p className="z-20">
           “EMBRACE THE UNKNOWN & GLIDE <br /> WITH US THROUGH THE COSMIC <br />{" "}
           SPECTRUM”
         </p>
