@@ -17,7 +17,10 @@
        font-display: swap;
        font-style: normal;
 }
-
+.rainbow-line {
+  @apply h-1 w-1/2;  /* Adjust height and width as desired */
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
 .panchang-font {
   font-family: 'Panchang', sans-serif; /* Include a fallback font */
 }
