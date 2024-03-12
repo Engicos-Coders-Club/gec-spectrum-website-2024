@@ -19,7 +19,11 @@ const Expo = () => {
     <div className="w-screen h-screen">
      <ScrollingText text={"EXPO ROBOWARS ROBOSOCCER HACKATHON RCBOAT UI/UXHACK"}/>
      <div className="w-screen p-10 flex justify-between flex-col md:flex-row">
-        <img src="expoImage.png" alt="" className="md:w-4/6 w-5/6"/>
+      <div className="md:w-4/6 w-5/6 relative">
+      <img src="glow-expo-build.svg" alt="" className='absolute w-[200%] md:left-80 left-52 blur-3xl rounded-full top-2/3 transform -translate-x-1/2 -translate-y-1/2 -z-10'/>
+      <img src="expoImage.png" alt="" className=''/>
+      </div>
+        
         <div className="md:w-1/5 p-2 flex flex-col justify-center md:items-end items-center gap-8 mt-8 md:mt-0">
             <h2 className={`${panchang.className} font-bold md:text-7xl text-5xl text-end`}>EXPO</h2>
             <p className={`${space.className} text-[#FFBA25] md:text-end md:mt-8 mt-5 text-center`}>Exhibit your innovations at our student expo this year. Open to High School and College students.</p>
