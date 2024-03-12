@@ -2,6 +2,7 @@
 import localFont from "next/font/local";
 import { Space_Grotesk } from 'next/font/google'
 import { motion } from "framer-motion";
+import { PinContainer } from "./3dPin";
 const panchang = localFont({
   src: "../../../public/Panchang-Variable.ttf",
   display: "swap",
@@ -24,7 +25,7 @@ const eventsData = [
 
 const Event = () => {
   return (
-    <div className={`${space.className} w-screen mt-96 relative sm:h-[150vh] h-[200vh]`}>
+    <div className={`${space.className} w-screen mt-96 relative sm:h-[150vh] h-[250vh]`}>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50"
       >
         <div className="absolute w-full h-full bg-gradient-to-br from-[#6B46C1] via-[#5933A6] to-[#4C1D95] rounded-[6rem] filter blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50"
@@ -54,7 +55,9 @@ const Event = () => {
       </div>
       <div className="w-screen grid lg:grid-rows-2 lg:grid-cols-3 md:grid-rows-3 sm:grid-cols-2 grid-cols-1 items-center justify-center z-[100] gap-10 p-10 place-content-center">
         { eventsData.map((events,index)=>{
-          return <div key={index}>
+          return (
+            <PinContainer title={events.event} href="">
+              <div key={index}>
             <motion.div className="flex justify-center"
             initial={{opacity:0,y:10}}
             whileInView={{opacity:1,y:0}}
@@ -69,6 +72,10 @@ const Event = () => {
          </div>
         </motion.div>
           </div>
+            </PinContainer>
+          ) 
+          
+          
         })
       }    
       </div>
