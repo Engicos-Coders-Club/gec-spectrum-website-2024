@@ -1,3 +1,4 @@
+'use client'
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import { IoChevronBack } from "react-icons/io5";
@@ -5,6 +6,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { Space_Grotesk } from "next/font/google";
 import { EVENT } from "@/utils/data.example";
 import localFont from "next/font/local";
+import { usePathname, useRouter } from "next/navigation";
 
 const space = Space_Grotesk({
   weight: ["700", "500", "400"],
@@ -13,11 +15,20 @@ const space = Space_Grotesk({
 });
 
 const panchang = localFont({
-  src: "../../../public/Panchang-Variable.ttf",
+  src: "../../../../public/Panchang-Variable.ttf",
   display: "swap",
 });
 
-const page = () => {
+const page = ({ params }) => {
+  // const router = useRouter();
+  // const { searchParams } = router; // Get search parameters object
+
+  // // Extract the id from searchParams
+  // const id = searchParams?.get('id');
+
+  // console.log(`Event ID: ${id}`);
+
+
   return (
     <div className="h-screen w-screen overflow-hidden">
       <Navbar />
@@ -38,12 +49,12 @@ const page = () => {
               <h1
                 className={`${panchang.className} font-semibold text-2xl text-[#FA5622]`}
               >
-                {EVENT[0].subtitle}
+                {EVENT[params.id]?.subtitle}
               </h1>
               <h1
                 className={`${panchang.className} font-semibold text-6xl leading-[4rem]`}
               >
-                {EVENT[0].title}
+                {EVENT[params.id]?.title}
               </h1>
             </div>
           </div>
@@ -56,7 +67,7 @@ const page = () => {
               </div>
               <div className={`mr-7 ${space.className} text-[#FFBA25]`}>
                 <h2 className=" font-bold leading-10 text-3xl">
-                  {EVENT[0].date}
+                  {EVENT[params.id].date}
                 </h2>
               </div>
             </div>
@@ -76,36 +87,40 @@ const page = () => {
                 </div>
                 <div className={`mr-7 ${space.className} text-[#FFBA25]`}>
                   <h2 className=" font-bold leading-10 text-3xl">
-                    {EVENT[0].team_size} ({EVENT[0].type})
+                    {EVENT[params.id].team_size} ({EVENT[params.id].type})
                   </h2>
                 </div>
               </div>
             </div>
             <div className="w-[33%] h-auto px-7 flex justify-between items-center">
-            <div
+              <div
                 className={`h-full w-10 rotate-[270deg] ${space.className} font-bold flex justify-center items-center`}
               >
                 CONTACT
-            </div>
-            <div className={`${space.className} text-[#FFBA25] w-60 h-full flex flex-col items-end`}>
-    <Link href={EVENT[0].contacts[0].contact} className="text-right">
-        <h2 className="font-semibold leading-6 text-xl flex items-center gap-2">
-            {EVENT[0].contacts[0].name} 
-            <span className="text-[#741CFF]">
-                <FaWhatsapp className="font-semibold text-xl"/>
-            </span>
-        </h2>
-    </Link>
-    <Link href={EVENT[0].contacts[1].contact}>
-        <h2 className="font-semibold leading-6 text-xl flex items-center gap-2">
-            {EVENT[0].contacts[1].name} 
-            <span className="text-[#741CFF]">
-                <FaWhatsapp className="font-semibold text-xl"/>
-            </span>
-        </h2>
-    </Link>
-</div>
-
+              </div>
+              <div
+                className={`${space.className} text-[#FFBA25] w-60 h-full flex flex-col items-end`}
+              >
+                <Link
+                  href={EVENT[params.id].contacts[0].contact}
+                  className="text-right"
+                >
+                  <h2 className="font-semibold leading-6 text-xl flex items-center gap-2">
+                    {EVENT[params.id].contacts[0].name}
+                    <span className="text-[#741CFF]">
+                      <FaWhatsapp className="font-semibold text-xl" />
+                    </span>
+                  </h2>
+                </Link>
+                <Link href={EVENT[params.id].contacts[1].contact}>
+                  <h2 className="font-semibold leading-6 text-xl flex items-center gap-2">
+                    {EVENT[params.id].contacts[1].name}
+                    <span className="text-[#741CFF]">
+                      <FaWhatsapp className="font-semibold text-xl" />
+                    </span>
+                  </h2>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
