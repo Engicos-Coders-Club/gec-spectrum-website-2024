@@ -18,10 +18,10 @@ function Navbar() {
         name:"EXPO",
         to: "#expo"
     },
-    {
-        name:"SPONSORS",
-        to: "#sponsors"
-    },
+    // {
+    //     name:"SPONSORS",
+    //     to: "#sponsors"
+    // },
     {
         name:"CONTACT",
         to: "#contact"
@@ -67,13 +67,13 @@ function Navbar() {
                 ))
             }
             
-            <button className="bg-primary p-2 px-5 rounded-full rounded-tl-none">
+            {/* <button className="bg-primary p-2 px-5 rounded-full rounded-tl-none">
                 BROCHURE
-            </button>
+            </button> */}
 
-            <button className="bg-yellow-500 p-2 px-5 rounded-full rounded-tl-none text-black">
+            {/* <button className="bg-yellow-500 p-2 px-5 rounded-full rounded-tl-none text-black">
                 SIGN IN
-            </button>
+            </button> */}
         </div>
     </motion.nav>
   )
