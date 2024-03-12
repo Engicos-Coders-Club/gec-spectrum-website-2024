@@ -5,6 +5,7 @@ import Logo from "@/assets/logo.png"
 import { useState } from "react"
 import Link from "next/link"
 import FullWidth from "./FullWidth"
+import { motion } from "framer-motion"
 function Navbar() {
   const [open, setOpen] = useState(false)
 
@@ -27,7 +28,11 @@ function Navbar() {
     }
   ]
   return (
-    <nav className="bg-[#06050a] px-10 sm:px-16 py-5 flex justify-between items-center">
+    <motion.nav className="bg-[#06050a] px-10 sm:px-16 py-5 flex justify-between items-center"
+    initial={{y:-100}}
+    animate={{y:0}}
+    transition={{duration:1}}
+    >
         <div className="flex items-center justify-between flex-1 lg:flex-auto lg:justify-start gap-5">
             {
                 !open ?
@@ -63,7 +68,7 @@ function Navbar() {
                 BROCHURE
             </button>
         </div>
-    </nav>
+    </motion.nav>
   )
 }
 
