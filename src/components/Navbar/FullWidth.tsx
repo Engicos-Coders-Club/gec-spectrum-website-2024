@@ -29,7 +29,7 @@ let links = [
   {
     name:"COMPETITIONS",
     icon:<BsTrophy color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
-    link:"/"
+    link:"/competitions"
   },
   {
     name:"EVENTS",

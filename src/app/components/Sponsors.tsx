@@ -14,7 +14,7 @@ const panchang = localFont({
 
 const Sponsors = () => {
   return (
-    <div className={`${space.className} w-screen h-screen flex items-center  flex-col`}>
+    <div className={`${space.className} w-screen h-screen flex items-center  flex-col`} id='sponsors'>
        <div className='flex w-full items-center justify-center relative'>
         <div className='h-0.5 gradient-five-colors w-full absolute'></div>
         <h2 className={`${panchang.className} text-4xl sm:text-5xl md:text-7xl font-bold z-10 bg-[#06050a]`}>SPONSORS</h2>
