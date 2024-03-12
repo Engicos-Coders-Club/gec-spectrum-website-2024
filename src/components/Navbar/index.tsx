@@ -12,7 +12,7 @@ function Navbar() {
   const links = [
     {
         name:"COMPETITIONS",
-        to: "#competitions"
+        to: "/competitions"
     },
     {
         name:"EXPO",
@@ -66,6 +66,10 @@ function Navbar() {
             
             <button className="bg-primary p-2 px-5 rounded-full rounded-tl-none">
                 BROCHURE
+            </button>
+
+            <button className="bg-yellow-500 p-2 px-5 rounded-full rounded-tl-none text-black">
+                SIGN IN
             </button>
         </div>
     </motion.nav>

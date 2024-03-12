@@ -54,7 +54,7 @@ let links = [
   {
     name:"TEAM",
     icon:<AiOutlineTeam color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
-    link:"/"
+    link:"/Teams"
   },
   {
     name:"CONTACT",

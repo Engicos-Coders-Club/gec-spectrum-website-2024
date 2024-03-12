@@ -8,7 +8,6 @@ import Navbar from "@/components/Navbar";
 import ExploreTile from "@/components/explore-tile/ExploreTile";
 import Event from "./components/Event";
 
-
 export default function Home() {
   return (
     <main className="overflow-hidden">
