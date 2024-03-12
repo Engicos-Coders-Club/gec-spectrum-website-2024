@@ -16,7 +16,7 @@ const panchang = localFont({
 
 const Expo = () => {
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen" id='expo'>
      <ScrollingText text={"EXPO ROBOWARS ROBOSOCCER HACKATHON RCBOAT UI/UXHACK"}/>
      <div className="w-screen p-10 flex justify-between flex-col md:flex-row">
       <div className="md:w-4/6 w-5/6 relative">

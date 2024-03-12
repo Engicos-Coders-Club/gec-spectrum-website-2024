@@ -44,13 +44,16 @@ function Navbar() {
                 <FullWidth close={setOpen}/>
             }
             <div className="order-1 lg:order-2W">
+                <Link href={'/'}>
                 <Image 
                     src={Logo.src}
                     width={Logo.width}
                     height={Logo.height}
-                    className=""
+                    className="cursor-pointer"
                     alt="logo"
                 />
+                </Link>
+                
             </div>
         </div>
         <div className="items-center gap-5 hidden lg:flex">
