@@ -15,7 +15,7 @@ export default function Home() {
       <Tagline />
       <Event />
       <Expo />
-      <Sponsors />
+      {/* <Sponsors /> */}
       <ExploreTile />
       <Footer />
     </main>
