@@ -4,6 +4,7 @@ import EventsButton from "../components/Events/Button";
 import Link from "next/link";
 import { Space_Grotesk } from "next/font/google";
 import CardItem from "@/components/Competitions-Card/CardItem";
+import Coming from "../ComingSoon/page";
 
 const Space = Space_Grotesk({ subsets : ['latin'], weight: ['700', '600']});
 
@@ -41,8 +42,9 @@ const events = new Array(9).fill(0);
           <span className={`text-primary flex items-center text-8xl lg:text-9xl ${Space.className}`}>25</span>
         </div>
       </section>
+      <Coming></Coming>
         
-      <section className='w-full flex justify-center mt-10 p-3 overflow-hidden'>
+      {/* <section className='w-full flex justify-center mt-10 p-3 overflow-hidden'>
             <div className={`grid grid-rows-2 p-5 grid-cols-3 sticky top-0 gap-10  ${Space.className} lg:grid-cols-7 lg:gap-4`}>  
                 <Link href='/' className='bg-[#FFBA25] p-3 rounded-full rounded-tl-none overflow-hidden w-32'>
                     <p className='text-black text-sm sm:text-base'>ALL</p> 
@@ -66,7 +68,7 @@ const events = new Array(9).fill(0);
                         ))}
                     </div>
                 </section>
-           
+            */}
     </main>
   );
 }
