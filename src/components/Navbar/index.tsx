@@ -6,7 +6,7 @@ import { useState } from "react"
 import Link from "next/link"
 
 import FullWidth from "./FullWidth"
-import LoginModal from "@/app/components/LoginModal"
+// import LoginModal from "@/app/components/LoginModal"
 import { motion } from "framer-motion"
 function Navbar() {
   const [open, setOpen] = useState(false)
@@ -68,12 +68,12 @@ function Navbar() {
             </div>
         </div>
         <div className="items-center gap-5 hidden lg:flex">
-        <div>
+        {/* <div>
       <h1  onClick={handleOpenModal} className="cursor-pointer">
         LOGIN
       </h1>
       {isModalOpen && <LoginModal onClose={handleCloseModal} />}
-    </div>
+    </div> */}
             {
                 links.map((link, i)=>(
                     <Link href={link.to} key={i} className=" hover:bg-dotted-border bg-[#06050a] relative flex justify-center rounded-full overflow-hidden">

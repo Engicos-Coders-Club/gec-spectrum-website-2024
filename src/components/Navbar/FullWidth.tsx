@@ -1,7 +1,5 @@
-
 import Image from 'next/image'
 import Link from 'next/link'
-
 import React from 'react'
 import { IoHomeOutline } from 'react-icons/io5'
 import { MdArrowOutward, MdOutlineLocalHotel } from 'react-icons/md'
@@ -11,7 +9,6 @@ import { GoClock, GoPersonAdd } from 'react-icons/go'
 import { FiPhone } from 'react-icons/fi'
 import { BsTrophy } from 'react-icons/bs'
 import { PiGlobeLight, PiTicketThin } from 'react-icons/pi'
-
 
 let links = [
   {
@@ -64,12 +61,11 @@ let links = [
     icon:<FiPhone color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
-
+  
   
 ]
 
 function FullWidth({close}:any) {
-
   return (
     <div className="h-screen w-screen entrance flex fixed top-0 left-0 bg-[#06050a] z-10">
       <div className="flex-[0.996] flex flex-col h-full">
