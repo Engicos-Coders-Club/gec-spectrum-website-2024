@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/spectrum-logo.png";
 import { useState } from "react";
 import Link from "next/link";
 import FullWidth from "./FullWidth";

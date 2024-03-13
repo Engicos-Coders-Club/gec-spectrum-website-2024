@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.className} bg-bgDark text-white`}
         style={{ background: `url('/Vector.svg') #06050a 200%` }}
       >
+        <Navbar />
         {children}
       </body>
     </html>
