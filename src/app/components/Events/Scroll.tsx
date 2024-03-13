@@ -15,9 +15,7 @@ const ScrollText: React.FC<ScrollTextProps> = ({ text }) => {
   const Text = text.split("_");
 
   return (
-    <div
-      className="flex mt-24 md:h-10 lg:h-16 border-y-2 whitespace-nowrap md:text-3xl text-xl w-full overflow-hidden bg-opacity-50 bg-gray-500"
-    >
+    <div className="flex mt-24 md:h-10 lg:h-16 border-y-2 whitespace-nowrap md:text-3xl text-xl w-full overflow-hidden bg-opacity-50 bg-gray-500">
       <motion.div
         className="flex items-center text-yellow-500"
         animate={{ x: "-100%" }}

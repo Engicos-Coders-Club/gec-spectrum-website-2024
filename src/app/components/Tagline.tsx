@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import { Space_Grotesk } from "next/font/google";
 
@@ -12,8 +12,8 @@ const Tagline = () => {
   return (
     <div className="relative mt-40 h-[50vh] w-screen flex items-center justify-center">
       <motion.div
-        initial={{ x: -200, y: 200,opacity:0}}
-        whileInView={{ x: 0, y: -100,opacity:1}}
+        initial={{ x: -200, y: 200, opacity: 0 }}
+        whileInView={{ x: 0, y: -100, opacity: 1 }}
         transition={{ duration: 2, delay: 0.2 }}
         className="z-20 absolute sm:-left-36 -left-44 sm:top-0 -top-24"
       >
@@ -41,10 +41,11 @@ const Tagline = () => {
         transition={{ duration: 2, delay: 0.2 }}
         className={`${space.className} text-3xl text-center relative -z-10 w-screen`}
       >
-        <motion.div className="h-[0.1rem] gradient-five-colors w-full absolute top-1/2 -z-10"
-        initial={{opacity:0}}
-        whileInView={{opacity:1}}
-        transition={{duration: 2, delay: 0.2}}
+        <motion.div
+          className="h-[0.1rem] gradient-five-colors w-full absolute top-1/2 -z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 2, delay: 0.2 }}
         ></motion.div>
         <p className="z-20">
           “EMBRACE THE UNKNOWN & GLIDE <br /> WITH US THROUGH THE COSMIC <br />{" "}
