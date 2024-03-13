@@ -4,10 +4,20 @@ import Image from "next/image"
 import Logo from "@/assets/logo.png"
 import { useState } from "react"
 import Link from "next/link"
+
 import FullWidth from "./FullWidth"
+import LoginModal from "@/app/components/LoginModal"
 import { motion } from "framer-motion"
 function Navbar() {
   const [open, setOpen] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    }
+    const handleOpenModal = (event:any) => {
+        event.preventDefault();
+        setIsModalOpen(true);
+    }
 
   const links = [
     {
@@ -26,6 +36,7 @@ function Navbar() {
         name:"CONTACT",
         to: "#contact"
     }
+   
   ]
   return (
     <motion.nav className="bg-[#06050a] px-10 sm:px-16 py-5 flex justify-between items-center"
@@ -57,6 +68,12 @@ function Navbar() {
             </div>
         </div>
         <div className="items-center gap-5 hidden lg:flex">
+        <div>
+      <h1  onClick={handleOpenModal} className="cursor-pointer">
+        LOGIN
+      </h1>
+      {isModalOpen && <LoginModal onClose={handleCloseModal} />}
+    </div>
             {
                 links.map((link, i)=>(
                     <Link href={link.to} key={i} className=" hover:bg-dotted-border bg-[#06050a] relative flex justify-center rounded-full overflow-hidden">
