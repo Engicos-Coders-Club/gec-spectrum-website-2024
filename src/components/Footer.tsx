@@ -44,7 +44,7 @@ const Footer = () => {
                   CONTACT US AT
                 </h1>
                 <h1
-                  className={`${space.className} font-medium md:text-5xl md:leading-[4rem] sm:leading-7 text-xl sm:text-lg break-words`}
+                  className={`${space.className} font-medium md:text-4xl md:leading-[4rem] sm:leading-7 sm:text-xs `}
                 >
                   gecstudentscouncil@gmail.com
                 </h1>
