@@ -44,24 +44,24 @@ const Footer = () => {
                   CONTACT US AT
                 </h1>
                 <h1
-                  className={`${space.className} font-medium md:text-5xl md:leading-[4rem] sm:leading-7 text-xl sm:text-lg break-words`}
+                  className={`${space.className} font-medium md:text-4xl md:leading-[4rem] sm:leading-7 sm:text-xs `}
                 >
-                  info@gecspectrum.com
+                  gecstudentscouncil@gmail.com
                 </h1>
               </div>
               <div>
                 <p
                   className={`${space.className} font-normal sm:text-base sm:leading-5 text-sm`}
                 >
-                  <span className="font-bold">Name: </span>Hello World (Cultural
-                  Secretary)
+                  <span className="font-bold">Name: </span>Avnish Cabral (Chairman,Students' Council
+                  )
                 </p>
                 <p
                   className={`${space.className} font-normal sm:text-base sm:leading-5 text-sm`}
                 >
-                  info@yahoo.com |{" "}
+                  {" "}
                   <Link
-                    href="https://api.whatsapp.com/send?phone=917020977713"
+                    href="https://api.whatsapp.com/send?phone=918237673292"
                     className="hover:underline"
                   >
                     WhatsApp
@@ -72,15 +72,14 @@ const Footer = () => {
                 <p
                   className={`${space.className} font-normal sm:text-base sm:leading-5 text-sm`}
                 >
-                  <span className="font-bold">Name: </span>Hello World (Cultural
-                  Secretary)
+                  <span className="font-bold">Name: </span>Dakshat Patil(Technical Head for Spectrum)
                 </p>
                 <p
                   className={`${space.className} font-normal sm:text-base sm:leading-5 text-sm`}
                 >
-                  info@yahoo.com |{" "}
+                  {" "}
                   <Link
-                    href="https://api.whatsapp.com/send?phone=917020977713"
+                    href="https://api.whatsapp.com/send?phone=918669072165"
                     className="hover:underline"
                   >
                     WhatsApp
@@ -89,17 +88,17 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 sm:mx-0 mx-10">
                 <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
-                  <Link href="/"><RiInstagramFill className="size-5" /></Link>
+                  <Link href="https://www.instagram.com/gec.students.council24/"><RiInstagramFill className="size-5" /></Link>
                 </div>
-                <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
+                {/* <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
                 <Link href="/"><FaFacebookF className="size-5" /></Link>
-                </div>
+                </div> */}
                 <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
-                <Link href="/"><FaLinkedinIn className="size-5" /></Link>
+                <Link href="https://www.linkedin.com/school/gecgoa/"><FaLinkedinIn className="size-5" /></Link>
                 </div>
-                <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
+                {/* <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
                 <Link href="/"><FaXTwitter className="size-5 text-white" /></Link>
-                </div>
+                </div> */}
               </div>
             </div>
         </div>
