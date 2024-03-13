@@ -55,13 +55,13 @@ function Navbar() {
           <FullWidth close={setOpen} />
         )}
         <div className="order-1 lg:order-2W">
-          <Link href={"/"}>
+          <Link href={"/"} className="cursor-pointer">
             <Image
               src={Logo.src}
-              width={Logo.width}
-              height={Logo.height}
-              className="cursor-pointer"
+              width={200}
+              height={100}
               alt="logo"
+              className="object-contain"
             />
           </Link>
         </div>
