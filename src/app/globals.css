@@ -3,98 +3,105 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Panchang'; /* Adjustable name */
-  src: url('/fonts/panchang-Regular.otf') format('truetype'); /* Regular font */
+  font-family: "Panchang"; /* Adjustable name */
+  src: url("/fonts/panchang-Regular.otf") format("truetype"); /* Regular font */
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Panchang-Bold';
-  src: url('../../public/fonts/Panchang-Bold.woff') format('woff2'),
-       url('../../public/fonts/Panchang-Bold.woff') format('woff'),
-       url('../../public/fonts/Panchang-Bold.ttf') format('truetype');
-       font-weight: 700;
-       font-display: swap;
-       font-style: normal;
+  font-family: "Panchang-Bold";
+  src: url("../../public/fonts/Panchang-Bold.woff") format("woff2"),
+    url("../../public/fonts/Panchang-Bold.woff") format("woff"),
+    url("../../public/fonts/Panchang-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
 }
 .rainbow-line {
-  @apply h-1 w-1/2;  /* Adjust height and width as desired */
-  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  @apply h-1 w-1/2; /* Adjust height and width as desired */
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
 }
 .panchang-font {
-  font-family: 'Panchang', sans-serif; /* Include a fallback font */
+  font-family: "Panchang", sans-serif; /* Include a fallback font */
 }
 
 .gradient-border {
   background-image: linear-gradient(
     to right,
-    #FF0000 0%,
-    #FFD809 25%,
-    #00FF29 45%,
-    #4200FF 65.4%,
-    #BD00FF 82.9%,
-    #FF00C7 100%
+    #ff0000 0%,
+    #ffd809 25%,
+    #00ff29 45%,
+    #4200ff 65.4%,
+    #bd00ff 82.9%,
+    #ff00c7 100%
   );
 }
 
 .font-panchang-bold {
-  font-family: 'Panchang-Bold', sans-serif;
-}
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  font-family: "Panchang-Bold", sans-serif;
 }
 
 .dotted-border {
-  
-  background: linear-gradient(265.4deg, rgba(232, 232, 232, 0.139772) 0.16%, #E8E8E8 56.79%, rgba(232, 232, 232, 0) 107.45%);
-
-
+  background: linear-gradient(
+    265.4deg,
+    rgba(232, 232, 232, 0.139772) 0.16%,
+    #e8e8e8 56.79%,
+    rgba(232, 232, 232, 0) 107.45%
+  );
 }
 .gradient-five-colors {
-  background: linear-gradient(to right, #FF0000 0%, #FFD809 10%, #FFD809 20%, #00FF29 30%, #00FF29 40%, #4200FF 50%, #4200FF 60%, #BD00FF 70%, #BD00FF 80%, #FF00C7 100%);
+  background: linear-gradient(
+    to right,
+    #ff0000 0%,
+    #ffd809 10%,
+    #ffd809 20%,
+    #00ff29 30%,
+    #00ff29 40%,
+    #4200ff 50%,
+    #4200ff 60%,
+    #bd00ff 70%,
+    #bd00ff 80%,
+    #ff00c7 100%
+  );
 }
 
 .footgrad {
-  background: linear-gradient(358.58deg, #00083B 1.28%, #002535 18.67%, #002D0D 35.67%, #232200 52.68%, #170000 67.8%, #000000 95.77%);
-
+  background: linear-gradient(
+    358.58deg,
+    #00083b 1.28%,
+    #002535 18.67%,
+    #002d0d 35.67%,
+    #232200 52.68%,
+    #170000 67.8%,
+    #000000 95.77%
+  );
 }
-@media (min-width: 640px){
+@media (min-width: 640px) {
   .bordercolor {
     border-right: solid;
-    border-image-source: linear-gradient(#FF0000 0%, #FFD809 25%, #00FF29 45%, #4200FF 65.4%, #BD00FF 82.9%, #FF00C7 100%);
+    border-image-source: linear-gradient(
+      #ff0000 0%,
+      #ffd809 25%,
+      #00ff29 45%,
+      #4200ff 65.4%,
+      #bd00ff 82.9%,
+      #ff00c7 100%
+    );
     border-image-slice: 1;
   }
 }
 
-.entrance{
-  animation: appear 0.3s ;
+.entrance {
+  animation: appear 0.3s;
 }
 
 @keyframes appear {
@@ -112,6 +119,6 @@ body {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scroll-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
