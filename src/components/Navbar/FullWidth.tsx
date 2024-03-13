@@ -125,7 +125,7 @@ let links = [
 
 function FullWidth({ close }: any) {
   return (
-    <div className="h-screen w-screen entrance flex absolute top-0 left-0 bg-bgDark z-[99000] overflow-y-hidden">
+    <div className="h-screen w-screen entrance flex absolute top-0 left-0 bg-bgDark z-[99999999999999999] overflow-y-hidden">
       <div className="uppercase tracking-[.2em] mt-3 mx-1 flex flex-col items-center">
         <span
           style={{
@@ -143,7 +143,7 @@ function FullWidth({ close }: any) {
           <Link
             key={i}
             href={link.link}
-            className="hover:bg-white py-10 group border border-[#FA5622] flex items-center justify-between duration-500 hover:text-black text-lg sm:text-2xl md:text-7xl pl-5 pr-0  md:px-12 hover:font-semibold"
+            className="hover:bg-white py-10 group border z-50 border-[#FA5622] flex items-center justify-between duration-500 hover:text-black text-lg sm:text-2xl md:text-7xl pl-5 pr-0  md:px-12 hover:font-semibold"
           >
             <div className="flex flex-wrap justify-center gap-4 md:gap-10 items-center">
               {link.icon}

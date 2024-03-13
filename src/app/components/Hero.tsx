@@ -17,7 +17,7 @@ const panchang = localFont({
 
 const Hero = () => {
   return (
-    <div className="h-screen w-full flex flex-col items-center justify-center">
+    <div className="h-screen w-full flex flex-col items-center justify-center headerbackground">
       <div className="h-screen w-screen flex flex-col items-center justify-center text-center">
         <motion.h1
           className={`${panchang.className} xl:text-9xl text-5xl font-bold line-clamp-1 md:text-7xl sm:text-6xl lg:text-8xl`}

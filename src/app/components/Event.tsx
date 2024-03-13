@@ -26,7 +26,7 @@ const Event = () => {
       </div>
       <div className="relative">
         <motion.h1
-          className={`${panchang.className} font-bold md:text-7xl ml-10 text-4xl`}
+          className={`${panchang.className} font-bold bg-[#06050a] w-fit md:text-7xl ml-10 text-4xl`}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.2 }}
