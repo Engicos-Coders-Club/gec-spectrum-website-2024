@@ -25,9 +25,9 @@ const Expo = () => {
       </div>
         
         <div className="md:w-1/5 p-2 flex flex-col justify-center md:items-end items-center gap-[0.5rem] mt-8 md:mt-0">
-        <div className={`${space.className} bg-[#741CFFC9] text-xs p-[0.5rem] pl-[1rem] pr-[1rem] rounded-tl-[1rem] rounded-tr-[1rem] rounded-bl-[1rem]  font-bold `}>FOR HIGH SCHOOLERS</div>
+        <div className={`${space.className} bg-[#741CFFC9] text-sm flex items-center justify-center w-2/3 font-bold rounded-3xl py-2 rounded-tl-none`}>FOR HIGH SCHOOLERS</div>
             <h2 className={`${panchang.className} font-bold md:text-7xl text-5xl text-end`}>EXPO</h2>
-            <p className={`${space.className} text-[#FFBA25] md:text-end md:mt-8 mt-5 text-center`}>Exhibit your innovations at our student expo this year. Open to High School and College students.</p>
+            <p className={`${space.className} text-[#FFBA25] md:text-end md:mt-8 mt-5 text-center py-2`}>Exhibit your innovations at our student expo this year. Open to High School and College students.</p>
             {/* <button className="bg-[#741CFF] rounded-3xl py-2 rounded-tl-none w-2/3">REGISTER NOW</button> */}
         </div>
     </div>

@@ -16,7 +16,7 @@ const ScrollText: React.FC<ScrollTextProps> = ({ text }) => {
 
   return (
     <div
-      className="flex mt-0 md:h-10 lg:h-10 border-y-2 border whitespace-nowrap md:text-3xl text-1xl w-full overflow-hidden"
+      className="flex mt-24 md:h-10 lg:h-10 border-y-2 border whitespace-nowrap md:text-3xl text-1xl w-full overflow-hidden"
       style={{
         backgroundImage: 'url("/Vector.svg")',
         backgroundBlendMode: "multiply", // Achieve light grey background effect

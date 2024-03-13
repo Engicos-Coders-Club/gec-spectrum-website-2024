@@ -32,18 +32,23 @@ const Hero = () => {
               <h2 className={`md:text-4xl font-bold text-xl ${panchang.className}`}>2024</h2>
           </motion.div>
       </div>
-      <motion.div className='bg-[#FFBA25] w-11/12 md:h-16 rounded-xl rounded-tl-none flex items-center md:justify-between text-black md:flex-row flex-col justify-center my-5'
-  
-          initial={{opacity:0}}
-          animate={{opacity:1}}
-          transition={{delay:1,duration:2,ease:'easeIn'}}
+      <motion.div
+        className="bg-[#FFBA25] w-11/12 md:h-16 rounded-xl rounded-tl-none flex items-center md:justify-between text-black md:flex-row flex-col justify-center my-5 md:text-2xl text-xl "
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 2, ease: "easeIn" }}
       >
-          <div>
-              <h3 className={`${space.className} md:ml-16`}>3<span className='text-purple-500'>RD.</span> 4<span className='text-purple-500'>TH.</span> APRIL</h3>
-          </div>
-          <div>
-              <h3 className={`${space.className} md:mr-16`}>/ * GOA COLLEGE OF ENGINEERING */</h3>
-          </div>
+        <div>
+          <h3 className="md:ml-16 font-bold">
+            3<span className="text-purple-500">RD.</span> 4
+            <span className="text-purple-500">TH.</span> APRIL
+          </h3>
+        </div>
+        <div>
+          <h3 className="md:mr-16 font-bold">
+            / * GOA COLLEGE OF ENGINEERING */
+          </h3>
+        </div>
       </motion.div>
   
       <ScrollText text={"EXPO ROBOWARS ROBOSOCCER HACKATHON RCBOAT UI/UXHACK"}/>
