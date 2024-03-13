@@ -19,7 +19,7 @@ const panchang = localFont({
   display: "swap",
 });
 
-const page = ({ params }) => {
+const page = ({ params }: { params: { id:number } }) => {
   // const router = useRouter();
   // const { searchParams } = router; // Get search parameters object
 

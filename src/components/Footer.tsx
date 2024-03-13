@@ -53,7 +53,7 @@ const Footer = () => {
                 <p
                   className={`${space.className} font-normal sm:text-base sm:leading-5 text-sm`}
                 >
-                  <span className="font-bold">Name: </span>Avnish Cabral (Chairman,Students' Council
+                  <span className="font-bold">Name: </span>Avnish Cabral (Chairman,Students&apos; Council
                   )
                 </p>
                 <p

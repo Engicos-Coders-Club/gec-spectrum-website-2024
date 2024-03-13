@@ -56,8 +56,8 @@ const Event = () => {
       <div className="w-screen grid lg:grid-rows-2 lg:grid-cols-3 md:grid-rows-3 sm:grid-cols-2 grid-cols-1 items-center justify-center z-[100] gap-10 p-10 place-content-center">
         { eventsData.map((events,index)=>{
           return (
-            <PinContainer title={events.event} href="">
-              <div key={index}>
+            <PinContainer key={index} title={events.event} href="">
+              <div>
             <motion.div className="flex justify-center"
             initial={{opacity:0,y:10}}
             whileInView={{opacity:1,y:0}}

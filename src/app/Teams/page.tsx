@@ -7,7 +7,7 @@ const page = () => {
   return (
     <div>
         <Navbar/>
-        <PageHead value={{body:"MEET THE", title:"TEAM" , faltutext:"/*"}}/>
+        <PageHead body="MEET THE" title="TEAM"  faltutext="/*" />
         <TeamsData/>
         {/* <div className="flex items-center justify-center flex-col gap-2">
           <p>COMING SOON</p>

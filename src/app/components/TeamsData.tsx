@@ -11,9 +11,9 @@ const space = Space_Grotesk({
   })
 
 const TeamsData = () => {
-  const [selectedDepartment, setSelectedDepartment] = useState(null);
+  const [selectedDepartment, setSelectedDepartment] = useState<null | number>(null);
 
-  const handleButtonClick = (index) => {
+  const handleButtonClick = (index:number) => {
     setSelectedDepartment(index);
   };
   return (
