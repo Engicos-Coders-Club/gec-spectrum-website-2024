@@ -13,52 +13,52 @@ import { PiGlobeLight, PiTicketThin } from 'react-icons/pi'
 let links = [
   {
     name:"HOME",
-    icon:<IoHomeOutline color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    icon:<IoHomeOutline color='#FA5622' size={40} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
     name:"ABOUT",
-    icon:<AiOutlineQuestion color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    icon:<AiOutlineQuestion color='#FA5622' size={40} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
     name:"SCHEDULE",
-    icon:<GoClock color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    icon:<GoClock color='#FA5622' size={40} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
     name:"COMPETITIONS",
-    icon:<BsTrophy color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    icon:<BsTrophy color='#FA5622' size={40} className='duration-300 group-hover:w-[0px]'/>,
     link:"/competitions"
   },
   {
     name:"EVENTS",
-    icon:<PiTicketThin color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    icon:<PiTicketThin color='#FA5622' size={40} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
     name:"EXPO",
-    icon:<PiGlobeLight color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    icon:<PiGlobeLight color='#FA5622' size={40} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
     name:"SPONSORS",
-    icon:<GoPersonAdd color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    icon:<GoPersonAdd color='#FA5622' size={40} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
     name:"ACCOMODATION",
-    icon:<MdOutlineLocalHotel color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    icon:<MdOutlineLocalHotel color='#FA5622' size={40} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   {
     name:"TEAM",
-    icon:<AiOutlineTeam color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    icon:<AiOutlineTeam color='#FA5622' size={40} className='duration-300 group-hover:w-[0px]'/>,
     link:"/Teams"
   },
   {
     name:"CONTACT",
-    icon:<FiPhone color='#FA5622' size={20} className='duration-300 group-hover:w-[0px]'/>,
+    icon:<FiPhone color='#FA5622' size={40} className='duration-300 group-hover:w-[0px]'/>,
     link:"/"
   },
   
@@ -67,11 +67,11 @@ let links = [
 function FullWidth({close}:any) {
   return (
     <div className="h-screen w-screen entrance flex fixed top-0 left-0 bg-[#06050a] z-10">
-      <div className="flex-[0.996] flex flex-col h-full">
+      <div className="flex-[0.996] max-h-screen scroll-hide overflow-y-auto flex flex-col">
           {
             links.map((link,i)=>(
-              <Link key={i} href={link.link} className="hover:bg-white flex-1 group border border-[#FA5622] flex items-center justify-between duration-500 hover:text-black text-lg sm:text-2xl md:text-3xl pl-5 pr-0  md:px-12 hover:font-semibold">
-                <div className='flex gap-4 md:gap-10 items-center'>
+              <Link key={i} href={link.link} className="hover:bg-white py-10 group border border-[#FA5622] flex items-center justify-between duration-500 hover:text-black text-lg sm:text-2xl md:text-7xl pl-5 pr-0  md:px-12 hover:font-semibold">
+                <div className='flex flex-wrap justify-center gap-4 md:gap-10 items-center'>
                   {link.icon}
                   <p>{link.name}</p>
                 </div>
