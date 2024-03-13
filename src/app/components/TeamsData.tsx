@@ -53,7 +53,7 @@ const TeamsData = () => {
                 key={`${selectedDepartment}-${index}`}
                 initial={{y:50,opacity:0}}
                 animate={{y:0,opacity:1}}
-                transition={{duration:1,delay:0.3}}
+                transition={{duration:1,delay:index/5}}
 
                 >
                   <img
