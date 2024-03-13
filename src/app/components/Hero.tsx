@@ -51,7 +51,7 @@ const Hero = () => {
         </div>
       </motion.div>
   
-      <ScrollText text={"EXPO ROBOWARS ROBOSOCCER HACKATHON RCBOAT UI/UXHACK"}/>
+      <ScrollText text={"EXPO_ROBO WARS_ROBO SOCCER_HACKATHON_RC BOAT_UI/UX HACK"}/>
   
   </div>
   
