@@ -46,7 +46,7 @@ const Footer = () => {
                 <h1
                   className={`${space.className} font-medium md:text-5xl md:leading-[4rem] sm:leading-7 text-xl sm:text-lg break-words`}
                 >
-                  info@gecspectrum.com
+                  gecstudentscouncil@gmail.com
                 </h1>
               </div>
               <div>
