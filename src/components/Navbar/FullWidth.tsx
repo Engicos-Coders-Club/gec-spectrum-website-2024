@@ -125,7 +125,7 @@ let links = [
 
 function FullWidth({ close }: any) {
   return (
-    <div className="h-screen w-screen entrance flex fixed top-0 left-0 bg-bgDark z-10">
+    <div className="h-screen w-screen entrance flex absolute top-0 left-0 bg-bgDark z-[99000] overflow-y-hidden">
       <div className="uppercase tracking-[.2em] mt-3 mx-1 flex flex-col items-center">
         <span
           style={{

@@ -12,10 +12,10 @@ interface ScrollingTextProps {
 }
 
 const ScrollingText: React.FC<ScrollingTextProps> = ({ text }) => {
-  const Text = text.split(" ");
+  const Text = text.split("_");
   return (
     <div
-      className="flex rotate-3 mt-20 md:h-20 h-10 border-y border-dashed whitespace-nowrap md:text-5xl text-2xl w-full overflow-hidden"
+      className="flex rotate-3 mt-20 md:h-20 h-10 border-y border-dashed whitespace-nowrap md:text-4xl text-2xl w-full overflow-hidden"
     >
       <motion.div
         className="flex items-center"

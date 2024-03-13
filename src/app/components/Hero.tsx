@@ -39,26 +39,26 @@ const Hero = () => {
         </motion.div>
       </div>
       <motion.div
-        className="bg-[#FFBA25] w-11/12 md:h-16 rounded-xl rounded-tl-none flex items-center md:justify-between text-black md:flex-row flex-col justify-center my-5"
+        className="bg-[#FFBA25] w-11/12 md:h-16 rounded-xl rounded-tl-none flex items-center md:justify-between text-black md:flex-row flex-col justify-center my-5 md:text-2xl text-xl "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 2, ease: "easeIn" }}
       >
         <div>
-          <h3 className="md:ml-16 text-2xl font-bold">
+          <h3 className="md:ml-16 font-bold">
             3<span className="text-purple-500">RD.</span> 4
             <span className="text-purple-500">TH.</span> APRIL
           </h3>
         </div>
         <div>
-          <h3 className="md:mr-16 text-2xl font-bold">
+          <h3 className="md:mr-16 font-bold">
             / * GOA COLLEGE OF ENGINEERING */
           </h3>
         </div>
       </motion.div>
 
       <ScrollText
-        text={"EXPO ROBOWARS ROBOSOCCER HACKATHON RCBOAT UI/UXHACK"}
+        text={"EXPO_ROBO WARS_ROBO SOCCER_HACKATHON_RC BOAT_UI/UX HACK"}
       />
     </div>
   );

@@ -10,7 +10,6 @@ import Event from "./components/Event";
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
-      <Navbar />
       <Hero />
       <Tagline />
       <Event />
