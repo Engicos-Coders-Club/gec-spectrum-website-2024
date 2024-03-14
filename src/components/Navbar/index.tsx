@@ -24,7 +24,7 @@ function Navbar() {
     // },
     {
       name: "CONTACT",
-      to: "#contact",
+      to: "/#contact",
     },
   ];
   return (
