@@ -22,7 +22,6 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${spaceGrotesk.className} bg-bgDark text-white`}
-        style={{ background: `url('/Vector.svg') #06050a 200%` }}
       >
         <Navbar />
         {children}
