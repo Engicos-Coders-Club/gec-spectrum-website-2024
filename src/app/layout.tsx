@@ -9,7 +9,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Spectrum 2024/Users/rushikeshgaonkar/Downloads/favicon_io/favicon.ico/Users/rushikeshgaonkar/Downloads/favicon_io/favicon.ico",
+  title: "Spectrum 2024",
   description: "Spectrum is the technical festival organized by the Goa College of Engineering.",
   keywords: ["Techfest", "Technical", "Event", "Expo", "Exhibition", "Robotics", "Fest", "Goa College of Engineering", "Hackathon", "Robo Sumo", "RC Boat", "Coding"]
 };
