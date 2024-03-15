@@ -2,6 +2,9 @@
 import localFont from 'next/font/local'
 import { Space_Grotesk } from 'next/font/google'
 import ScrollingText from './ScrollingText'
+import GlowExpo from '../../../public/glow-expo-build.svg'
+import ExpoImage from '../../../public/expoImage.png'
+import Image from 'next/image'
 
 const space = Space_Grotesk({
     weight: ['700','500'],
@@ -18,10 +21,10 @@ const Expo = () => {
   return (
     <div className="w-screen h-screen" id='expo'>
      <ScrollingText text={"EXPO_ROBO WARS_ROBO SOCCER_HACKATHON_RC BOAT_UI/UX HACK"}/>
-     <div className="w-screen p-10 pr-20 flex justify-between flex-col md:flex-row">
+     <div className="w-screen p-10 sm:p-10 sm:pr-20 flex justify-between flex-col md:flex-row">
       <div className="md:w-4/6 w-5/6 relative">
-      <img src="glow-expo-build.svg" alt="" className='absolute w-[200%] md:left-80 left-52 blur-3xl rounded-full top-2/4 transform -translate-x-1/2 -translate-y-1/2 -z-10'/>
-      <img src="expoImage.png" alt="" className=''/>
+      <Image src={GlowExpo.src} height={GlowExpo.height} width={GlowExpo.width} alt="" className='absolute w-[200%] md:left-80 left-52 blur-3xl rounded-full top-2/4 transform -translate-x-1/2 -translate-y-1/2 -z-10'/>
+      <Image src={ExpoImage.src} width={ExpoImage.width} height={GlowExpo.height} alt="" className=''/>
       </div>
         
         <div className="md:w-1/5 p-2 flex flex-col justify-center md:items-end items-center gap-[0.5rem] mt-8 md:mt-0">

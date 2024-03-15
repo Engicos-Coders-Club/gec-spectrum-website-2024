@@ -4,6 +4,9 @@ import { Space_Grotesk } from "next/font/google";
 import { motion } from "framer-motion";
 import { PinContainer } from "./3dPin";
 import { eventsData } from "@/assets/EventData";
+import Image from "next/image";
+import ElementSVG from "../../../public/Element.svg"
+
 const panchang = localFont({
   src: "../../../public/Panchang-Variable.ttf",
   display: "swap",
@@ -23,7 +26,7 @@ const Event = () => {
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50">
         <div className="absolute w-full h-full bg-gradient-to-br from-[#6B46C1] via-[#5933A6] to-[#4C1D95] rounded-[6rem] filter blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50"></div>
 
-        <img src="Element.svg" alt="" className="z-0" />
+        <Image src={ElementSVG.src} height={ElementSVG.height} width={ElementSVG.width} alt="" className="z-0" />
       </div>
       <div className="relative">
         <motion.h1
@@ -67,8 +70,10 @@ const Event = () => {
                         {events.title}
                       </h2>
                       <h3 className="text-[#FFBA25]">DEPARTMENT</h3>
-                      <img
+                      <Image
                         src={events.image}
+                        height={400}
+                        width={400}
                         alt=""
                         style={{
                           transform: `rotate(${events.rotate})`,

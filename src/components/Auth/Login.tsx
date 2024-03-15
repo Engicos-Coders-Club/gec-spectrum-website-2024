@@ -43,7 +43,7 @@ const Login = () => {
             <RxCross2 className="text-[#FA5622] sm:text-xl text-lg size-full font-bold"/>
           </div>
         </div>
-        <div className="h-5 w-full flex justify-center items-center "><p className={`${space.className} font-medium text-xs leading-5 text-center`}>Haven't registered yet? Sign up <Link href='/' className="hover:underline">here</Link></p></div>
+        <div className="h-5 w-full flex justify-center items-center "><p className={`${space.className} font-medium text-xs leading-5 text-center`}>Haven&apos;t registered yet? Sign up <Link href='/' className="hover:underline">here</Link></p></div>
       </div>
       <div className="w-full h-16 flex flex-col gap-1">
           <h2 className="text-white font-medium leading-5 text-sm">Name</h2>

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Space_Grotesk } from "next/font/google";
+import Image from "next/image";
 
 const space = Space_Grotesk({
   weight: ["700"],
@@ -17,8 +18,10 @@ const Tagline = () => {
         transition={{ duration: 2, delay: 0.2 }}
         className="z-20 absolute sm:-left-36 -left-44 sm:top-0 -top-24"
       >
-        <img
+        <Image
           className="sm:h-80 h-64 w-[auto] rotate-[25deg]"
+          height={200}
+          width={200}
           src="https://s3-alpha-sig.figma.com/img/52d7/c247/011c2659015ffd1b09c19a9e1e679abc?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dyWtkTEtycdTQ4i6UdG1Snx5j2R6OFCq97aTsBkHw5zbm3pLpB4dObVE0gt4n2vjIThK-qWLKLJ-3sE4K3ZVyc2tlpAVNPACNIWw3AsF-ihv72O8rNwGk94ZzqpzFEkoKeeTJSEbCpivVZxuJrKPRQv9LQ4ovyD2mWcLPoFrF-bg0OnxZlXgv8NYZ7nw0SKClFiLzxCwOzEKi2Erm60EZ6HVti5t~t0Ti8Q7xaasvc2o30WKx4BoH4uB45J9in0xdUsLHuHqd07gYDVitvs9vsAUuc3DjAFoNbUXf5auIzjWzC8tSWqociPiOcDpOfcEH1KZA1JYLNdm4leasWa4zQ__"
           alt="computer"
         />
@@ -29,8 +32,10 @@ const Tagline = () => {
         transition={{ duration: 2, delay: 0.2 }}
         className="z-20 absolute sm:-right-[25rem] -right-[22rem] sm:top-0 top-96"
       >
-        <img
+        <Image
           className="sm:h-[40rem] h-[30rem] rotate-[-26deg] w-[auto]"
+          height={200}
+          width={200}
           src="https://s3-alpha-sig.figma.com/img/9882/f4b1/44b540a3c892da5a247649855a71b660?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XC~zYr7FZoXBqiUy3nSKTMh0k6P02xWpePUWY-INcdawNDTwhaHj6Xyrab~zI9TOfsnAOg8AZMBOQbZCF-bVe1NGEQJ0ykwoOHnViqJ2QNDotkbUV7fZFc0YHFcHgA6wSpZ4W6ACUMHBAsTgyHaL8N~6ExnRBOX0wK-CTzGKRbWhADy~jdhnj~EHXy1cEnvkUeqKBgb9Ly2uo6jwgeGZjEKm9-sGbXLbpMLesfSuoWL03DrEUQ0vhjannPU-QUFoxXPkVkaA75s3tZX30N3vmq~dmhM17bOmS7j3xaqC2KAqyfHAmxJvr3VdWZL3xkOohP5DsIQuJxn5Z4KlHPkmag__"
           alt="robot"
         />
