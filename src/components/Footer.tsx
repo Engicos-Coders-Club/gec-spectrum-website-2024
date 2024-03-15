@@ -128,8 +128,10 @@ const Footer = () => {
         whileInView={{ x: 0, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <img
+        <Image
           src="https://s3-alpha-sig.figma.com/img/a5e9/ebea/c8597b32e62c2ca8c0426b7e632cb7e0?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QVm-rp-Toq~ZCYSh90tBG0ifXCJsxpm4C~dTe4kxZevVXwSZkGA-jaZD3sXJsGSF-Zn8roGch4cJxgsCCzZRBZjaY7RckIdEvJYHkB0AF1JfVxLGX9TJ4P7BIBucC-eU6KNH5Ctv1ryos7LQf1ITFHpNrqTTEAIDJuRyRQR8ccQMxh~9yYheVj5jN-60WJsR3Gn~a9~G0b2lKqwiOYNS6xoCslpeDt~2DU3GXoPSq~b17sEv4AUPE9u2mnJVDasN4rH~F4~rfk6P7L-TtdpsNF2bbUf2m0GULBhZ830ccUxV7jzJT61KaQV3hF-IGRbfPfAis4yS-3E3gWHQC8vykA__"
+          height={1000}
+          width={1000}
           alt="planet"
         />
       </motion.div>
@@ -139,8 +141,10 @@ const Footer = () => {
         whileInView={{ x: 0, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <img
+        <Image
           src="https://s3-alpha-sig.figma.com/img/6d06/58bb/86129c537e9a2dce530146dbdb22096d?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MCsALS8HCl1wPFSFQPN4DYds81ax3A~wVna50HuTG-nKp8fX8-fQlS4pkgVOh-12jsfYIt4pysX8~7BXh2lGQ8s-zwLULr0dJVAdPEoFaj9wcH9sCNCxlgFlHunE6Z1EyBigWYU~OcoQxbPwB6mTDxjQCFITi8JOvcrjYNn314RJ-lxlZmZ1omtTfmDYY72C8TU95CPWwZ-lcAnj9cf7j2eaUCiosmeST~cDPg5rIGV7hdSS7vaTkOC-awpk7eM31HyIEY~HVy68qdMDQbqeGBr1AEGEAon3LhYmRfiJcyf-BoEhaVF5H3V2BiEOVfaoUvTkWzpTwsKRmR0vw4MGQw__"
+          height={1000}
+          width={1000}
           alt="speceship"
         />
       </motion.div>
