@@ -6,7 +6,6 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { Space_Grotesk } from "next/font/google";
 import { EVENT } from "@/utils/data.example";
 import localFont from "next/font/local";
-import { usePathname, useRouter } from "next/navigation";
 
 const space = Space_Grotesk({
   weight: ["700", "500", "400"],
