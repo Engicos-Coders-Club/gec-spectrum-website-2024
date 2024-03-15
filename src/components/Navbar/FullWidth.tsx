@@ -119,7 +119,7 @@ let links = [
         className="duration-300 group-hover:w-[0px] hidden md:block"
       />
     ),
-    link: "/",
+    link: "/#contact",
   },
 ];
 
