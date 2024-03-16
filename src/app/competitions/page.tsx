@@ -28,10 +28,7 @@ export default function Competitions() {
 
   return (
     <main>
-      <section className="border border-gray-300 border-l-0 border-r-0">
-        {/* <Navbar /> */}
-      </section>
-      <PageHead body="EXPLORE" title="COMPETITIONS" faltutext="25" />
+      <PageHead body="EXPLORE" title="COMPETITIONS"  faltutext="25"/>
 
       <Coming></Coming>
 

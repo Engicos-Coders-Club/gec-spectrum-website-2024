@@ -143,6 +143,7 @@ function FullWidth({ close }: any) {
           <Link
             key={i}
             href={link.link}
+            onClick={() => close(false)}
             className="hover:bg-white py-10 group border z-50 border-[#FA5622] flex items-center justify-between duration-500 hover:text-black text-lg sm:text-2xl md:text-7xl pl-5 pr-0  md:px-12 hover:font-semibold"
           >
             <div className="flex flex-wrap justify-center gap-4 md:gap-10 items-center">

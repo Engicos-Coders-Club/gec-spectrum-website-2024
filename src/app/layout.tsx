@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.className} bg-bgDark text-white`}
+        className={`${spaceGrotesk.className} max-w-screen overflow-x-hidden bg-bgDark text-white`}
       >
         {/* <Navbar /> */}
         <Navbar/>
