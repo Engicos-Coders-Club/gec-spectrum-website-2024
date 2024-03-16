@@ -16,7 +16,7 @@ function Navbar() {
     },
     {
       name: "EXPO",
-      to: "#expo",
+      to: "/#expo",
     },
     // {
     //     name:"SPONSORS",
