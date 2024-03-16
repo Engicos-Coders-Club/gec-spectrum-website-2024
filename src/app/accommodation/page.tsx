@@ -17,9 +17,6 @@ export default function Accommodation() {
 
   return (
     <main>
-      <section className="border border-gray-300 border-l-0 border-r-0">
-        <Navbar />
-      </section>
       <section className="w-full flex items-center h-48 border-b border-[#FFBA25]">
         <div className={`w-full sm:w-3/4 h-full flex items-center sm:border-r border-[#FFBA25]`}>
           <div className="p-5 mx-5 sm:mx-10 flex flex-col space-y-2 sm:space-y-5">
