@@ -155,19 +155,19 @@ const Navbar = () => {
       >
         <Link
           href={"/competitions"}
-          className="hover:border-dotted border border-transparent hover:border-[#FA5622]  p-2 rounded-full rounded-tl-none"
+          className="hover:border-dotted border border-transparent hover:border-white  p-2 rounded-full rounded-tl-none"
         >
           COMPETITIONS
         </Link>
         <Link
           href={"/#expo"}
-          className="hover:border-dotted border border-transparent hover:border-[#FA5622]  p-2 rounded-full rounded-tl-none"
+          className="hover:border-dotted border border-transparent hover:border-white  p-2 rounded-full rounded-tl-none"
         >
           EXPO
         </Link>
         <Link
           href={"/#contact"}
-          className="hover:border-dotted border border-transparent hover:border-[#FA5622]  p-2 rounded-full rounded-tl-none"
+          className="hover:border-dotted border border-transparent hover:border-white  p-2 rounded-full rounded-tl-none"
         >
           CONTACT
         </Link>
