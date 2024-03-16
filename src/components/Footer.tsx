@@ -100,7 +100,7 @@ const Footer = () => {
                 </Link>
               </p>
             </div>
-            <div className="flex items-center gap-2 sm:mx-0 mx-10">
+            <div className="flex justify-center md:justify-normal gap-2 sm:mx-0 mx-10">
               <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
                 <Link href="https://www.instagram.com/gec.students.council24/">
                   <RiInstagramFill className="size-5" />
