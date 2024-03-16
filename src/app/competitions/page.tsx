@@ -29,9 +29,6 @@ const events = new Array(9).fill(0);
  
   return (
     <main>
-      <section className="border border-gray-300 border-l-0 border-r-0">
-        <Navbar />
-      </section>
       <PageHead body="EXPLORE" title="COMPETITIONS"  faltutext="25"/>
 
       <Coming></Coming>
