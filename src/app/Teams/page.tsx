@@ -6,7 +6,6 @@ import Coming from "../ComingSoon/page"
 const page = () => {
   return (
     <div>
-        <Navbar/>
         <PageHead body="MEET THE" title="TEAM"  faltutext="/*" />
         <TeamsData/>
         {/* <div className="flex items-center justify-center flex-col gap-2">

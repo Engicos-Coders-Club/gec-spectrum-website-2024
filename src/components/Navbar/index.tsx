@@ -29,7 +29,7 @@ function Navbar() {
   ];
   return (
     <motion.nav
-      className="px-10 sm:px-16 py-5 flex justify-between items-center fixed z-50 w-full backdrop-blur"
+      className="px-10 sm:px-16 py-5 flex justify-between items-center sticky top-0 z-50 w-full backdrop-blur"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 1 }}
