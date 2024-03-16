@@ -1,5 +1,6 @@
 // ExploreTile.tsx
 import Tile from './tile/Tile';
+import Link from 'next/link';
 import localFont from 'next/font/local'
 
 const panchang = localFont({
@@ -20,9 +21,9 @@ const ExploreTile: React.FC<ExploreTileProps> = () => {
       </div>
 
       <div className='flex flex-col sm:flex-row gap-4 mt-10'>
-        <Tile text='* FAQS' subStr='Got doubts?' />
-        <Tile text='* team' subStr='meet the' />
-        <Tile text='* rooms' subStr='book' />
+        <Tile href='/' text='* FAQS' subStr='Got doubts?' />
+        <Tile href="/Teams"text='* team' subStr='meet the' />
+        <Tile href="/accommodation"text='* rooms' subStr='book' />
       </div>
     </div>
   );
