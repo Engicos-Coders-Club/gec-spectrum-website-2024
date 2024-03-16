@@ -209,56 +209,92 @@ const page = ({ params }: { params: { slug: string } }) => {
       </div>
       <div className="h-screen w-screen py-20 px-20">
         <div className="size-full flex justify-between">
-            <div className="h-[40%] w-[20%] flex flex-col gap-10">
-                <h2 className={`${space.className} font-bold text-xs leading-4 tracking-[3%]`}>TABLE OF CONTENTS</h2>
-                <div className="h-[70%] w-full flex flex-col gap-4 text-[#FFBA25]">
-                    <Link href='#rules' className={`${space.className} hover:underline font-bold text-xs leading-4`}>RULES & REGULATIONS</Link>
-                    <Link href='#arena' className={`${space.className} hover:underline font-bold text-xs leading-4`}>ARENA</Link>
-                    <Link href='/' className={`${space.className} hover:underline font-bold text-xs leading-4`}>ROBOT SPECS</Link>
-                    <Link href='/' className={`${space.className} hover:underline font-bold text-xs leading-4`}>GAMEPLAY</Link>
-                    <div className="w-full h-7 rounded-3xl text-white border border-[#555555]">
-                    <button
-                    className={`size-full px-1 py-2 flex gap-2 items-center justify-center ${space.className}`}
-                  >
-                    <RiLinkM className="size-4 link" />{" "}
-                    <span className=" font-medium text-xs leading-4">
-                      SHARE EVENT
-                    </span>
-                  </button>
-                    </div>
-                </div>
+          <div className="h-[40%] w-[20%] flex flex-col gap-10">
+            <h2
+              className={`${space.className} font-bold text-xs leading-4 tracking-[3%]`}
+            >
+              TABLE OF CONTENTS
+            </h2>
+            <div className="h-[70%] w-full flex flex-col gap-4 text-[#FFBA25]">
+              <Link
+                href="#rules"
+                className={`${space.className} hover:underline font-bold text-xs leading-4`}
+              >
+                RULES & REGULATIONS
+              </Link>
+              <Link
+                href="#arena"
+                className={`${space.className} hover:underline font-bold text-xs leading-4`}
+              >
+                ARENA
+              </Link>
+              <Link
+                href="/"
+                className={`${space.className} hover:underline font-bold text-xs leading-4`}
+              >
+                ROBOT SPECS
+              </Link>
+              <Link
+                href="/"
+                className={`${space.className} hover:underline font-bold text-xs leading-4`}
+              >
+                GAMEPLAY
+              </Link>
+              <div className="w-full h-7 rounded-3xl text-white border border-[#555555]">
+                <button
+                  className={`size-full px-1 py-2 flex gap-2 items-center justify-center ${space.className}`}
+                >
+                  <RiLinkM className="size-4 link" />{" "}
+                  <span className=" font-medium text-xs leading-4">
+                    SHARE EVENT
+                  </span>
+                </button>
+              </div>
             </div>
-            <div className="h-full w-[75%] bg-black flex flex-col gap-10">
-                <div className="h-auto w-[80%] flex flex-col gap-4">
-                    <h1 id="#rules">RULES & REGULATIONS</h1>
-                    <div>
-                        {/* data can be mapped once api integration is done */}
-                        <ul className={`list-disc ${space.className} font-normal text-base leading-5 tracking-[22%] text-[#FEFEFE]`}>
-                            <li>Timely arrival is mandatory for all teams. Failure to comply will result in elimination, with the option to rejoin upon payment of a designated fee </li>
-                            <li>A team can have a maximum of 4 members.</li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="size-auto">
-                <div className="h-auto w-[80%] flex flex-col gap-4">
+          </div>
+          <div className="h-full w-[75%] bg-black flex flex-col gap-10">
+            <div className="h-auto w-[80%] flex flex-col gap-4">
+              <h1 id="#rules">RULES & REGULATIONS</h1>
+              <div>
+                {/* data can be mapped once api integration is done */}
+                <ul
+                  className={`list-disc ${space.className} font-normal text-base leading-5 tracking-[22%] text-[#FEFEFE]`}
+                >
+                  <li>
+                    Timely arrival is mandatory for all teams. Failure to comply
+                    will result in elimination, with the option to rejoin upon
+                    payment of a designated fee{" "}
+                  </li>
+                  <li>A team can have a maximum of 4 members.</li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+            <div className="size-auto">
+              <div className="h-auto w-[80%] flex flex-col gap-4">
                 <h1 id="arena">ARENA</h1>
-                    <div>
-                        <ul className={`list-disc ${space.className} font-normal text-base leading-5 tracking-[22%] text-[#FEFEFE]`}>
-                            <li>The arena dimensions are 8 feet in length and 4 feet in width. The arena has a 20 cm wide goal post on either side.</li>
-                            <li>The arena is bounded from all sides.</li>
-                        </ul>
-                    </div>
-                    </div>
+                <div>
+                  <ul
+                    className={`list-disc ${space.className} font-normal text-base leading-5 tracking-[22%] text-[#FEFEFE]`}
+                  >
+                    <li>
+                      The arena dimensions are 8 feet in length and 4 feet in
+                      width. The arena has a 20 cm wide goal post on either
+                      side.
+                    </li>
+                    <li>The arena is bounded from all sides.</li>
+                  </ul>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
