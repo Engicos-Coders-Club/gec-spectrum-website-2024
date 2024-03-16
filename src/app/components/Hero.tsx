@@ -20,7 +20,7 @@ const Hero = () => {
     <div className="h-screen w-full flex flex-col items-center justify-center headerbackground">
       <div className="h-screen w-screen flex flex-col items-center justify-center text-center">
         <motion.h1
-          className={`${panchang.className} xl:text-9xl text-5xl font-bold line-clamp-1 md:text-7xl sm:text-6xl lg:text-8xl`}
+          className={`${panchang.className} xl:text-9xl text-3xl font-bold line-clamp-1 md:text-7xl sm:text-6xl lg:text-8xl`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, damping: 10 }}
@@ -39,7 +39,7 @@ const Hero = () => {
         </motion.div>
       </div>
       <motion.div
-        className="bg-[#FFBA25] w-11/12 md:h-16 rounded-xl rounded-tl-none flex items-center md:justify-between text-black md:flex-row flex-col justify-center my-5 md:text-2xl text-xl "
+        className="bg-[#FFBA25] w-11/12 md:h-16 rounded-xl rounded-tl-none flex items-center md:justify-between text-black md:flex-row flex-col justify-center my-5 md:text-2xl text-sm "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 2, ease: "easeIn" }}
