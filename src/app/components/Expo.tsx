@@ -20,7 +20,9 @@ const panchang = localFont({
 const Expo = () => {
   return (
     <div className="w-screen h-screen" id='expo'>
+     <div className='md:pt-32 pt-16'>
      <ScrollingText text={"EXPO_ROBO WARS_ROBO SOCCER_HACKATHON_RC BOAT_UI/UX HACK"}/>
+     </div>
      <div className="w-screen p-10 sm:p-10 sm:pr-20 flex justify-between flex-col md:flex-row">
       <div className="md:w-4/6 w-5/6 relative">
       <Image src={GlowExpo.src} height={GlowExpo.height} width={GlowExpo.width} alt="" className='absolute w-[200%] md:left-80 left-52 blur-3xl rounded-full top-2/4 transform -translate-x-1/2 -translate-y-1/2 -z-10'/>
