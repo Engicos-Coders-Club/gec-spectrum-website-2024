@@ -6,6 +6,7 @@ import { PinContainer } from "./3dPin";
 import { eventsData } from "@/assets/EventData";
 import Image from "next/image";
 import ElementSVG from "../../../public/Element.svg";
+import Link from "next/link";
 
 const panchang = localFont({
   src: "../../../public/Panchang-Variable.ttf",
@@ -21,7 +22,7 @@ const space = Space_Grotesk({
 const Event = () => {
   return (
     <div
-      className={`${space.className} w-screen mt-96 relative sm:h-[150vh] h-[300vh]  sm:mb-80 lg:mb-5`}
+      className={`${space.className} w-screen mt-96 relative sm:mb-80 lg:mb-5`}
     >
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50">
         <div className="absolute w-full h-full bg-gradient-to-br from-[#6B46C1] via-[#5933A6] to-[#4C1D95] rounded-[6rem] filter blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50"></div>
@@ -39,7 +40,7 @@ const Event = () => {
         </motion.h1>
         <div className="absolute gradient-five-colors h-[1px] w-screen top-1/2 -z-10"></div>
       </div>
-      <div className="mt-10 mx-4 md:mx-20 text-xl">
+      <div className="mt-10 mx-4 md:mx-20 md:text-xl">
         <motion.p
           className="text-[#FFBA25] text-end flex flex-col"
           initial={{ opacity: 0 }}
@@ -51,7 +52,7 @@ const Event = () => {
         </motion.p>
       </div>
       <div className="flex flex-col">
-        <div className="w-screen grid lg:grid-rows-2 lg:grid-cols-3 md:grid-rows-3 sm:grid-cols-2 grid-cols-1 items-center justify-center z-[100] gap-10 p-10 place-content-center">
+        <div className="w-screen flex flex-wrap items-center justify-center z-[100] gap-10 p-10">
           {eventsData.map((events, index) => {
             return (
               <PinContainer key={index} title={events.event} href="">
@@ -60,7 +61,7 @@ const Event = () => {
                     className="flex justify-center"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, delay: 1 }}
+                    transition={{ duration: 1.2, delay: 0.3 }}
                   >
                     <div
                       style={{ backgroundImage: 'url("eventBox.svg")' }}
@@ -90,15 +91,20 @@ const Event = () => {
             );
           })}
         </div>
-{/* under the tiles */}
-        <motion.p
-          className={`${space.className} bg-[#741CFFC9] w-fit self-center  text-sm text-center px-5 whitespace-nowrap font-bold rounded-3xl py-2 rounded-tl-none`}
+        {/* under the tiles */}
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.2 }}
+          className="w-fit mx-auto mt-10"
         >
-          BROWSE ALL COMPETITIONS
-        </motion.p>
+          <Link
+            href="/competitions"
+            className="bg-[#741CFFC9] px-5 whitespace-nowrap font-bold rounded-3xl py-2 rounded-tl-none"
+          >
+            BROWSE ALL COMPETITIONS
+          </Link>
+        </motion.div>
       </div>
     </div>
   );
