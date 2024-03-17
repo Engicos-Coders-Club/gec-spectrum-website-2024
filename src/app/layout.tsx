@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import TanstackProvider from "@/utils/TanstackProvider";
 // import Navbar from "@/components/Navbar";
 
 const spaceGrotesk = Space_Grotesk({
@@ -39,9 +40,11 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.className} max-w-screen overflow-x-hidden bg-bgDark text-white`}
       >
-        {/* <Navbar /> */}
-        <Navbar />
-        {children}
+        <TanstackProvider>
+          {/* <Navbar /> */}
+          <Navbar />
+          {children}
+        </TanstackProvider>
       </body>
     </html>
   );

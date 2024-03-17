@@ -62,6 +62,7 @@ const CompetitionPage = ({ params }: { params: { slug: string } }) => {
       const data = await response.data;
       setEvents(data);
     })();
+    console.log("call single events");
   }, [params.slug]);
 
   const handleSubmit = () => {
