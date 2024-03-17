@@ -20,6 +20,7 @@ interface PageHeadProps {
 
 const PageHead = ({ body, title, faltutext }: PageHeadProps) => {
   return (
+
     <div
       className={`${panchang.className} w-screen md:h-56  h-40 flex border border-b-[#FFBA25] border-t-white border-x-0 mt-28`}
     >

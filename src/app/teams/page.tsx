@@ -7,7 +7,7 @@ const page = () => {
   return (
     <div>
       <PageHead body="MEET THE" title="TEAM" faltutext="/*" />
-      <TeamsData />
+      {/* <TeamsData /> */}
       <Coming></Coming>
     </div>
   );

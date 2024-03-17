@@ -47,11 +47,11 @@ const Navbar = () => {
       icon: <BsTrophy color="#FA5622" size={40} />,
       link: "/competitions",
     },
-    {
-      name: "EVENTS",
-      icon: <PiTicketThin color="#FA5622" size={40} />,
-      link: "/Events",
-    },
+    // {
+    //   name: "EVENTS",
+    //   icon: <PiTicketThin color="#FA5622" size={40} />,
+    //   link: "/Events",
+    // },
     {
       name: "EXPO",
       icon: <PiGlobeLight color="#FA5622" size={40} />,
@@ -70,7 +70,7 @@ const Navbar = () => {
     {
       name: "TEAM",
       icon: <AiOutlineTeam color="#FA5622" size={40} />,
-      link: "/Teams",
+      link: "/teams",
     },
     {
       name: "CONTACT",
