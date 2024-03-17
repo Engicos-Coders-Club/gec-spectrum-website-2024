@@ -8,15 +8,15 @@ import axios from "axios";
 import Link from "next/link";
 
 interface Department {
-    _id: string;
-    name: string;
-  }
-  
-  interface Obj {
-    department: string;
-    eventName: string;
-    eventId: string;
-  }
+  _id: string;
+  name: string;
+}
+
+interface Obj {
+  department: string;
+  eventName: string;
+  eventId: string;
+}
 
 const Space = Space_Grotesk({ subsets: ["latin"], weight: ["700", "600"] });
 
@@ -46,12 +46,15 @@ export default function CardItem({ obj }: { obj: Obj }) {
   if (obj.eventName) {
     const parts = obj.eventName.split("(");
     eventName = parts[0].trim();
-    secondaryname = parts[1] ? parts[1].substring(0, parts[1].length - 1).trim() : "";
+    secondaryname = parts[1]
+      ? parts[1].substring(0, parts[1].length - 1).trim()
+      : "";
   }
   return (
-    <Link className="bg-[#FA5622] rounded-xl rounded-tl-none overflow-hidden p-2"
-    // href={`event/${obj.eventId}`}
-    href={'/'}
+    <Link
+      className="bg-[#FA5622] rounded-xl rounded-tl-none overflow-hidden p-2"
+      href={`competitions/${obj.eventId}`}
+      // href={'/'}
     >
       <Image
         src={trophyImage}

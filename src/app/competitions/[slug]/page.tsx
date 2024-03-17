@@ -9,6 +9,32 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { RWebShare } from "react-web-share"
 
+interface EventData {
+  event: {
+    contact: {
+      coordinators: {
+        name: string;
+        contact: string;
+        _id: string;
+      }[];
+    };
+    rulesAndRegulations: {
+      topic: string;
+      points: string[];
+      _id: string;
+    }[];
+    eventName: string;
+    imageURL: string;
+    introduction: string;
+    prices: {
+      firstPlace: number;
+      secondPlace: number;
+    };
+    date: string;
+    teamSize: number;
+  };
+}
+
 const space = Space_Grotesk({
   weight: ["700", "500", "400"],
   subsets: ["latin"],
@@ -20,12 +46,9 @@ const panchang = localFont({
   display: "swap",
 });
 
-const handleSubmit = () => {
-  console.log("Button is working");
-};
 
 const page = ({ params }: { params: { slug: string } }) => {
-  const [events, setEvents] = useState({});
+  const [events, setEvents] = useState<EventData>({} as EventData);
 
   useEffect(() => {
     (async()=>{
@@ -35,6 +58,18 @@ const page = ({ params }: { params: { slug: string } }) => {
     })()
   }, [params.slug])
 
+  const handleSubmit = () => {
+    console.log("Button is working");
+    const RegistrationLink = events?.event?.rulesAndRegulations?.find(rule => rule.topic === "Registration Link:")?.points[0];
+    
+    if (RegistrationLink) {
+        console.log('Registration Link:', RegistrationLink);
+        window.location.href = RegistrationLink;
+    } else {
+        console.error('Registration link not found or invalid.');
+        // Optionally, you can show an error message to the user here.
+    }
+};
   const renderCoordinators = () => {
     return events?.event?.contact?.coordinators.map((coordinator, index) => (
       <Link key={index} href={coordinator.contact}>
@@ -47,14 +82,13 @@ const page = ({ params }: { params: { slug: string } }) => {
       </Link>
     ));
   };
+
   const renderRules = () => {
-    return events?.event?.rulesAndRegulations?.map((rule, index) =>{
-      <Link key={index} href={`#${rule.topic}`}
-            className={`${space.className} hover:underline font-bold text-xs leading-4`}
-      >
-            RULES & REGULATIONS
+    return events?.event?.rulesAndRegulations?.map((rule, index) => (
+      <Link key={index} href={`#${rule.topic}`} className={`${space.className} hover:underline font-bold text-xs leading-4`}>
+        RULES & REGULATIONS
       </Link>
-    })
+    ));
   };
 const renderRulesAndRegulations = () => {
   return events?.event?.rulesAndRegulations.map((rule, index) => (
@@ -68,7 +102,7 @@ const renderRulesAndRegulations = () => {
     </div>
   ));
 };
-const formatDate = (dateString) => {
+const formatDate = (dateString:string) => {
   if (!dateString) return "";
   const date = new Date(dateString);
   if (isNaN(date.getTime())) return "";
@@ -168,7 +202,7 @@ const formatDate = (dateString) => {
           <div className="h-full w-[33%] flex flex-col items-center border-l border-[#FFBA25]">
             <div className="h-[60%] w-full flex items-center justify-center">
               <img
-                src={events?.event?.imageUrl}
+                src={events?.event?.imageURL}
                 alt="eventImage"
                 className="size-full"
               />
