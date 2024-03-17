@@ -153,12 +153,12 @@ const page = ({ params }: { params: { slug: string } }) => {
                 <h1
                   className={`${panchang.className} font-semibold text-2xl text-[#FA5622]`}
                 >
-                  {events?.event?.eventName.split("(")[1].slice(0, -1)}
+                  {events?.event?.eventName && events.event.eventName.split("(")[1].slice(0, -1)}
                 </h1>
                 <h1
                   className={`${panchang.className} font-semibold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-[4rem]`}
                 >
-                  {events?.event?.eventName?.split("(")[0]}
+                  {events?.event?.eventName && events.event.eventName.split("(")[0]}
                 </h1>
               </div>
               <div className="w-auto h-8 flex items-center gap-2">
