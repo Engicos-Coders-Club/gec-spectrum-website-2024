@@ -6,10 +6,13 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ExploreTile from "@/components/explore-tile/ExploreTile";
 import Event from "./components/Event";
+import Loading from "./loading";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
+     <Suspense fallback = {<Loading/>}>
       <Hero />
       <Tagline />
       <Event />
@@ -17,6 +20,7 @@ export default function Home() {
       {/* <Sponsors /> */}
       <ExploreTile />
       <Footer />
+     </Suspense>
     </main>
   );
 }
