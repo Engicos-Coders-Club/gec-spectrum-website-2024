@@ -18,6 +18,7 @@ const Tagline = () => {
         transition={{ duration: 2, delay: 0.2 }}
         className="z-20 absolute sm:left-[-13rem] -left-44 sm:top-8 -top-24"
       >
+        {/* laptop thing is here */}
         <Image
           className="sm:h-80 hidden md:block h-64 w-[auto] rotate-[25deg]"
           height={200}
@@ -32,6 +33,8 @@ const Tagline = () => {
         transition={{ duration: 2, delay: 0.2 }}
         className="z-20 absolute sm:-right-[27.5rem] -right-[22rem] sm:top-[6rem] top-96"
       >
+
+        {/* robot thing is here */}
         <Image
           className="sm:h-[40rem] hidden md:block h-[30rem] rotate-[-26deg] w-[auto]"
           height={200}

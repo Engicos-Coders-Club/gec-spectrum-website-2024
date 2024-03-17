@@ -45,6 +45,21 @@ const Footer = () => {
                   className="sm:h-full h-[90%] w-full object-cover rounded-3xl"
                 />
               </div>
+              <motion.p
+                className={`mt-10  text-[#FEFEFE] ${space.className} font-normal sm:text-base text-sm leading-5 text-center`}
+                initial={{ y: 10, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                Found bugs? &nbsp;
+                <a
+                  href={`https://api.whatsapp.com/send?phone=917972321283`}
+                  target="_blank"
+                  className="underline hover:text-gray-300" // Optional styling for hover effect
+                >
+                  Report here
+                </a>
+              </motion.p>
             </div>
           </div>
         </div>
@@ -148,6 +163,7 @@ const Footer = () => {
           alt="speceship"
         />
       </motion.div>
+
       <motion.p
         className={`sm:mt-20 mt-5 text-[#FEFEFE] ${space.className} font-normal sm:text-base text-sm leading-5`}
         initial={{ y: 10, opacity: 0 }}
