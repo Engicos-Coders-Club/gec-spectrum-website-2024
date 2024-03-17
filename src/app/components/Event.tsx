@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { PinContainer } from "./3dPin";
 import { eventsData } from "@/assets/EventData";
 import Image from "next/image";
-import ElementSVG from "../../../public/Element.svg"
+import ElementSVG from "../../../public/Element.svg";
 
 const panchang = localFont({
   src: "../../../public/Panchang-Variable.ttf",
@@ -50,44 +50,55 @@ const Event = () => {
           more.
         </motion.p>
       </div>
-      <div className="w-screen grid lg:grid-rows-2 lg:grid-cols-3 md:grid-rows-3 sm:grid-cols-2 grid-cols-1 items-center justify-center z-[100] gap-10 p-10 place-content-center">
-        {eventsData.map((events, index) => {
-          return (
-            <PinContainer key={index} title={events.event} href="">
-              <div>
-                <motion.div
-                  className="flex justify-center"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1.2, delay: 1 }}
-                >
-                  <div
-                    style={{ backgroundImage: 'url("eventBox.svg")' }}
-                    className="lg:w-[376px] lg:h-[344px] md:w-[356px] md:h-[326px] sm:w-[336px] sm:h-[307px] w-[300px] h-[277px] bg-cover overflow-hidden"
+      <div className="flex flex-col">
+        <div className="w-screen grid lg:grid-rows-2 lg:grid-cols-3 md:grid-rows-3 sm:grid-cols-2 grid-cols-1 items-center justify-center z-[100] gap-10 p-10 place-content-center">
+          {eventsData.map((events, index) => {
+            return (
+              <PinContainer key={index} title={events.event} href="">
+                <div>
+                  <motion.div
+                    className="flex justify-center"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.2, delay: 1 }}
                   >
-                    <div className="flex items-center justify-center flex-col mt-20">
-                      <h2 className="ms:text-3xl text-2xl text-wrap text-center">
-                        {events.title}
-                      </h2>
-                      <h3 className="text-[#FFBA25]">DEPARTMENT</h3>
-                      <Image
-                        src={events.image}
-                        height={400}
-                        width={400}
-                        alt=""
-                        style={{
-                          transform: `rotate(${events.rotate})`,
-                          marginTop: events.marginTop,
-                        }}
-                        className="-z-10"
-                      />
+                    <div
+                      style={{ backgroundImage: 'url("eventBox.svg")' }}
+                      className="lg:w-[376px] lg:h-[344px] md:w-[356px] md:h-[326px] sm:w-[336px] sm:h-[307px] w-[300px] h-[277px] bg-cover overflow-hidden"
+                    >
+                      <div className="flex items-center justify-center flex-col mt-20">
+                        <h2 className="ms:text-3xl text-2xl text-wrap text-center">
+                          {events.title}
+                        </h2>
+                        <h3 className="text-[#FFBA25]">DEPARTMENT</h3>
+                        <Image
+                          src={events.image}
+                          height={400}
+                          width={400}
+                          alt=""
+                          style={{
+                            transform: `rotate(${events.rotate})`,
+                            marginTop: events.marginTop,
+                          }}
+                          className="-z-10"
+                        />
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              </div>
-            </PinContainer>
-          );
-        })}
+                  </motion.div>
+                </div>
+              </PinContainer>
+            );
+          })}
+        </div>
+
+        <motion.p
+          className={`${space.className} bg-[#741CFFC9] w-fit self-center  text-sm text-center px-5 whitespace-nowrap font-bold rounded-3xl py-2 rounded-tl-none`}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
+        >
+          BROWSE ALL COMPETITIONS
+        </motion.p>
       </div>
     </div>
   );
