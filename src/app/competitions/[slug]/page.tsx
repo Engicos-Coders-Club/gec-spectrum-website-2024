@@ -203,7 +203,7 @@ const CompetitionPage = ({ params }: { params: { slug: string } }) => {
             </div>
             <div className="w-[70%] h-32 mt-7 flex flex-col gap-3">
               <h1 className={`${space.className} font-bold text-xl leading-6`}>
-                WHAT'S IT?
+                WHAT&apos;S IT?
               </h1>
               <h1>{events?.event?.introduction.slice(0, 300) + "...more"}</h1>
             </div>
@@ -229,11 +229,12 @@ const CompetitionPage = ({ params }: { params: { slug: string } }) => {
 
           <div className="h-full w-[33%] flex flex-col items-center border-l border-[#FFBA25]">
             <div className="h-[60%] w-full flex items-center justify-center">
-              <img
+              {/* <img
                 src={events?.event?.imageURL}
                 alt="eventImage"
                 className="size-full"
-              />
+              /> */}
+              :)
             </div>
             <div className="h-[40%] w-full sm:px-8 px-3 py-6 border-t border-[#FFBA25]">
               <div className="h-full w-full flex flex-col items-center justify-center gap-10">

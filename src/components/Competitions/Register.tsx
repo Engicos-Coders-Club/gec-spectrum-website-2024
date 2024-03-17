@@ -13,24 +13,15 @@ type Member = {
 };
 
 export default function Register() {
-  const [members, setMembers] = useState<Member[]>([]);
-
-  const addMember = () => {
-    setMembers([...members, { name: "", email: "", phoneNumber: "" }]);
-  };
-  const handleSubmit = () => {
-    console.log(members);
-  };
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files[0];
+    const file = e.target.files?.[0];
     console.log("Selected file:", file);
     // You can perform further actions here, such as uploading the file or processing it.
   };
-  
 
   return (
     <div className="w-full flex justify-center items-center bg-black mb-4">
-      <div className="p-3 w-3/4 sm:w-1/2 mb-4 bg-black border border-dashed border-[#FFBA25] flex justify-center">
+      {/* <div className="p-3 w-3/4 sm:w-1/2 mb-4 bg-black border border-dashed border-[#FFBA25] flex justify-center">
         <div className="flex flex-col">
           <div className="p-3 mt-3 border flex space-x-2">
             <Image src={IIcon} alt="i-icon" className="invisible sm:visible" />
@@ -103,7 +94,7 @@ export default function Register() {
             REGISTER TEAM
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
