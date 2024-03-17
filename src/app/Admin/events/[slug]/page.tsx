@@ -19,7 +19,7 @@ const initialTeams: Team[] = [
 
 const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
   const [teams, setTeams] = useState<Team[]>([]);
-  const [event, setEvent] = useState<Event>("");
+  const [event, setEvent] = useState<Event>('' as any);
   const { slug } = params;
 
   useEffect(() => {
