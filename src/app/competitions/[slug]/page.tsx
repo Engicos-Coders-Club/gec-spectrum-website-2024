@@ -79,7 +79,7 @@ const page = ({ params }: { params: { slug: string } }) => {
   const renderCoordinators = () => {
     return events?.event?.contact?.coordinators.map((coordinator, index) => (
       <Link key={index} href={coordinator.contact}>
-        <h2 className="font-semibold leading-6 text-xl flex items-center gap-2">
+        <h2 className="font-semibold sm:leading-6 leading-3 sm:text-xl text-xs flex items-center sm:gap-2 gap-1 w-full">
           {coordinator.name}
           <span className="text-[#741CFF]">
             <FaWhatsapp className="font-semibold text-xl" />
@@ -122,14 +122,20 @@ const page = ({ params }: { params: { slug: string } }) => {
     if (!dateString) return "";
     const date = new Date(dateString);
     if (isNaN(date.getTime())) return "";
-    return date.toISOString().split("T")[0];
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
+    // Reversing the date format
+    return `${day}-${month}-${year}`;
   };
 
   return (
     <div className="h-screen w-screen overflow-x-hidden">
       <div className="size-full mt-20">
         <div className="h-[70%] w-screen flex items-center">
-          <div className="h-full w-[66%] flex flex-col gap-4 justify-center pl-5 sm:pl-20">
+          <div className="h-full w-[66%] flex flex-col gap-4 justify-around pl-5 sm:pl-20">
             <div className="h-10 w-full">
               <div className="flex gap-2 w-40">
                 <Link href="/competitions" className="flex gap-2">
@@ -196,18 +202,18 @@ const page = ({ params }: { params: { slug: string } }) => {
               </h1>
               <h1>{events?.event?.introduction.slice(0, 300) + "...more"}</h1>
             </div>
-            <div className="w-full h-11 flex gap-7">
+            <div className="w-full h-11 flex sm:gap-7 gap-4 sm:text-xl text-lg">
               <Link href="#rules">
                 <div
-                  className={`${space.className} h-full w-40 border border-[#741CFF] rounded-r-2xl rounded-b-2xl py-2 px-4 font-semibold text-xl leading-6`}
+                  className={`${space.className} h-full sm:w-40 w-32 border border-[#741CFF] rounded-r-2xl rounded-b-2xl py-2 px-4 font-semibold leading-6`}
                 >
                   RULEBOOK
                 </div>
               </Link>
 
-              <div className="h-full w-36 bg-[#741CFF] rounded-r-2xl rounded-b-2xl">
+              <div className="h-full w-28 sm:w-36 bg-[#741CFF] rounded-r-2xl rounded-b-2xl">
                 <button
-                  className={`${space.className} size-full py-2 px-4 font-semibold text-xl leading-6`}
+                  className={`${space.className} size-full py-2 px-4 font-semibold leading-6`}
                   onClick={handleSubmit}
                 >
                   REGISTER
@@ -224,16 +230,16 @@ const page = ({ params }: { params: { slug: string } }) => {
                 className="size-full"
               />
             </div>
-            <div className="h-[40%] w-full px-8 py-6 border-t border-[#FFBA25]">
+            <div className="h-[40%] w-full sm:px-8 px-3 py-6 border-t border-[#FFBA25]">
               <div className="h-full w-full flex flex-col items-center justify-center gap-10">
                 <h1
-                  className={`${space.className} font-bold text-xl leading-6 tracking-[22%]`}
+                  className={`${space.className} font-bold text-xl leading-4 sm:leading-6 tracking-[22%]`}
                 >
                   PRIZES
                 </h1>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col sm:gap-2 gap-1 text-end">
                   <h1
-                    className={`${space.className} font-bold leading-10 text-4xl`}
+                    className={`${space.className} font-bold sm:leading-10 leading-6 md:text-4xl sm:text-3xl text-xl`}
                   >
                     1st ~{" "}
                     <span className="font-semibold text-tangerine">
@@ -241,7 +247,7 @@ const page = ({ params }: { params: { slug: string } }) => {
                     </span>
                   </h1>
                   <h1
-                    className={`${space.className} font-bold text-3xl leading-10 text-right`}
+                    className={`${space.className} font-bold sm:leading-10 leading-6 text-right md:text-4xl sm:text-3xl text-xl`}
                   >
                     2nd ~{" "}
                     <span className="font-semibold text-tangerine">
@@ -261,13 +267,13 @@ const page = ({ params }: { params: { slug: string } }) => {
               DATE
             </div>
             <div className={`mr-7 ${space.className} text-[#FFBA25]`}>
-              <h2 className=" font-bold leading-10 text-3xl">
+              <h2 className="sm:font-bold font-semibold sm:leading-10 sm:text-3xl text-xs text-start w-full">
                 {formatDate(events?.event?.date)}
               </h2>
             </div>
           </div>
           <div className=" border-l w-[32%] border-[#FFBA25] h-full">
-            <div className="h-full mx-8 flex justify-between items-center">
+            <div className="h-full sm:mx-8 mx-4 flex justify-between items-center">
               <div className="flex flex-row">
                 <div
                   className={`w-10 h-20 rotate-[270deg] flex justify-center ${space.className} font-bold`}
@@ -280,31 +286,33 @@ const page = ({ params }: { params: { slug: string } }) => {
                   SIZE
                 </div>
               </div>
-              <div className={`mr-7 ${space.className} text-[#FFBA25]`}>
-                <h2 className=" font-bold leading-10 text-3xl">
-                  Max:{events?.event?.teamSize?.max} (TEAM)
+              <div
+                className={`mr-7 ${space.className} text-[#FFBA25] text-end md:text-3xl sm:text-2xl text-xs`}
+              >
+                <h2 className=" font-bold leading-10">
+                  Max:{events?.event?.teamSize?.max}/TEAM
                 </h2>
-                <h2 className=" font-bold leading-10 text-3xl">
-                  Min:{events?.event?.teamSize?.min} (TEAM)
+                <h2 className=" font-bold leading-10 ">
+                  Min:{events?.event?.teamSize?.min}/TEAM
                 </h2>
               </div>
             </div>
           </div>
-          <div className="w-[33%] h-full px-7 flex justify-between items-center border-l border-[#FFBA25]">
+          <div className="w-[33%] h-full sm:px-7 flex justify-between items-center border-l border-[#FFBA25]">
             <div
               className={`h-full w-10 rotate-[270deg] ${space.className} font-bold flex justify-center items-center`}
             >
               CONTACT
             </div>
             <div
-              className={`${space.className} text-[#FFBA25] w-60 h-full flex flex-col items-end justify-center gap-2`}
+              className={`${space.className} text-[#FFBA25] w-60 h-full flex flex-col items-end justify-center gap-2 sm:text-end text-start`}
             >
               {renderCoordinators()}
             </div>
           </div>
         </div>
       </div>
-      <div className="min-h-screen w-screen py-20 px-20">
+      <div className="min-h-screen w-screen py-20 sm:px-20 px-8">
         <div className="size-full flex justify-between">
           <div className="h-[40%] w-[20%] flex flex-col gap-10">
             <h2
