@@ -28,7 +28,7 @@ export default function Competitions() {
 
   return (
     <main>
-      <PageHead body="EXPLORE" title="COMPETITIONS" faltutext="25" />
+      <PageHead body="EXPLORE" title="COMPETITIONS" faltutext="22" />
       <section className={`mt-8 ${Space.className} container mx-auto mb-20`}>
         <div className="grid grid-cols-1 p-5 sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {Events.map((event, index) => (

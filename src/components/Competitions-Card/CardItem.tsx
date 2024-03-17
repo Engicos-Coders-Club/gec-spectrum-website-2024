@@ -5,6 +5,7 @@ import trophyImage from "../../../public/trophyImage.jpeg";
 import { Space_Grotesk } from "next/font/google";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 interface Department {
     _id: string;
@@ -14,6 +15,7 @@ interface Department {
   interface Obj {
     department: string;
     eventName: string;
+    eventId: string;
   }
 
 const Space = Space_Grotesk({ subsets: ["latin"], weight: ["700", "600"] });
@@ -46,9 +48,11 @@ export default function CardItem({ obj }: { obj: Obj }) {
     eventName = parts[0].trim();
     secondaryname = parts[1] ? parts[1].substring(0, parts[1].length - 1).trim() : "";
   }
-
   return (
-    <div className="bg-[#FA5622] rounded-xl rounded-tl-none overflow-hidden p-2">
+    <Link className="bg-[#FA5622] rounded-xl rounded-tl-none overflow-hidden p-2"
+    // href={`event/${obj.eventId}`}
+    href={'/'}
+    >
       <Image
         src={trophyImage}
         alt="random"
@@ -61,6 +65,6 @@ export default function CardItem({ obj }: { obj: Obj }) {
         </h2>
         <p className="text-sm">{departmentName}</p>
       </div>
-    </div>
+    </Link>
   );
 }
