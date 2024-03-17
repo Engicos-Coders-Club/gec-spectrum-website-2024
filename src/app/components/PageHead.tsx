@@ -6,6 +6,7 @@ const spacemono = Space_Mono({
   subsets: ["latin"],
   display: "swap",
 });
+
 const panchang = localFont({
   src: "../../../public/Panchang-Variable.ttf",
   display: "swap",
@@ -26,7 +27,9 @@ const PageHead = ({ body, title, faltutext }: PageHeadProps) => {
         <h2 className="text-[#741CFF] font-semibold sm:text-2xl text-lg">
           {body}
         </h2>
-        <h1 className="font-semibold sm:text-6xl text-5xl">{title}</h1>
+        <h1 className="font-semibold xl:text-7xl lg:text-5xl md:text-4xl sm:text-3xl text-2xl">
+          {title}
+        </h1>
       </div>
       <div className="w-2/6 h-full sm:flex justify-center items-center hidden">
         <p
