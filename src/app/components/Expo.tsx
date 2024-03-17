@@ -21,7 +21,7 @@ const Expo = () => {
   return (
     <div className="w-screen h-screen" id='expo'>
      <div className='md:pt-32 pt-16'>
-     <ScrollingText text={"EXPO_ROBO WARS_ROBO SOCCER_HACKATHON_RC BOAT_UI/UX HACK"}/>
+     <ScrollingText text={"EXPO_DRONE RACE_ROBO SOCCER_HACKATHON_RC BOAT_UI/UX HACK"}/>
      </div>
      <div className="w-screen p-10 sm:p-10 sm:pr-20 flex justify-between flex-col md:flex-row">
       <div className="md:w-4/6 w-5/6 relative">

@@ -21,7 +21,7 @@ const ExploreTile: React.FC<ExploreTileProps> = () => {
       </div>
 
       <div className='flex flex-col sm:flex-row gap-4 mt-10'>
-        <Tile href='/' text='* FAQS' subStr='Got doubts?' />
+        <Tile href='/competitions' text='* FAQS' subStr='Got doubts?' />
         <Tile href="/Teams"text='* team' subStr='meet the' />
         <Tile href="/accommodation"text='* rooms' subStr='book' />
       </div>
