@@ -50,8 +50,8 @@ const panchang = localFont({
   display: "swap",
 });
 
-const page = ({ params }: { params: { slug: string } }) => {
-  const router = useRouter()
+const CompetitionPage = ({ params }: { params: { slug: string } }) => {
+  const router = useRouter();
   const [events, setEvents] = useState<EventData>({} as EventData);
 
   useEffect(() => {
@@ -77,7 +77,7 @@ const page = ({ params }: { params: { slug: string } }) => {
     //   console.error("Registration link not found or invalid.");
     //   // Optionally, you can show an error message to the user here.
     // }
-    router.push(`/event/${params.slug}`)
+    router.push(`/event/${params.slug}`);
   };
   const renderCoordinators = () => {
     return events?.event?.contact?.coordinators.map((coordinator, index) => (
@@ -156,12 +156,14 @@ const page = ({ params }: { params: { slug: string } }) => {
                 <h1
                   className={`${panchang.className} font-semibold text-2xl text-[#FA5622]`}
                 >
-                  {events?.event?.eventName && events.event.eventName.split("(")[1]?.slice(0, -1)}
+                  {events?.event?.eventName &&
+                    events.event.eventName.split("(")[1]?.slice(0, -1)}
                 </h1>
                 <h1
                   className={`${panchang.className} font-semibold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-[4rem]`}
                 >
-                  {events?.event?.eventName && events.event.eventName.split("(")[0]}
+                  {events?.event?.eventName &&
+                    events.event.eventName.split("(")[0]}
                 </h1>
               </div>
               <div className="w-auto h-8 flex items-center gap-2">
@@ -355,4 +357,4 @@ const page = ({ params }: { params: { slug: string } }) => {
   );
 };
 
-export default page;
+export default CompetitionPage;
