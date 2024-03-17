@@ -1,12 +1,12 @@
 "use client"
 
 import Image from "next/image"
-import Logo from "@/assets/logo.png"
+import Logo from "@/assets/spectrum-logo.png"
 import { useState } from "react"
 import Link from "next/link"
 
 import FullWidth from "./FullWidth"
-// import LoginModal from "@/app/components/LoginModal"
+import LoginModal from "@/app/components/LoginModal"
 import { motion } from "framer-motion"
 function Navbar() {
   const [open, setOpen] = useState(false)
@@ -39,7 +39,7 @@ function Navbar() {
    
   ]
   return (
-    <motion.nav className="bg-[#06050a] px-10 sm:px-16 py-5 flex justify-between items-center"
+    <motion.nav className="bg-[#06050a] border-b  px-10 sm:px-16 py-5 flex justify-between items-center"
     initial={{y:-100}}
     animate={{y:0}}
     transition={{duration:1}}
@@ -58,8 +58,8 @@ function Navbar() {
                 <Link href={'/'}>
                 <Image 
                     src={Logo.src}
-                    width={Logo.width}
-                    height={Logo.height}
+                    width={Logo.width-900}
+                    height={Logo.height-900}
                     className="cursor-pointer"
                     alt="logo"
                 />
@@ -68,16 +68,16 @@ function Navbar() {
             </div>
         </div>
         <div className="items-center gap-5 hidden lg:flex">
-        {/* <div>
-      <h1  onClick={handleOpenModal} className="cursor-pointer">
-        LOGIN
-      </h1>
-      {isModalOpen && <LoginModal onClose={handleCloseModal} />}
-    </div> */}
+        <div>
+        <h1 onClick={handleOpenModal} className="cursor-pointer">
+            LOGIN
+        </h1>
+        {isModalOpen && <LoginModal onClose={handleCloseModal} />}
+        </div> 
             {
                 links.map((link, i)=>(
-                    <Link href={link.to} key={i} className=" hover:bg-dotted-border bg-[#06050a] relative flex justify-center rounded-full overflow-hidden">
-                        <div className="bg-[#06050a] m-[1px] p-2 px-5 outline-dotted rounded-full outline-2 outline-black">
+                    <Link href={link.to} key={i} className=" hover:bg-dotted-border bg-[#06050a] relative flex rounded-tl-none justify-center rounded-full overflow-hidden">
+                        <div className="bg-[#06050a] m-[1px] p-2 px-5 outline-dotted rounded-tl-none rounded-full outline-2 outline-black">
                             {link.name}
                         </div>
                     </Link>

@@ -34,7 +34,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
 
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div className="fixed backdrop-blur-sm bg-black bg-opacity-50 inset-0 flex items-center justify-center z-50">
       <div className="text-white p-6 rounded-xl shadow-lg w-1/2 bg-[#06050A]">
         <div className="flex justify-between items-center">
           <h2 className={`mb-4 ${panchang.className} text-2xl text-[#FFBA25] font-semibold`}>Login</h2>
@@ -45,9 +45,12 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
         <form onSubmit={handleSubmit}>
           <label className="block mb-2 mx-auto">
             Email:
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="mt-1 p-2 w-full bg-[#323232] text-white rounded-lg" />
+            <input placeholder='john@doe.com' type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="mt-2 p-2 px-4 w-full bg-[#323232] text-white rounded-lg" />
           </label>
-          <button type="submit" className="block w-1/6 mt-10 p-2 mx-auto bg-[#741CFF] text-white rounded-full rounded-tl-none">Submit</button>
+          <div className='flex items-center gap-5 justify-between'>
+            <button type="submit" className="block w-full mt-10 p-2 mx-auto bg-[#741CFF] text-white rounded-full">Submit</button>
+            <button onClick={onClose} className="block w-full mt-10 p-2 mx-auto bg-red-500 text-white rounded-full">Cancel</button>
+          </div>
         </form>
       </div>
 
