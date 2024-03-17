@@ -59,33 +59,31 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
   };
 
   return (
-    <div className="p-40">
-      <h1 className="text-5xl justify-center">{event.eventName}</h1>
-
+    <div className="pt-40 md:mt-10 mt-10 sm:p-8  lg:pt-40 xl:p-20">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl justify-center">{event.eventName}</h1>
+  
       <table className="table-auto mt-10 w-full justify-center items-center mb-10">
         <thead>
           <tr>
-            <th className="px-4 text-2xl py-2">Team</th>
-            <th className="px-4 text-2xl py-2">Team Leader</th>
-            <th className="px-4 text-2xl py-2">Paid</th>
-            <th className="px-4 text-2xl py-2">Action</th>
+            <th className="px-2 sm:px-4 text-xl sm:text-2xl py-2">Team</th>
+            <th className="px-2 sm:px-4 text-xl sm:text-2xl py-2">Team Leader</th>
+            <th className="px-2 sm:px-4 text-xl sm:text-2xl py-2">Paid</th>
+            <th className="px-2 sm:px-4 text-xl sm:text-2xl py-2">Action</th>
           </tr>
         </thead>
         <tbody>
           {teams.map((team, index) => (
             <tr key={index} className="bg-white">
-              <td className="border text-black px-4 py-2">{team.name}</td>
-              <td className="border text-black px-4 py-2">{team.leader}</td>
+              <td className="border text-black px-2 sm:px-4 py-2">{team.name}</td>
+              <td className="border text-black px-2 sm:px-4 py-2">{team.leader}</td>
               <td
-                className={`border px-4 py-2 ${
-                  team.paid
-                    ? "bg-green-300 text-white"
-                    : "bg-red-300 text-white"
+                className={`border px-2 sm:px-4 py-2 ${
+                  team.paid ? "bg-green-300 text-white" : "bg-red-300 text-white"
                 }`}
               >
                 {team.paid ? "Yes" : "No"}
               </td>
-              <td className="border bg-blue-300 text-black px-4 py-2">
+              <td className="border bg-blue-300 text-black px-2 sm:px-4 py-2">
                 <button onClick={() => togglePaid(index)}>Toggle Paid</button>
               </td>
             </tr>

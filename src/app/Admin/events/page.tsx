@@ -64,37 +64,30 @@ const Page = () => {
 
 
   return (
-    <div className="p-20">
-      <table className="table-auto w-full justify-center items-center">
-        <thead>
-          <tr>
-          
-            <th className="px-4 text-2xl py-2">Event Name</th>
-            <th className="px-4 text-2xl py-2">Department</th>
-            <th className="px-4 text-2xl py-2">Event Id</th>
-          
+    <div className="pt-20 sm:p-8 md:pt-20 lg:p-16 xl:p-20">
+    <table className="table-auto w-full justify-center items-center">
+      <thead>
+        <tr>
+          <th className="px-2 sm:px-4 text-xl sm:text-2xl py-2">Event Name</th>
+          <th className="px-2 sm:px-4 text-xl sm:text-2xl py-2">Department</th>
+          <th className="hidden sm:block px-2 sm:px-4 text-xl sm:text-2xl py-2">Event Id</th>
+        </tr>
+      </thead>
+      <tbody>
+        {events.map((event, index) => (
+          <tr key={index} className="bg-white">
+            <td className="border font-semibold cursor-pointer hover:bg-green-200 text-black px-2 sm:px-4 py-2">
+              <Link href={`/Admin/events/${event.eventId}`}>
+                {event.eventName}
+              </Link>
+            </td>
+            <td className="border text-black px-2 sm:px-4 py-2">{event.deptName}</td>
+            <td className="hidden sm:block border text-black px-2 sm:px-4 py-2">{event.eventId}</td>
           </tr>
-        </thead>
-        <tbody>
-          {events.map((event, index) => (
-            <tr key={index} className="bg-white">
-             
-              
-                <td className="border font-semibold cursor-pointer  hover:bg-green-200  text-black px-4 py-2">
-                  <Link href={`/Admin/events/${event.eventId}`}>
-                
-                  {event.eventName}
-                  </Link>
-                </td>
-              
-              <td className="border text-black px-4 py-2">{event.deptName}</td>
-              <td className="border text-black px-4 py-2">{event.eventId}</td>
-            
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+        ))}
+      </tbody>
+    </table>
+  </div>  
   );
 };
 
