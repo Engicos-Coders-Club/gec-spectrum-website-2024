@@ -31,7 +31,6 @@ const page = ({ params }: { params: { id:number } }) => {
 
   return (
     <div className="h-screen w-screen overflow-hidden">
-      <Navbar />
       <div className="h-[89vh] w-screen">
         <div className="h-[70%] w-full my-5">
           <div className="h-[65%] w-screen px-14 flex flex-col gap-10">
