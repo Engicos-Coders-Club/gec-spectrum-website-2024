@@ -25,8 +25,8 @@ function Navbar() {
         to: "/competitions"
     },
     {
-        name:"EXPO",
-        to: "#expo"
+      name: "EXPO",
+      to: "/#expo",
     },
     // {
     //     name:"SPONSORS",

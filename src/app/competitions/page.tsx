@@ -5,6 +5,7 @@ import CardItem from "@/components/Competitions-Card/CardItem";
 import PageHead from "../components/PageHead";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { axiosInstance } from "../../../axios-config";
 
 const Space = Space_Grotesk({ subsets: ["latin"], weight: ["700", "600"] });
 
@@ -16,8 +17,8 @@ const panchang = localFont({
 export default function Competitions() {
   const [Events, setEvents] = useState([]);
   useEffect(() => {
-    axios
-      .get("https://gec-spectrum-backend-2024.2.sg-1.fl0.io/api/v1/events")
+    axiosInstance
+      .get("events")
       .then(function (response) {
         setEvents(response.data.events);
       })
