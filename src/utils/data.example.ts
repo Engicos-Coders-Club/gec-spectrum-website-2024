@@ -75,6 +75,16 @@ export const EVENT_INFO = {
             title: "TECHNOTHON",
             subtitle: "HACKATHON",
             description: "Pen is mightier than sword, but we geeks prefer to fight using code. Enter the arena to battle it out. Magic of your logic is what we care about.",
+            prizes: [
+                {
+                    rank: 1,
+                    cash: 4000
+                },
+                {
+                    rank: 2,
+                    cash: 3000
+                }
+            ],
             date: "5 MARCH 2023",
             type: "Team",
             team_size: "3 - 4",
