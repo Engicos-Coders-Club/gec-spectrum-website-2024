@@ -90,7 +90,7 @@ const Event = () => {
             );
           })}
         </div>
-
+{/* under the tiles */}
         <motion.p
           className={`${space.className} bg-[#741CFFC9] w-fit self-center  text-sm text-center px-5 whitespace-nowrap font-bold rounded-3xl py-2 rounded-tl-none`}
           initial={{ opacity: 0 }}
