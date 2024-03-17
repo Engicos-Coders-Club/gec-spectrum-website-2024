@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import { CgClose } from "react-icons/cg";
-import { IoIosMenu } from "react-icons/io";
 import { Space_Grotesk } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoHomeOutline } from "react-icons/io5";
@@ -12,6 +10,8 @@ import { GoClock, GoPersonAdd } from "react-icons/go";
 import { FiPhone } from "react-icons/fi";
 import { BsTrophy } from "react-icons/bs";
 import { PiGlobeLight, PiTicketThin } from "react-icons/pi";
+import { VscClose, VscMenu } from "react-icons/vsc";
+
 const space = Space_Grotesk({
   weight: ["300"],
   subsets: ["latin"],
@@ -80,7 +80,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="fixed top-0 left-0 w-full flex items-center justify-between z-[100] p-5 text-white sm:px-10 px-6">
+    <div className="fixed top-0 left-0 w-full flex items-center justify-between z-[100] p-5 text-white sm:px-10 px-6 bg-bgDark/70">
       <motion.div
         className="flex items-center sm:gap-6 gap-14"
         initial={{ opacity: 0, x: -50 }}
@@ -96,9 +96,9 @@ const Navbar = () => {
             }}
           >
             {menu ? (
-              <CgClose className="text-[#FA5622] size-12" />
+              <VscClose className="text-[#FA5622] size-12" />
             ) : (
-              <IoIosMenu className="text-white size-12" />
+              <VscMenu className="text-white size-12" />
             )}
           </button>
           <AnimatePresence>
@@ -151,19 +151,19 @@ const Navbar = () => {
       >
         <Link
           href={"/competitions"}
-          className="hover:border-dotted border border-transparent hover:border-white  p-2 rounded-full rounded-tl-none"
+          className="hover:border-dotted hover:outline-dashed outline-1 p-2 rounded-full rounded-tl-none"
         >
           COMPETITIONS
         </Link>
         <Link
           href={"/#expo"}
-          className="hover:border-dotted border border-transparent hover:border-white  p-2 rounded-full rounded-tl-none"
+          className="hover:border-dotted hover:outline-dashed outline-1 p-2 rounded-full rounded-tl-none"
         >
           EXPO
         </Link>
         <Link
           href={"/#contact"}
-          className="hover:border-dotted border border-transparent hover:border-white  p-2 rounded-full rounded-tl-none"
+          className="hover:border-dotted hover:outline-dashed outline-1 p-2 rounded-full rounded-tl-none"
         >
           CONTACT
         </Link>
