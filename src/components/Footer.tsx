@@ -8,6 +8,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import Logo from "@/assets/spectrum-logo.png";
 import Image from "next/image";
+import { LuExternalLink } from "react-icons/lu";
 
 const space = Space_Grotesk({
   weight: ["700", "500"],
@@ -22,7 +23,7 @@ const Footer = () => {
       id="contact"
     >
       <motion.div
-        className="z-10 sm:flex-row flex flex-col-reverse sm:justify-center justify-normal mt-5 sm:mt-0 items-center sm:h-[70vh] w-[90vw] rounded-3xl bg-[#18181880] backdrop-blur-sm "
+        className="z-10 sm:flex-row flex flex-col-reverse sm:justify-center justify-normal mt-5 sm:mt-0 items-center sm:min-h-[70vh] w-[90vw] rounded-3xl bg-[#18181880] backdrop-blur-sm "
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -46,81 +47,100 @@ const Footer = () => {
                 />
               </div>
             </div>
+            <motion.p
+              className={`mt-5 text-[#FEFEFE] ${space.className} font-normal sm:text-base text-sm leading-5 text-center`}
+              initial={{ y: 10, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              Found bugs? &nbsp;
+              <a
+                href={`https://api.whatsapp.com/send?phone=917972321283`}
+                target="_blank"
+                className="underline text-mango hover:text-gray-300" // Optional styling for hover effect
+              >
+                Report here
+              </a>
+            </motion.p>
           </div>
         </div>
         <div className=" h-full w-96 p-14 sm:w-[60%]">
           <div className="h-full w-full flex flex-col sm:gap-10 gap-5">
             <div className="flex flex-col justify-center">
-              <h1
-                className={`text-[#FA5622] ${space.className} sm:font-bold font-medium sm:leading-6 md:text-xl sm:text-lg text-base`}
+              <p
+                className={`text-[#FA5622] ${space.className} sm:font-bold font-medium sm:leading-6 sm:text-sm md:text-md md:text-xl text-base`}
               >
                 CONTACT US AT
-              </h1>
-              <h1
-                className={`${space.className} font-medium md:text-4xl md:leading-[4rem] sm:leading-7 sm:text-xs `}
+              </p>
+              <p
+                className={`${space.className} font-medium text-lg  md:text-2xl lg:text-3xl xl:text-3xl md:leading-[4rem] sm:leading-7 sm:text-xs `}
               >
                 gecstudentscouncil@gmail.com
-              </h1>
-            </div>
-            <div>
-              <p
-                className={`${space.className} font-normal sm:text-base sm:leading-5 text-sm`}
-              >
-                <span className="font-bold">Name: </span>Avnish Cabral
-                (Chairman,Students&apos; Council )
-              </p>
-              <p
-                className={`${space.className} font-normal sm:text-base sm:leading-5 text-sm`}
-              >
-                {" "}
-                <Link
-                  href="https://api.whatsapp.com/send?phone=918237673292"
-                  className="hover:underline"
-                >
-                  WhatsApp
-                </Link>
               </p>
             </div>
             <div>
               <p
                 className={`${space.className} font-normal sm:text-base sm:leading-5 text-sm`}
               >
-                <span className="font-bold">Name: </span>Dakshat Patil(Technical
-                Head for Spectrum)
+                <span className="font-bold">Avnish Cabral </span> (Chairman,
+                Students&apos; Council)
               </p>
+              <Link
+                href="https://api.whatsapp.com/send?phone=918237673292"
+                className="hover:underline flex gap-2 text-primary font-normal sm:text-base sm:leading-5 text-sm mt-1"
+              >
+                WhatsApp <LuExternalLink />
+              </Link>
+            </div>
+            <div>
               <p
                 className={`${space.className} font-normal sm:text-base sm:leading-5 text-sm`}
               >
-                {" "}
-                <Link
-                  href="https://api.whatsapp.com/send?phone=918669072165"
-                  className="hover:underline"
-                >
-                  WhatsApp
-                </Link>
+                <span className="font-bold">Dakshat Patil </span> (Technical
+                Head - Spectrum)
               </p>
+              <Link
+                href="https://api.whatsapp.com/send?phone=918669072165"
+                className="hover:underline flex gap-2 text-primary font-normal sm:text-base sm:leading-5 text-sm mt-1"
+              >
+                WhatsApp <LuExternalLink />
+              </Link>
             </div>
-            <div className="flex items-center gap-2 sm:mx-0 mx-10">
-              <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
-                <Link href="https://www.instagram.com/gec.students.council24/">
+            <div>
+              <p
+                className={`text-[#FA5622] ${space.className} sm:font-bold font-medium sm:leading-6 text-center md:text-left sm:text-sm md:text-md md:text-xl text-base uppercase mb-4`}
+              >
+                socials
+              </p>
+              <div className="flex justify-center md:justify-normal gap-5 sm:mx-0 mx-10">
+                <Link
+                  href="https://www.instagram.com/gec.students.council24/"
+                  className="size-9 bg-mango text-black hover:bg-mango/80 rounded-md flex justify-center items-center"
+                  title="Instagram"
+                >
                   <RiInstagramFill className="size-5" />
                 </Link>
-              </div>
-              {/* <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
-                <Link href="/"><FaFacebookF className="size-5" /></Link>
-                </div> */}
-              <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
-                <Link href="https://www.linkedin.com/school/gecgoa/">
+                {/* <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
+                  <Link href="/"><FaFacebookF className="size-5" /></Link>
+                  </div> */}
+                <Link
+                  href="https://www.linkedin.com/school/gecgoa/"
+                  className="size-9 bg-mango text-black hover:bg-mango/80 rounded-md flex justify-center items-center"
+                  title="LinkedIn"
+                >
                   <FaLinkedinIn className="size-5" />
                 </Link>
+
+                {/* <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
+                  <Link href="/"><FaXTwitter className="size-5 text-white" /></Link>
+                  </div> */}
               </div>
-              {/* <div className="size-9 bg-[#06050A] rounded-md flex justify-center items-center">
-                <Link href="/"><FaXTwitter className="size-5 text-white" /></Link>
-                </div> */}
             </div>
           </div>
         </div>
       </motion.div>
+
+      {/* After Footer Images */}
       <div className="absolute h-[60vh] w-full top-[70] bottom-0 -z-10 footgrad flex justify-between "></div>
       <motion.div
         className="absolute bottom-[-46vh] left-[-30vw] hidden md:flex"
@@ -148,6 +168,7 @@ const Footer = () => {
           alt="speceship"
         />
       </motion.div>
+
       <motion.p
         className={`sm:mt-20 mt-5 text-[#FEFEFE] ${space.className} font-normal sm:text-base text-sm leading-5`}
         initial={{ y: 10, opacity: 0 }}

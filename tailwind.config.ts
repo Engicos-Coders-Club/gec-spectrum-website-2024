@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,6 +9,9 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["var(--font-space-grotesk)", ...defaultTheme.fontFamily.sans],
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -21,9 +26,6 @@ const config: Config = {
         mango: "#FFBA25",
         tangerine: "#FA5622",
         bgDark: "#06050a",
-      },
-      fontFamily: {
-        sans: ["var(--font-space-grotesk)"],
       },
     },
   },
