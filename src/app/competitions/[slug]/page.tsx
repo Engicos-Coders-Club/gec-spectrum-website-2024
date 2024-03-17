@@ -8,6 +8,7 @@ import { RiInstagramFill, RiLinkM } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { RWebShare } from "react-web-share";
+import { useRouter } from "next/navigation";
 
 interface EventData {
   event: {
@@ -50,6 +51,7 @@ const panchang = localFont({
 });
 
 const page = ({ params }: { params: { slug: string } }) => {
+  const router = useRouter()
   const [events, setEvents] = useState<EventData>({} as EventData);
 
   useEffect(() => {
@@ -63,18 +65,19 @@ const page = ({ params }: { params: { slug: string } }) => {
   }, [params.slug]);
 
   const handleSubmit = () => {
-    console.log("Button is working");
-    const RegistrationLink = events?.event?.rulesAndRegulations?.find(
-      (rule) => rule.topic === "Registration Link:"
-    )?.points[0];
+    // console.log("Button is working");
+    // const RegistrationLink = events?.event?.rulesAndRegulations?.find(
+    //   (rule) => rule.topic === "Registration Link:"
+    // )?.points[0];
 
-    if (RegistrationLink) {
-      console.log("Registration Link:", RegistrationLink);
-      window.location.href = RegistrationLink;
-    } else {
-      console.error("Registration link not found or invalid.");
-      // Optionally, you can show an error message to the user here.
-    }
+    // if (RegistrationLink) {
+    //   console.log("Registration Link:", RegistrationLink);
+    //   window.location.href = RegistrationLink;
+    // } else {
+    //   console.error("Registration link not found or invalid.");
+    //   // Optionally, you can show an error message to the user here.
+    // }
+    router.push(`/event/${params.slug}`)
   };
   const renderCoordinators = () => {
     return events?.event?.contact?.coordinators.map((coordinator, index) => (
@@ -96,7 +99,7 @@ const page = ({ params }: { params: { slug: string } }) => {
         href={`#${rule.topic}`}
         className={`${space.className} hover:underline font-bold text-xs leading-4`}
       >
-        RULES & REGULATIONS
+        {rule.topic}
       </Link>
     ));
   };
