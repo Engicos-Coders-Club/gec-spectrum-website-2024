@@ -16,6 +16,7 @@ interface Obj {
   department: string;
   eventName: string;
   eventId: string;
+  imageUrl: string;
 }
 
 const Space = Space_Grotesk({ subsets: ["latin"], weight: ["700", "600"] });
@@ -53,16 +54,16 @@ export default function CardItem({ obj }: { obj: Obj }) {
   return (
     <Link
       className="bg-[#FA5622] rounded-xl rounded-tl-none overflow-hidden p-2"
-      href={`competitions/${obj.eventId}`}
+      href={`/event/${obj.eventId}`}
       // href={'/'}
     >
       <Image
-        src={trophyImage}
+        src={trophyImage || obj.imageUrl}
         alt="random"
         className="rounded-xl rounded-tl-none"
       />
       <div className="p-2 text-white">
-        <p className="text-sm font-light"> {secondaryname}</p>
+        <p className="text-sm font-light"> {secondaryname || "Competition"}</p>
         <h2 className={`text-xl font-bold text-black ${Space.className}`}>
           {eventName}
         </h2>

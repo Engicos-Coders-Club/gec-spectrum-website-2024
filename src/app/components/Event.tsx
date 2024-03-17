@@ -52,10 +52,10 @@ const Event = () => {
         </motion.p>
       </div>
       <div className="flex flex-col">
-        <div className="w-screen flex flex-wrap items-center justify-center z-[100] gap-10 p-10">
+        <div className="w-screen flex flex-wrap items-center justify-center z-[10] gap-10 p-10">
           {eventsData.map((events, index) => {
             return (
-              <PinContainer key={index} title={events.event} href="">
+              <PinContainer key={index} title={events.event} href={`/competitions/${events.id}`}>
                 <div>
                   <motion.div
                     className="flex justify-center"

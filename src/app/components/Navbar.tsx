@@ -96,9 +96,9 @@ const Navbar = () => {
             }}
           >
             {menu ? (
-              <VscClose className="text-[#FA5622] size-12" />
+              <VscClose className="text-[#FA5622] size-10" />
             ) : (
-              <VscMenu className="text-white size-12" />
+              <VscMenu className="text-white size-10" />
             )}
           </button>
           <AnimatePresence>
@@ -111,7 +111,7 @@ const Navbar = () => {
                 className="fixed inset-0 bg-black z-40 flex"
               >
                 <div className="md:w-1/12 sm:w-2/12 w-1/4 h-full bg-black flex justify-center items-end border border-[#FA5622]">
-                  <img src="GecLogo.png" alt="GEC" className="size-20 mb-5" />
+                  <img src="/GecLogo.png" alt="GEC" className="size-20 mb-5" />
                 </div>
                 <div className="md:w-11/12 w-3/4 h-full">
                   {links.map((link, index) => (

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export const PinContainer = ({
   children,
@@ -14,6 +15,8 @@ export const PinContainer = ({
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)"
   );
+
+  const router = useRouter();
 
   const onMouseEnter = () => {
     setTransform("translate(-50%,-50%) rotateX(40deg) scale(0.8)");
@@ -29,6 +32,7 @@ export const PinContainer = ({
       }
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={()=>router.push(href || "")}
     >
       <div
         style={{

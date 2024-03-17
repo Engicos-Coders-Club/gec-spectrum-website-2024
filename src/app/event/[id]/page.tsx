@@ -142,7 +142,7 @@ const EventPage = ({ params }: { params: { id: string } }) => {
                   </Link>
                 </div> 
                 <div className="mt-5">
-                  <p className="font-bold mb-2 text-lg text-mango">WHAT'S IT?</p>
+                  <p className="font-bold mb-2 text-lg text-mango">WHAT&apos;S IT?</p>
                   <p>{events && events?.event?.introduction}</p>
                   <div className="flex gap-5 items-center mt-10">
                     <button className=" border border-primary rounded-full rounded-tl-none p-1.5 px-5 hover:bg-primary">RULEBOOK</button>
