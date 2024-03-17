@@ -1,15 +1,10 @@
 "use client";
-import Navbar from "@/components/Navbar";
 import localFont from "next/font/local";
-import EventsButton from "../components/Events/Button";
-import Link from "next/link";
 import { Space_Grotesk } from "next/font/google";
 import CardItem from "@/components/Competitions-Card/CardItem";
-import Coming from "../ComingSoon/page";
 import PageHead from "../components/PageHead";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 const Space = Space_Grotesk({ subsets: ["latin"], weight: ["700", "600"] });
 
@@ -25,7 +20,6 @@ export default function Competitions() {
       .get("https://gec-spectrum-backend-2024.2.sg-1.fl0.io/api/v1/events")
       .then(function (response) {
         setEvents(response.data.events);
-        console.log(response.data.events)
       })
       .catch(function (error) {
         console.log(error);

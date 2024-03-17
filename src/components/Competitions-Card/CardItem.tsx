@@ -6,17 +6,26 @@ import { Space_Grotesk } from "next/font/google";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+interface Department {
+    _id: string;
+    name: string;
+  }
+  
+  interface Obj {
+    department: string;
+    eventName: string;
+  }
+
 const Space = Space_Grotesk({ subsets: ["latin"], weight: ["700", "600"] });
 
-export default function CardItem({ obj }) {
-  const [department, setDepartment] = useState([]);
+export default function CardItem({ obj }: { obj: Obj }) {
+  const [department, setDepartment] = useState<Department[]>([]);
   const [departmentName, setDepartmentName] = useState("");
   useEffect(() => {
     axios
       .get("https://gec-spectrum-backend-2024.2.sg-1.fl0.io/api/v1/department")
       .then(function (response) {
         setDepartment(response.data.departments);
-        console.log(response.data.departments);
       })
       .catch(function (error) {
         console.log(error);
