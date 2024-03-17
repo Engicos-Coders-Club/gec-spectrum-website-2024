@@ -282,47 +282,6 @@ const formatDate = (dateString) => {
             </div>
           </div>
           <div className="h-full w-[75%] bg-black flex flex-col gap-10">
-            {/* <div className="h-auto w-[80%] flex flex-col gap-4">
-              <h1 id="#rules">RULES & REGULATIONS</h1>
-              <div>
-                data can be mapped once api integration is done
-                <ul
-                  className={`list-disc ${space.className} font-normal text-base leading-5 tracking-[22%] text-[#FEFEFE]`}
-                >
-                  <li>
-                    Timely arrival is mandatory for all teams. Failure to comply
-                    will result in elimination, with the option to rejoin upon
-                    payment of a designated fee{" "}
-                  </li>
-                  <li>A team can have a maximum of 4 members.</li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-              </div>
-            </div>
-            <div className="size-auto">
-              <div className="h-auto w-[80%] flex flex-col gap-4">
-                <h1 id="arena">ARENA</h1>
-                <div>
-                  <ul
-                    className={`list-disc ${space.className} font-normal text-base leading-5 tracking-[22%] text-[#FEFEFE]`}
-                  >
-                    <li>
-                      The arena dimensions are 8 feet in length and 4 feet in
-                      width. The arena has a 20 cm wide goal post on either
-                      side.
-                    </li>
-                    <li>The arena is bounded from all sides.</li>
-                  </ul>
-                </div>
-              </div>
-            </div> */}
             {renderRulesAndRegulations()}
           </div>
         </div>
