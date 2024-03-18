@@ -24,7 +24,7 @@ const ExploreTile: React.FC<ExploreTileProps> = () => {
         <div className="absolute -left-10 h-[1px] w-screen gradient-border -z-10"></div>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-4 mt-10">
+      <div className="flex flex-col sm:flex-row gap-4 sm:mt-10 my-10">
         <Tile href="/competitions" text="* Events" subStr="All competitions" />
         <Tile href="/teams" text="* team" subStr="meet the" />
         <Tile href="/accommodation" text="* rooms" subStr="book" />

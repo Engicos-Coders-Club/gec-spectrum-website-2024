@@ -27,6 +27,15 @@ const config: Config = {
         tangerine: "#FA5622",
         bgDark: "#06050a",
       },
+      keyframes: {
+        jiggle: {
+          "0%, 100%": { transform: "rotate(-3deg) skewY(10deg) skewX(3deg)" },
+          "50%": { transform: "rotate(3deg) skewX(0deg) skewX(-1deg)" },
+        },
+      },
+      animation: {
+        jiggle: "jiggle 2s infinite 1s",
+      },
     },
   },
   plugins: [],
