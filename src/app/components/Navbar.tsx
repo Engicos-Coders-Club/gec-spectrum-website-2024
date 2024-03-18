@@ -11,6 +11,7 @@ import { FiPhone } from "react-icons/fi";
 import { BsTrophy } from "react-icons/bs";
 import { PiGlobeLight, PiTicketThin } from "react-icons/pi";
 import { VscClose, VscMenu } from "react-icons/vsc";
+import Image from "next/image";
 
 const space = Space_Grotesk({
   weight: ["300"],
@@ -40,7 +41,7 @@ const Navbar = () => {
     {
       name: "SCHEDULE",
       icon: <GoClock color="#FA5622" size={40} />,
-      link: "/",
+      link: "/schedule",
     },
     {
       name: "COMPETITIONS",
@@ -111,17 +112,23 @@ const Navbar = () => {
                 className="fixed inset-0 bg-black z-40 flex"
               >
                 <div className="md:w-1/12 sm:w-2/12 w-1/4 h-full bg-black flex justify-center items-end border border-[#FA5622]">
-                  <img src="/GecLogo.png" alt="GEC" className="size-20 mb-5" />
+                  <Image
+                    src="/GecLogo.png"
+                    alt="GEC"
+                    width={100}
+                    height={100}
+                    className="size-20 mb-5"
+                  />
                 </div>
                 <div className="md:w-11/12 w-3/4 h-full">
                   {links.map((link, index) => (
                     <Link
                       href={link.link}
                       onClick={handleClick}
-                      className="h-[10%] w-full flex border-y border-[#FA5622] group text-white hover:bg-white hover:text-black duration-500 hover:font-semibold text-lg sm:text-2xl md:text-7xl justify-center items-center gap-5"
+                      className="h-[12.5%] w-full flex border-y border-[#FA5622] group text-white hover:bg-white hover:text-black duration-500 hover:font-semibold text-lg sm:text-2xl md:text-7xl justify-center items-center gap-5"
                       key={index}
                     >
-                      <div className="w-[10%] group-hover:w-0 h-full flex items-center justify-center ml-5 sm:ml-0">
+                      <div className="w-[12.5%] group-hover:w-0 h-full flex items-center justify-center ml-5 sm:ml-0">
                         {link.icon}
                       </div>
                       <div className="w-[90%] group-hover:w-full group-hover:ml-10 h-full flex justify-between sm:text-3xl text-2xl items-center duration-500">
@@ -136,9 +143,11 @@ const Navbar = () => {
           </AnimatePresence>
         </div>
         <Link href={"/"} className="">
-          <img
+          <Image
             src="/spectrum-logo.png"
             alt="Logo"
+            width={250}
+            height={100}
             className="w-64 rounded-2xl"
           />
         </Link>
