@@ -9,7 +9,18 @@ import Checker from "@/assets/checker.png";
 import Image from "next/image";
 import { RiLink } from "react-icons/ri";
 import { FaInstagram } from "react-icons/fa";
-import { Key } from "react";
+import Register from "@/components/Competitions/Register";
+import axios from "axios";
+import {
+  AwaitedReactNode,
+  JSXElementConstructor,
+  Key,
+  ReactElement,
+  ReactNode,
+  ReactPortal,
+  useEffect,
+  useState,
+} from "react";
 import { UrlObject } from "url";
 import { useQuery } from "@tanstack/react-query";
 import { axiosInstance } from "../../../../axios-config";
@@ -117,7 +128,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                       "Competition")}
                 </h2>
                 <h1
-                  className={`${panchang.className} font-extrabold break-words text-2xl md:text-6xl md:leading-[4rem]`}
+                  className={`${panchang.className} font-bold break-words text-2xl md:text-6xl md:leading-[4rem]`}
                 >
                   {isSuccess &&
                     data &&
