@@ -6,6 +6,7 @@ export const EVENT = [
         date: "3 MARCH 2023",
         type: "Team",
         team_size: "3 - 5",
+        fee:"300",
         contacts: [
             {
                 name: "Harsh Kumar",
@@ -24,6 +25,7 @@ export const EVENT = [
         date: "5 MARCH 2023",
         type: "Team",
         team_size: "3 - 4",
+        fee:"300",
         contacts: [
             {
                 name: "Harsh Kumar",

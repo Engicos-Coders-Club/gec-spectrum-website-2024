@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export const PinContainer = ({
   children,
@@ -8,12 +9,14 @@ export const PinContainer = ({
   href,
 }: {
   children: React.ReactNode;
-  title?: string;
-  href?: string;
+  title: string;
+  href: string;
 }) => {
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)"
   );
+
+  const router = useRouter();
 
   const onMouseEnter = () => {
     setTransform("translate(-50%,-50%) rotateX(40deg) scale(0.8)");
@@ -22,13 +25,28 @@ export const PinContainer = ({
     setTransform("translate(-50%,-50%) rotateX(0deg) scale(1)");
   };
 
+  // Get a new searchParams string by merging the current
+  // searchParams with a provided key/value pair
+  const searchParams = useSearchParams();
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams]
+  );
+
   return (
     <div
-      className={
-        "relative group/pin cursor-pointer"
-      }
+      className={"relative group/pin cursor-pointer"}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={() =>
+        router.push("/competitions?" + createQueryString("dept", href) || "")
+      }
     >
       <div
         style={{
