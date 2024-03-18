@@ -83,7 +83,11 @@ const CompetitionsRegister = ({ params }: { params: { slug: string } }) => {
                 ))}
             </div>
           </div>
-          {/* <Register /> */}
+          <Register
+            minTeam={data?.event.teamSize.min}
+            maxTeam={data?.event.teamSize.max}
+            eventId={params.slug}
+          />
         </>
       )}
     </div>
