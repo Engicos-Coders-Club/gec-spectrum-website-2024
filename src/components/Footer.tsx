@@ -19,7 +19,7 @@ const space = Space_Grotesk({
 const Footer = () => {
   return (
     <div
-      className="h-screen max-w-screen relative flex flex-col justify-center items-center bg-[#06050a] overflow-hidden"
+      className="min-h-screen h-auto max-w-screen relative flex flex-col justify-center items-center bg-[#06050a] overflow-hidden sm:mt-0 mt-52"
       id="contact"
     >
       <motion.div
@@ -48,7 +48,7 @@ const Footer = () => {
               </div>
             </div>
             <motion.p
-              className={`mt-5 text-[#FEFEFE] ${space.className} font-normal sm:text-base text-sm leading-5 text-center`}
+              className={`mt-5 text-[#FEFEFE] ${space.className} font-normal sm:text-base text-sm leading-5 text-center sm:mb-0 mb-2`}
               initial={{ y: 10, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}

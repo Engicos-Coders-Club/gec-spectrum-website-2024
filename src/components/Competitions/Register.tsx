@@ -179,7 +179,7 @@ export default function Register({
                 </button>
               </div>
               <div key={index} className="w-full flex flex-col space-y-3 mt-10">
-                <div className="flex justify-between">
+                {/* <div className="flex justify-between">
                   <p className="text-[#FFBA25] text-bold underline underline-offset-4 decoration-wavy">
                     Member {index + 1}
                   </p>
@@ -190,7 +190,7 @@ export default function Register({
                   >
                     <MdDelete className="text-red-600 text-xl" />
                   </button>
-                </div>
+                </div> */}
                 <div className="mt-3">
                   <CustomInput
                     label="Full Name"

@@ -6,7 +6,7 @@ const PaymentPreview = () => {
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    console.log("Selected file:", file);
+    // console.log("Selected file:", file);
     // You can perform further actions here, such as uploading the file or processing it.
     if (file) {
       const reader = new FileReader();
