@@ -80,9 +80,9 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="fixed top-0 left-0 w-full flex items-center justify-between z-[100] p-5 text-white sm:px-10 px-6 bg-bgDark/70">
+    <div className="sticky border-b border-white top-0 left-0 w-full flex items-center justify-between z-[100] p-5 text-white sm:px-10 px-6 bg-bgDark">
       <motion.div
-        className="flex items-center sm:gap-6 gap-14"
+        className="flex items-center justify-between w-full md:w-auto md:justify-start sm:gap-6 gap-14"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -96,9 +96,9 @@ const Navbar = () => {
             }}
           >
             {menu ? (
-              <VscClose className="text-[#FA5622] size-12" />
+              <VscClose className="text-[#FA5622] size-10" />
             ) : (
-              <VscMenu className="text-white size-12" />
+              <VscMenu className="text-white size-10" />
             )}
           </button>
           <AnimatePresence>
@@ -111,7 +111,7 @@ const Navbar = () => {
                 className="fixed inset-0 bg-black z-40 flex"
               >
                 <div className="md:w-1/12 sm:w-2/12 w-1/4 h-full bg-black flex justify-center items-end border border-[#FA5622]">
-                  <img src="GecLogo.png" alt="GEC" className="size-20 mb-5" />
+                  <img src="/GecLogo.png" alt="GEC" className="size-20 mb-5" />
                 </div>
                 <div className="md:w-11/12 w-3/4 h-full">
                   {links.map((link, index) => (
@@ -144,7 +144,7 @@ const Navbar = () => {
         </Link>
       </motion.div>
       <motion.div
-        className={`${space.className} hidden sm:flex gap-1 sm:gap-7 sm:text-lg items-center justify-center `}
+        className={`${space.className} hidden md:flex gap-1 sm:gap-7 sm:text-lg items-center justify-center `}
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}

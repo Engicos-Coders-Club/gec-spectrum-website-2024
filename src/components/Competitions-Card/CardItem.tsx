@@ -13,6 +13,7 @@ export default function CardItem({
 }) {
   let eventName = "";
   let secondaryname = "";
+
   if (eventDeets?.eventName) {
     const parts = eventDeets.eventName.split("(");
     eventName = parts[0].trim();
@@ -23,17 +24,17 @@ export default function CardItem({
 
   return (
     <Link
-      className="bg-mango rounded-xl rounded-tl-none overflow-hidden p-2"
+      className="bg-mango rounded-xl rounded-tl-none overflow-hidden p-2 hover:scale-105 transition-transform delay-75"
       href={`competitions/${eventDeets?.eventId}`}
     >
       <Image
-        src={trophyImage}
+        src={trophyImage || obj.imageUrl}
         alt="random"
         className="rounded-xl rounded-tl-none"
       />
-      <div className="p-2">
-        <p className="text-sm font-light text-gray-500"> {secondaryname}</p>
-        <h2 className={`text-3xl font-bold text-black ${Space.className}`}>
+      <div className="p-2 text-white">
+        <p className="text-sm font-light"> {secondaryname || "Competition"}</p>
+        <h2 className={`text-xl font-bold text-black ${Space.className}`}>
           {eventName}
         </h2>
         <p className="text-sm text-primary">{eventDeets?.deptName}</p>
