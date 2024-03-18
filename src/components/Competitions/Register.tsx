@@ -26,6 +26,7 @@ interface formProps {
   teamName: string;
   leader: string;
   participants: Member[];
+  payment_screenshot: string;
 }
 
 export default function Register({
@@ -39,6 +40,7 @@ export default function Register({
 }) {
   const [members, setMembers] = useState<{ count: number }[]>([]);
 
+  // Update backend
   const {
     mutate: onDetailsSubmit,
     isPending,
@@ -61,32 +63,6 @@ export default function Register({
     },
   });
 
-  const {
-    mutate: onPaymentSubmit,
-    isPending: pendingPayment,
-    isSuccess: successPayment,
-    data: paymentData,
-    reset: paymentReset,
-  } = useMutation({
-    mutationFn: async (values: FormData) => {
-      await axiosInstance.patch(
-        `payments/upload-payment-receipt/${eventId}`,
-        values,
-        {
-          headers: { "Content-Type": "multipart/formdata" },
-        }
-      );
-    },
-    onSuccess: (data: any) => {
-      // form.reset();
-      toast.success(data.msg);
-    },
-    onError: (err: AxiosError) => {
-      console.log(err.response?.data);
-      toast.error("Check console for error!");
-    },
-  });
-
   useEffect(() => {
     if (minTeam > 0) {
       setMembers(
@@ -97,17 +73,18 @@ export default function Register({
     }
   }, [minTeam]);
 
+  // form submit handling
   const handleUserSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget as HTMLFormElement;
     const formData = new FormData(form);
-    const paymentFormData = new FormData();
+    // const paymentFormData = new FormData();
     // upload payment to formdata
-    paymentFormData.append("file", formData.get("paymentSS") as Blob);
+    // paymentFormData.append("file", formData.get("paymentSS") as Blob);
 
     // Convert id files to base64 for all members
     const memberPromises = members.map(async (count, index) => {
-      const updateId = formData.get(`member.${index}.idcard`) as Blob;
+      const updateId = formData.get(`member.${index}.idcard`) as File;
       const base64idcard = await fileToBase64(updateId);
       formData.delete(`member.${index}.idcard`);
       formData.append(`member.${index}.idcard`, base64idcard);
@@ -115,6 +92,11 @@ export default function Register({
 
     // Wait for all member promises to complete
     await Promise.all(memberPromises);
+
+    const updatePayment = formData.get(`payment_screenshot`) as File;
+    const base64idcard = await fileToBase64(updatePayment);
+    formData.delete(`payment_screenshot`);
+    formData.append(`payment_screenshot`, base64idcard);
 
     // form object to be sent to backend
     const dataObj = {} as formProps;
@@ -132,11 +114,13 @@ export default function Register({
     dataObj.eventId = eventId;
     dataObj.leader = formData.get("leader") as string;
     dataObj.teamName = formData.get("teamName") as string;
+    dataObj.payment_screenshot = formData.get("payment_screenshot") as string;
     onDetailsSubmit(dataObj);
-    console.log(dataObj);
-    onPaymentSubmit(paymentFormData);
+
+    // onPaymentSubmit(paymentFormData);
   };
 
+  // handle add member
   const handleAddMember = () => {
     if (members.length >= maxTeam) {
       alert("Maximum team size required.");
@@ -158,7 +142,7 @@ export default function Register({
     setMembers((members) => members.filter((_, i) => i !== index));
   };
 
-  return (
+  return !isSuccess ? (
     <div className="w-full flex justify-center items-center bg-black mb-4 mt-20">
       <div className="p-3 w-3/4 sm:w-2/3 mb-4 bg-black border border-dashed border-[#FFBA25] flex justify-center">
         <form className="w-full flex flex-col" onSubmit={handleUserSubmit}>
@@ -247,14 +231,27 @@ export default function Register({
 
           <PaymentPreview />
           <button
-            className="mx-auto bg-[#FFBA25] text-black text-xl mt-7 w-[269px] px-3 py-2 rounded-full rounded-tl-none"
+            className="mx-auto bg-[#FFBA25] text-black text-lg my-7 w-[269px] px-3 py-2 rounded-full rounded-tl-none hover:bg-yellow-600 uppercase font-bold disabled:bg-gray-500"
             type="submit"
+            disabled={isPending}
           >
-            {pendingPayment ? "Registering..." : "Submit"}
+            {isPending ? "Registering..." : "Submit"}
           </button>
         </form>
-        {successPayment && <Link href="/competitions">Go to Competitions</Link>}
       </div>
+    </div>
+  ) : (
+    <div className="border m-4 border-dashed border-mango h-[30vh] flex flex-col items-center justify-center text-center">
+      <h3 className="text-md md:text-xl text-mango lg:w-2/4">
+        Please keep an eye on your emails for Registration Confirmation.
+        We&apos;ll soon update the details on website profiles as well.
+      </h3>
+      <Link
+        href="/competitions"
+        className="mx-auto bg-[#FFBA25] text-black text-lg my-7 w-[269px] px-3 py-2 text-center rounded-full rounded-tl-none hover:bg-yellow-600 uppercase font-bold disabled:bg-gray-500"
+      >
+        Go to Competitions
+      </Link>
     </div>
   );
 }
