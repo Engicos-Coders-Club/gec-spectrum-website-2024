@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import TanstackProvider from "@/utils/TanstackProvider";
 // import Navbar from "@/components/Navbar";
+import { Toaster } from "react-hot-toast";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -44,6 +45,14 @@ export default function RootLayout({
           {/* <Navbar /> */}
           <Navbar />
           {children}
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+            gutter={8}
+            toastOptions={{
+              duration: 5000,
+            }}
+          />
         </TanstackProvider>
       </body>
     </html>

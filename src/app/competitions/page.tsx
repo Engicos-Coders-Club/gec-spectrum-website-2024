@@ -43,7 +43,11 @@ export default function Competitions() {
           </div>
         </section>
       )}
-      {isError && <p className="mx-auto">Oops! Data got lost in space 🪨</p>}
+      {isError && (
+        <p className="mx-auto text-center my-6">
+          Oops! Data got lost in space 🪨
+        </p>
+      )}
     </main>
   );
 }
