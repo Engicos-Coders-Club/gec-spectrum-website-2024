@@ -11,13 +11,14 @@ import { AxiosError } from "axios";
 import PaymentPreview from "./PaymentPreview";
 import { fileToBase64 } from "@/utils/base64Conversion";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 type Member = {
   name: string;
   email: string;
   contact: string;
   college?: string;
-  idcard?: string;
+  idcard: string;
 };
 
 interface formProps {
@@ -52,10 +53,11 @@ export default function Register({
     },
     onSuccess: () => {
       // form.reset();
-      alert("Registration Successful");
+      toast.success("Registration Successful");
     },
     onError: (err: AxiosError) => {
-      alert(err.response?.data);
+      console.log(err.response?.data);
+      toast.error("Check console for error!");
     },
   });
 
@@ -67,7 +69,7 @@ export default function Register({
     reset: paymentReset,
   } = useMutation({
     mutationFn: async (values: FormData) => {
-      await axiosInstance.post(
+      await axiosInstance.patch(
         `payments/upload-payment-receipt/${eventId}`,
         values,
         {
@@ -77,10 +79,11 @@ export default function Register({
     },
     onSuccess: (data: any) => {
       // form.reset();
-      alert(data?.msg);
+      toast.success(data.msg);
     },
     onError: (err: AxiosError) => {
-      alert(err.response?.data);
+      console.log(err.response?.data);
+      toast.error("Check console for error!");
     },
   });
 
@@ -114,8 +117,8 @@ export default function Register({
     await Promise.all(memberPromises);
 
     // form object to be sent to backend
-    const dataObj = { participants: [] as Member[] } as formProps;
-    dataObj.participants = members.map((member, index) => {
+    const dataObj = {} as formProps;
+    const participants = members.map((member, index) => {
       const participant = {
         name: formData.get(`member.${index}.name`) as string,
         email: formData.get(`member.${index}.email`) as string,
@@ -125,11 +128,12 @@ export default function Register({
       };
       return participant;
     });
-
+    dataObj.participants = participants;
     dataObj.eventId = eventId;
     dataObj.leader = formData.get("leader") as string;
     dataObj.teamName = formData.get("teamName") as string;
     onDetailsSubmit(dataObj);
+    console.log(dataObj);
     onPaymentSubmit(paymentFormData);
   };
 

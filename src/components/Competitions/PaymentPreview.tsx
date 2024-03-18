@@ -13,7 +13,6 @@ const PaymentPreview = () => {
       reader.onload = () => {
         const imagePreviewUrl = reader.result as string;
         // Set the image preview URL in state or pass it to another component for display
-        console.log("Image preview URL:", imagePreviewUrl);
         setPreviewImg(imagePreviewUrl);
       };
       reader.readAsDataURL(file);
@@ -30,7 +29,7 @@ const PaymentPreview = () => {
           </span>{" "}
           should be mentioned during payment as &quot;note&quot;.
         </p>
-        <div className="w-69 h-[500px] object-fit relative mx-auto">
+        <div className="w-69 h-[500px] object-contain relative mx-auto">
           <Image
             src="/Payment QR.jpg"
             fill
@@ -50,9 +49,14 @@ const PaymentPreview = () => {
         />
         <p className="text-mango font-bold">Upload Screenshot of Payment</p>
         {previewImg && (
-          <div className="mt-6 w-44 h-44 relative object-contain overflow-hidden">
+          <div className="mt-6 w-44 md:w-56 h-44 relative object-contain overflow-hidden">
             {" "}
-            <Image src={previewImg} fill alt="payment screenshot" />
+            <Image
+              src={previewImg}
+              fill
+              alt="payment screenshot"
+              className="object-contain"
+            />
           </div>
         )}
       </div>

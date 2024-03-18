@@ -6,6 +6,7 @@ import Register from "@/components/Competitions/Register";
 import Link from "next/link";
 import { HiExternalLink } from "react-icons/hi";
 import { GoLink, GoLinkExternal } from "react-icons/go";
+import { ToastContainer } from "react-toastify";
 
 const panchang = localFont({
   src: "../../../../../public/Panchang-Variable.ttf",
