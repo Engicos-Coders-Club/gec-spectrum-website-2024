@@ -92,7 +92,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
           index: Key | null | undefined
         ) => (
           <Link key={index} href={`https://wa.me/91${coordinator.contact}`}>
-            <h2 className="font-semibold sm:leading-6 leading-3 sm:text-xl text-xl mt-2 flex items-center sm:gap-2 gap-1 w-full">
+            <h2 className="font-semibold sm:leading-6 leading-3 sm:text-xl text-base mt-2 flex items-center sm:gap-2 gap-1 w-full">
               {coordinator.name}
               <span className="text-[#741CFF]">
                 <FaWhatsapp className="font-semibold text-xl" />
@@ -234,7 +234,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
               </div>
               {isSuccess && (
                 <div className={`mr-7 ${space.className} text-[#FFBA25]`}>
-                  <h2 className=" font-bold leading-10 text-3xl">
+                  <h2 className=" font-bold leading-10 md:text-3xl text-xl">
                     ₹ {data && data?.event?.fee}
                   </h2>
                 </div>
@@ -256,7 +256,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                 </div>
                 {isSuccess && (
                   <div
-                    className={`md:mr-7 ${space.className} text-[#FFBA25] text-3xl font-bold`}
+                    className={`md:mr-7 ${space.className} text-[#FFBA25]  md:text-3xl text-xl font-bold`}
                   >
                     {data && data?.event?.teamSize.min} -
                     {data && data?.event?.teamSize.max}
@@ -273,7 +273,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
               </div>
               {isSuccess && (
                 <div className={`mr-7 ${space.className} text-[#FFBA25]`}>
-                  <h2 className=" font-bold leading-10 text-3xl">
+                  <h2 className=" font-bold leading-10 md:text-3xl text-xl">
                     {new Date(data && data?.event?.date).getDay()}/
                     {new Date(data && data?.event?.date).getMonth()}/
                     {new Date(data && data?.event?.date).getFullYear()}
@@ -291,7 +291,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
               CONTACT
             </div>
             <div
-              className={`${space.className} text-[#FFBA25] w-60 h-full flex flex-col items-end justify-center`}
+              className={`${space.className} text-[#FFBA25] min-w-60 w-auto h-full flex flex-col items-end justify-center`}
             >
               {renderCoordinators()}
             </div>
@@ -307,7 +307,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
             <p className="text-mango font-semibold text-xl">
               max participation limit:{" "}
               <span className="text-white">
-                {isSuccess && data && data.event?.participationLimit}
+                {/* {isSuccess && data && data.event?.participationLimit} */} -
               </span>
             </p>
             <p className="font-semibold text-xl">Rules and Regulations</p>

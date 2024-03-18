@@ -32,11 +32,11 @@ const Navbar = () => {
       icon: <IoHomeOutline color="#FA5622" size={40} />,
       link: "/",
     },
-    {
-      name: "ABOUT",
-      icon: <AiOutlineQuestion color="#FA5622" size={40} />,
-      link: "/",
-    },
+    // {
+    //   name: "ABOUT",
+    //   icon: <AiOutlineQuestion color="#FA5622" size={40} />,
+    //   link: "/",
+    // },
     {
       name: "SCHEDULE",
       icon: <GoClock color="#FA5622" size={40} />,
