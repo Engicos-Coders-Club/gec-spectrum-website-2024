@@ -5,14 +5,23 @@ import Image from "next/image";
 import QRCode from "../../../public/Payment QR.jpg";
 import { MdDelete } from "react-icons/md";
 import { IoAdd, IoInformation } from "react-icons/io5";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { BiInfoCircle } from "react-icons/bi";
 
 type Member = {
   name: string;
   email: string;
   phoneNumber: string;
+  college?: String;
+  idProof?: string;
 };
+
+interface formProps {
+  teamName: string;
+  teamLeader: string;
+  members: Member[];
+  paymentScreenshot: string;
+}
 
 export default function Register() {
   const [members, setMembers] = useState<Member[]>([]);
@@ -21,8 +30,8 @@ export default function Register() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
+  } = useForm<formProps>();
+  const onSubmit: SubmitHandler<formProps> = (data) => console.log(data);
 
   const handleUserSubmit = () => {
     console.log("Submitting form with members:", members);
@@ -76,13 +85,13 @@ export default function Register() {
           <div className="w-full flex flex-col justify-center mt-3 space-y-3 text-[#FFBA25]">
             <CustomInput
               label="Team Name"
-              {...register("Team Name", { required: true, maxLength: 60 })}
+              {...register("teamName", { required: true, maxLength: 60 })}
             />
             <CustomInput
               label="Team Leader Email"
               placeholder="example@email.com"
               type="email"
-              {...register("Team Leader", { required: true })}
+              {...register("teamLeader", { required: true })}
             />
           </div>
 
@@ -106,18 +115,18 @@ export default function Register() {
                   label="Email ID"
                   placeholder="example@email.com"
                   type="email"
-                  {...register(`Member Email ${index + 1}`, { required: true })}
+                  {...register(`members.${index}.email`, { required: true })}
                 />
                 <CustomInput
                   label="College Name"
                   type="text"
-                  {...register(`College ${index + 1}`)}
+                  {...register(`members.${index}.college`)}
                 />
                 <CustomInput
                   label="Phone Number"
                   placeholder="+91"
                   type="tel"
-                  {...register(`Phone Number ${index + 1}`, {
+                  {...register(`members.${index}.phoneNumber`, {
                     required: true,
                     pattern: /^[1-9]\d{9}$/i,
                   })}
