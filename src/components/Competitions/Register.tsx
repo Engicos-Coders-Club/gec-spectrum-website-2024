@@ -178,41 +178,55 @@ export default function Register({
                   <MdDelete className="text-red-600 text-xl" />
                 </button>
               </div>
-              <div className="mt-3">
-                <CustomInput
-                  label="Full Name"
-                  type="text"
-                  required={true}
-                  name={`member.${index}.name`}
-                />
-                <CustomInput
-                  label="Email ID"
-                  placeholder="example@email.com"
-                  type="email"
-                  name={`member.${index}.email`}
-                  required={true}
-                />
-                <CustomInput
-                  label="College Name"
-                  type="text"
-                  name={`member.${index}.college`}
-                />
-                <CustomInput
-                  label="Phone Number"
-                  placeholder="+91"
-                  type="tel"
-                  name={`member.${index}.contact`}
-                  required={true}
-                />
-                <p className="text-white text-sm mt-5">
-                  ID Card Photo/ID Proof
-                </p>
-                <input
-                  type="file"
-                  required={true}
-                  name={`member.${index}.idcard`}
-                  className="mt-3 p-2 border-b border-[#FFBA25] bg-black w-full outline-none"
-                />
+              <div key={index} className="w-full flex flex-col space-y-3 mt-10">
+                <div className="flex justify-between">
+                  <p className="text-[#FFBA25] text-bold underline underline-offset-4 decoration-wavy">
+                    Member {index + 1}
+                  </p>
+                  <button
+                    type="button"
+                    className="hover:bg-gray-800 rounded p-2"
+                    onClick={handleDeleteMember.bind(null, index)}
+                  >
+                    <MdDelete className="text-red-600 text-xl" />
+                  </button>
+                </div>
+                <div className="mt-3">
+                  <CustomInput
+                    label="Full Name"
+                    type="text"
+                    required={true}
+                    name={`member.${index}.name`}
+                  />
+                  <CustomInput
+                    label="Email ID"
+                    placeholder="example@email.com"
+                    type="email"
+                    name={`member.${index}.email`}
+                    required={true}
+                  />
+                  <CustomInput
+                    label="College Name"
+                    type="text"
+                    name={`member.${index}.college`}
+                  />
+                  <CustomInput
+                    label="Phone Number"
+                    placeholder="+91"
+                    type="tel"
+                    name={`member.${index}.contact`}
+                    required={true}
+                  />
+                  <p className="text-white text-sm mt-5">
+                    ID Card Photo/ID Proof
+                  </p>
+                  <input
+                    type="file"
+                    required={true}
+                    name={`member.${index}.idcard`}
+                    className="mt-3 p-2 border-b border-[#FFBA25] bg-black w-full outline-none"
+                  />
+                </div>
               </div>
             </div>
           ))}
