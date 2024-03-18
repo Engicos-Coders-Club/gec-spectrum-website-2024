@@ -59,14 +59,14 @@ const CompetitionsRegister = ({ params }: { params: { slug: string } }) => {
               </p>
               {isSuccess &&
                 (data?.event?.prices.secondPlace === 0 ? (
-                  <div className="mr-10 md:mr-0">
+                  <div>
                     <p className="text-2xl md:text-4xl font-medium text-tangerine">
                       ₹ {data && data?.event?.prices.firstPlace}
                     </p>
                     <p className="uppercase text-right italic">pool</p>
                   </div>
                 ) : (
-                  <div className="mr-10 md:mr-0">
+                  <div>
                     <p className="text-2xl md:text-4xl font-medium">
                       1st ~{" "}
                       <span className="font-semibold text-tangerine">
