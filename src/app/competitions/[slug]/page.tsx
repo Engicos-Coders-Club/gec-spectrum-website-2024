@@ -196,13 +196,23 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
               </div>
             </div>
             <div className="h-full col-span-1 border-l border-b border-[#FFBA25]">
-              <Image
-                src={Checker.src}
-                height={Checker.height}
-                width={Checker.width}
-                alt=""
-                className="hidden md:block"
-              />
+              {isSuccess ? (
+                <Image
+                  src={data?.event?.imageURL || Checker.src}
+                  alt="random"
+                  width={512}
+                  height={712}
+                  className="rounded-xl rounded-tl-none h-72 object-cover"
+                />
+              ) : (
+                <Image
+                  src={Checker.src}
+                  height={Checker.height}
+                  width={Checker.width}
+                  alt=""
+                  className="hidden md:block"
+                />
+              )}
               <div className=" border-t border-[#FFBA25] flex md:flex-col items-center justify-between md:justify-center py-5">
                 <p className="text-xl md:text-2xl tracking-widest font-semibold mb-2 rotate-[270deg] md:rotate-[0deg]">
                   PRIZES

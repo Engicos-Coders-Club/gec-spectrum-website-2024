@@ -28,8 +28,10 @@ export default function CardItem({
       href={`competitions/${eventDeets?.eventId}`}
     >
       <Image
-        src={trophyImage || eventDeets.imageUrl}
+        src={eventDeets.imageUrl || trophyImage}
         alt="random"
+        width={512}
+        height={712}
         className="rounded-xl rounded-tl-none h-72 object-cover"
       />
       <div className="p-2 text-white">
