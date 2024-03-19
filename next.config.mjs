@@ -7,8 +7,10 @@ const nextConfig = {
                 hostname: "s3-alpha-sig.figma.com",
                 port: '',
                 pathname: '**',
+                
             }
-        ]
+        ],
+        domains: ['res.cloudinary.com']
     }
 };
 

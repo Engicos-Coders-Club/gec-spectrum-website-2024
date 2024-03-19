@@ -139,7 +139,7 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
         {team.paid ? "Yes" : "No"}
       </td>
       <td className="border text-black px-2 sm:px-4 py-2">
-        <Image src={team.payment_screenshot} alt="payment" />
+        <Image src={team.payment_screenshot} width={100} height={100} alt="payment" />
       </td>
       <td className="border text-black px-2 sm:px-4 py-2">
         <button
