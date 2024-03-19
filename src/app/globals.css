@@ -18,7 +18,6 @@
   font-style: normal;
 }
 .rainbow-line {
-  @apply h-1 w-1/2; /* Adjust height and width as desired */
   background-image: linear-gradient(
     to right,
     red,
@@ -113,8 +112,8 @@
   }
 }
 
-.headerbackground{
-  background: url('/Vector.svg') #06050a 200%
+.headerbackground {
+  background: url("/Vector.svg") #06050a 200%;
 }
 
 .scroll-hide::-webkit-scrollbar {
@@ -122,6 +121,18 @@
 }
 
 .scroll-hide {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.link {
+  color: linear-gradient(
+    90deg,
+    #ff0000 0%,
+    #ffd809 25%,
+    #00ff29 45%,
+    #4200ff 65.4%,
+    #bd00ff 82.9%,
+    #ff00c7 100%
+  );
 }

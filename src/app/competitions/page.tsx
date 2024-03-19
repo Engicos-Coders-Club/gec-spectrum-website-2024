@@ -1,62 +1,65 @@
-import Navbar from "@/components/Navbar";
+"use client";
 import localFont from "next/font/local";
-import EventsButton from "../components/Events/Button";
-import Link from "next/link";
 import { Space_Grotesk } from "next/font/google";
 import CardItem from "@/components/Competitions-Card/CardItem";
-import Coming from "../ComingSoon/page";
 import PageHead from "../components/PageHead";
+import { useEffect, useState } from "react";
+import { axiosInstance } from "../../../axios-config";
+import { useQuery } from "@tanstack/react-query";
+import { CompetitionsProps } from "@/utils/types/CompetitionCard";
+import { useSearchParams } from "next/navigation";
+import Loading from "../loading";
 
 const Space = Space_Grotesk({ subsets: ["latin"], weight: ["700", "600"] });
 
-const panchang = localFont({
-  src: "../../../public/Panchang-Variable.ttf",
-  display: "swap",
-});
-
-const eventsData = [
-  { title: "Technical", department: "Computer", event: "Technix" },
-  { title: "IT", department: "IT", event: "Techfluence" },
-  { title: "Mechanical", department: "Mechanical", event: "Torque" },
-  { title: "ETC", department: "ETC", event: "Resonance" },
-  { title: "ENE", department: "ENE", event: "Sparks" },
-  { title: "Civil", department: "Civil", event: "Pratikriya" },
-];
-
 export default function Competitions() {
-  const events = new Array(9).fill(0);
+  const searchParams = useSearchParams();
+  const dept = searchParams.get("dept");
+  // const deptName = searchParams.get("deptName");
 
+  const { isPending, isSuccess, isError, data } = useQuery({
+    queryKey: ["competitions", dept],
+    queryFn: async (): Promise<CompetitionsProps> => {
+      const query = dept ? `events/department/${dept}` : "events/";
+      const res = await axiosInstance.get(query);
+      return res.data;
+    },
+  });
+
+  if (isPending)
+    return (
+      <>
+        <PageHead body="EXPLORE" title="COMPETITIONS" faltutext="**" />{" "}
+        <Loading />
+      </>
+    );
   return (
     <main>
-      <PageHead body="EXPLORE" title="COMPETITIONS"  faltutext="25"/>
-
-      <Coming></Coming>
-
-      {/* <section className='w-full flex justify-center mt-10 p-3 overflow-hidden'>
-            <div className={`grid grid-rows-2 p-5 grid-cols-3 sticky top-0 gap-10  ${Space.className} lg:grid-cols-7 lg:gap-4`}>  
-                <Link href='/' className='bg-[#FFBA25] p-3 rounded-full rounded-tl-none overflow-hidden w-32'>
-                    <p className='text-black text-sm sm:text-base'>ALL</p> 
-                    <p className='text-primary text-sm sm:text-base'>Departments</p>
-                </Link>
-                {
-                    eventsData.map((events, index) =>(
-                    <div key={index}>
-                        <EventsButton title={events.event} department={events.department} />
-                    </div>
-
-                ))
-                }
-                </div>
-      </section>
-
-                <section className={`mt-8 ${Space.className} container mx-auto mb-20`}>
-                    <div className='grid grid-cols-1 p-5 sm:grid-cols-2 lg:grid-cols-3 gap-7'>
-                        {events.map(( index) => (
-                            <CardItem key={index} />
-                        ))}
-                    </div>
-                </section>
-            */}
+      <PageHead
+        body="EXPLORE"
+        title="COMPETITIONS"
+        faltutext={data?.events?.length || "/*"}
+      />
+      {isSuccess && dept ? (
+        <h2 className="uppercase text-primary mx-auto sm:text-lg md:text-2xl text-center mt-10">
+          {data?.events[0]?.deptName}
+          <span className="text-mango">{" */"}</span>
+        </h2>
+      ) : null}
+      {isSuccess && (
+        <section className={`mt-8 ${Space.className} container mx-auto mb-20`}>
+          <div className="grid grid-cols-1 p-5 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+            {data?.events?.map((event, index) => {
+              return <CardItem key={index} eventDeets={event} />;
+            })}
+          </div>
+        </section>
+      )}
+      {isError && (
+        <p className="mx-auto text-center my-6">
+          Oops! Data got lost in space 🪨
+        </p>
+      )}
     </main>
   );
 }

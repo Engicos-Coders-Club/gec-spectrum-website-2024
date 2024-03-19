@@ -1,5 +1,6 @@
 'use client'
 
+import axios from "axios";
 import { Space_Grotesk } from "next/font/google";
 import { Merriweather } from "next/font/google";
 import localFont from "next/font/local";

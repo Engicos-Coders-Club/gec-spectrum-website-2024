@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Animation from "../components/Events/animation";
 
 const loading = () => {
   return (
     <div>
-        Loading...
+      <Animation />
     </div>
-  )
-}
+  );
+};
 
-export default loading
+export default loading;

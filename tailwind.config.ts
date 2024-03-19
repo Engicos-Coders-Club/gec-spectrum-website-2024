@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,6 +9,9 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["var(--font-space-grotesk)", ...defaultTheme.fontFamily.sans],
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -22,8 +27,14 @@ const config: Config = {
         tangerine: "#FA5622",
         bgDark: "#06050a",
       },
-      fontFamily: {
-        sans: ["var(--font-space-grotesk)"],
+      keyframes: {
+        jiggle: {
+          "0%, 100%": { transform: "rotate(-3deg) skewY(10deg) skewX(3deg)" },
+          "50%": { transform: "rotate(3deg) skewX(0deg) skewX(-1deg)" },
+        },
+      },
+      animation: {
+        jiggle: "jiggle 2s infinite 1s",
       },
     },
   },
