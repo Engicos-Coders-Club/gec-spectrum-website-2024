@@ -11,16 +11,7 @@ import { RiLink } from "react-icons/ri";
 import { FaInstagram } from "react-icons/fa";
 import Register from "@/components/Competitions/Register";
 import axios from "axios";
-import {
-  AwaitedReactNode,
-  JSXElementConstructor,
-  Key,
-  ReactElement,
-  ReactNode,
-  ReactPortal,
-  useEffect,
-  useState,
-} from "react";
+import { Key } from "react";
 import { UrlObject } from "url";
 import { useQuery } from "@tanstack/react-query";
 import { axiosInstance } from "../../../../axios-config";
@@ -37,6 +28,39 @@ const panchang = localFont({
   display: "swap",
 });
 
+const checkParticipationLimit = (limit: number): string => {
+  if (!limit || limit === -1) return "--";
+  return limit.toString();
+};
+
+const getDateFormat = (dateString: string): string => {
+  const date = new Date(dateString);
+
+  // Define an array with short month names
+  const monthNamesShort = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  // Get the month from the date object and use it to index the array
+  const monthShort = monthNamesShort[date.getMonth()];
+
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  return `${day} ${monthShort} ${year}`;
+};
+
 const EventPage = ({ params }: { params: { slug: string } }) => {
   const pathname = usePathname();
   const { isPending, isSuccess, isError, data } = useQuery({
@@ -46,28 +70,6 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
       return res.data;
     },
   });
-  // useEffect(() => {
-  //   (async () => {
-  //     const response = await axios.get(
-  //       `https://gec-spectrum-backend-2024.2.sg-1.fl0.io/api/v1/events/${params.slug}`
-  //     );
-  //     const data = await response.data;
-  //     setEvents(data);
-  //   })();
-  // }, [params.slug]);
-
-  const formatDate = (dateString: string) => {
-    if (!dateString) return "";
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) return "";
-
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const day = String(date.getDate()).padStart(2, "0");
-
-    // Reversing the date format
-    return `${day}-${month}-${year}`;
-  };
 
   const renderCoordinators = () => {
     if (isSuccess)
@@ -285,10 +287,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
               {isSuccess && (
                 <div className={`mr-7 ${space.className} text-[#FFBA25]`}>
                   <h2 className=" font-bold leading-10 md:text-3xl text-xl">
-                    {new Date(data && data?.event?.date).toLocaleDateString(
-                      "en-GB",
-                      { day: "2-digit", month: "short", year: "numeric" }
-                    )}
+                    {getDateFormat(data && data?.event?.date)}
                   </h2>
                 </div>
               )}
@@ -319,7 +318,8 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
             <p className="text-mango font-semibold text-xl">
               max participation limit:{" "}
               <span className="text-white">
-                {/* {isSuccess && data && data.event?.participationLimit} */} -
+                {isSuccess &&
+                  checkParticipationLimit(data?.event?.participationLimit)}
               </span>
             </p>
             <p className="font-semibold text-xl">Rules and Regulations</p>
