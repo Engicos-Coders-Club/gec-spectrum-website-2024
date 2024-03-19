@@ -186,7 +186,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                     >
                       RULEBOOK
                     </a>
-                    <Link href={pathname + "/register"}>
+                    <Link href={"https://unstop.com/p/spectrathon-spectrum-2024-goa-college-of-engineering-930111"}>
                       <button className=" border border-primary rounded-full rounded-tl-none p-1.5 px-5 bg-primary hover:bg-violet-700">
                         REGISTER
                       </button>
