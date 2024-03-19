@@ -33,13 +33,12 @@ const Tagline = () => {
         transition={{ duration: 2, delay: 0.2 }}
         className="z-20 absolute sm:-right-[27.5rem] -right-[22rem] sm:top-[6rem] top-96"
       >
-
         {/* robot thing is here */}
         <Image
           className="h-[40rem] hidden md:block  rotate-[-26deg] w-[auto]"
           height={600}
           width={600}
-src="https://s3-alpha-sig.figma.com/img/9882/f4b1/44b540a3c892da5a247649855a71b660?Expires=1711324800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=V2cUcMh2LVCLfDiEkeJxjBoxu33P1aGAYnkeLD6h9s6i2WUFqSGyqkejeu2-~yFJ3dwN8vtSeO~C07qlPSejjhfQoLsU15aZYOJezUii~M3rmW2boipfpS9N1Be6q8YzloKEhppCOnJj9umHVPYYrG3LaCbUcByRr0rsFdt5~Vq6XTey~0eCLS6w7A3Bg1uzi51tQDrHI5cfd18uPRnWVU7GJtzyCZHGURBrl5ashhXPVIi3KDVOv8SI--FBklnBuoVShGstBg7hXXpXeyBiMVZdXzw2YUpX5NRnC-aXRiD~Lmm-i93M5iPnbm5gfBS-sQg9PcbejbDJqJy6HWTEJw__"
+          src="https://s3-alpha-sig.figma.com/img/9882/f4b1/44b540a3c892da5a247649855a71b660?Expires=1711324800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=V2cUcMh2LVCLfDiEkeJxjBoxu33P1aGAYnkeLD6h9s6i2WUFqSGyqkejeu2-~yFJ3dwN8vtSeO~C07qlPSejjhfQoLsU15aZYOJezUii~M3rmW2boipfpS9N1Be6q8YzloKEhppCOnJj9umHVPYYrG3LaCbUcByRr0rsFdt5~Vq6XTey~0eCLS6w7A3Bg1uzi51tQDrHI5cfd18uPRnWVU7GJtzyCZHGURBrl5ashhXPVIi3KDVOv8SI--FBklnBuoVShGstBg7hXXpXeyBiMVZdXzw2YUpX5NRnC-aXRiD~Lmm-i93M5iPnbm5gfBS-sQg9PcbejbDJqJy6HWTEJw__"
           alt="robot"
         />
       </motion.div>
@@ -47,7 +46,7 @@ src="https://s3-alpha-sig.figma.com/img/9882/f4b1/44b540a3c892da5a247649855a71b6
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 2, delay: 0.2 }}
-        className={`${space.className} text-3xl  text-center relative -z-10 w-screen`}
+        className={`${space.className} text-xl md:text-3xl  text-center relative -z-10 w-screen`}
       >
         <motion.div
           className="h-[0.1rem] gradient-five-colors w-full absolute top-1/2 -z-10"

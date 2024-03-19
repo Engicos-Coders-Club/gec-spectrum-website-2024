@@ -40,16 +40,27 @@ const Event = () => {
         </motion.h1>
         <div className="absolute gradient-five-colors h-[1px] w-screen top-1/2 -z-10"></div>
       </div>
-      <div className="mt-10 mx-4 md:mx-20 md:text-xl">
-        <motion.p
-          className="text-[#FFBA25] text-end flex flex-col"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.2 }}
+
+      <motion.p
+        className="text-[#FFBA25] text-end flex flex-col ml-auto mr-10 mt-10 mb-2 md:mr-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.2 }}
+      >
+        Explore our events under each department.{" "}
+        <span>Click tile to know more.</span>
+      </motion.p>
+      <div className="md:hidden ml-auto w-fit mr-10 mt-4">
+        <a
+          title="Download Brochure"
+          className="bg-primary p-2 px-5 rounded-full rounded-tl-none font-semibold hover:bg-violet-500"
+          download={true}
+          href="/GEC-Spectrum-Brochure-2024.pdf"
+          target="_blank"
+          rel="noreferrer"
         >
-          <span>Explore our events under each department.</span> Click to know
-          more.
-        </motion.p>
+          BROCHURE
+        </a>
       </div>
       <div className="flex flex-col">
         <div className="w-screen flex flex-wrap items-center justify-center z-[10] gap-10 p-10">
