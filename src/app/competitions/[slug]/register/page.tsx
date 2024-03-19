@@ -7,6 +7,8 @@ import Link from "next/link";
 import { HiExternalLink } from "react-icons/hi";
 import { GoLink, GoLinkExternal } from "react-icons/go";
 import { getTeamData } from "@/utils/getTeamSize";
+import { useEffect } from "react";
+import { redirect } from "next/navigation";
 
 const panchang = localFont({
   src: "../../../../../public/Panchang-Variable.ttf",
@@ -21,6 +23,14 @@ const CompetitionsRegister = ({ params }: { params: { slug: string } }) => {
       return res.data;
     },
   });
+
+  // Hackathon redirect
+  useEffect(() => {
+    if (params.slug === "65f5c3460197f7897ad54efa")
+      redirect(
+        "https://unstop.com/p/spectrathon-spectrum-2024-goa-college-of-engineering-930111"
+      );
+  }, [params.slug]);
 
   // console.log(data);
   return (
