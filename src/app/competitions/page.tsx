@@ -9,6 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import { CompetitionsProps } from "@/utils/types/CompetitionCard";
 import { useSearchParams } from "next/navigation";
 import Loading from "../loading";
+import CompetitionSort from "../components/CompetitionSort";
 
 const Space = Space_Grotesk({ subsets: ["latin"], weight: ["700", "600"] });
 
@@ -25,6 +26,9 @@ export default function Competitions() {
       return res.data;
     },
   });
+  useEffect(() => {
+    
+  },[dept]);
 
   if (isPending)
     return (
@@ -48,6 +52,7 @@ export default function Competitions() {
       ) : null}
       {isSuccess && (
         <section className={`mt-8 ${Space.className} container mx-auto mb-20`}>
+          <CompetitionSort />
           <div className="grid grid-cols-1 p-5 sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {data?.events?.map((event, index) => {
               return <CardItem key={index} eventDeets={event} />;
