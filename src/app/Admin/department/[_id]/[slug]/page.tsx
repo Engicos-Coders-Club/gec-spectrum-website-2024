@@ -68,32 +68,7 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
       });
   }, []);
 
-  const handleApprove = async (teamId: string) => {
-    try {
-      const response = await fetch(`https://gec-spectrum-backend-2024.2.sg-1.fl0.io/api/v1/payments/update-payment-status/${teamId}`, {
-        method: 'PATCH',
-        headers: {
-          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MTA2OTU5NTEsImV4cCI6MTcxMTEyNzk1MX0.3uOiqRvKdfmfgvohmMCv_u3B3Zoe1eKCJspG0MedRH4`,
-        },
-      });
-  
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-  
-      const data = await response.json();
-      console.log(data);
-  
-      // Update the state of the teams array
-      setTeams(prevTeams =>
-        prevTeams.map(team =>
-          team._id === teamId ? { ...team, paid: true } : team
-        )
-      );
-    } catch (error) {
-      console.error('Fetch error: ', error);
-    }
-  };
+ 
 
   return (
     <div className="pt-40 md:mt-10 mt-10 sm:p-8  lg:pt-40 xl:p-20">
@@ -114,7 +89,7 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
             <th className="px-2 sm:px-4 text-xl sm:text-2xl py-2">
               Payment Screenshot
             </th>
-            <th className="px-2 sm:px-4 text-xl sm:text-2xl py-2">Actions</th>
+        
           </tr>
         </thead>
         <tbody>
@@ -141,14 +116,7 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
       <td className="border text-black px-2 sm:px-4 py-2">
         <Image src={team.payment_screenshot} width={100} height={100} alt="payment" />
       </td>
-      <td className="border text-black px-2 sm:px-4 py-2">
-        <button
-          onClick={() => handleApprove(team._id)}
-          className="bg-blue-500 p-4 rounded-md"
-        >
-          Approve
-        </button>
-      </td>
+    
     </tr>
   ))}
 </tbody>
