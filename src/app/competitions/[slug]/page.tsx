@@ -131,7 +131,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                       "Competition")}
                 </h2>
                 <h1
-                  className={`${panchang.className} font-extrabold break-words text-5xl sm:text-4xl md:text-6xl md:leading-[4rem]`}
+                  className={`${panchang.className} font-extrabold break-words text-2xl sm:text-4xl md:text-6xl md:leading-[4rem]`}
                 >
                   {isSuccess &&
                     data &&
