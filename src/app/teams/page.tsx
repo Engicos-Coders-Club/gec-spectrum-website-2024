@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import PageHead from "../components/PageHead";
 import TeamsData from "../components/TeamsData";
 import Coming from "../ComingSoon/page";
