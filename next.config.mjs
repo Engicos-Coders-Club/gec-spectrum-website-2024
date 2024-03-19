@@ -15,6 +15,9 @@ const nextConfig = {
         pathname: "/dzpgkq215/image/upload/**",
       },
     ],
+    images:{
+      domains: ['s3-alpha-sig.figma.com', 'res.cloudinary.com']
+    }
   },
 };
 
