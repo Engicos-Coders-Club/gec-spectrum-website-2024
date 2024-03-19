@@ -30,14 +30,19 @@ export default function CardItem({
       <Image
         src={trophyImage || eventDeets.imageUrl}
         alt="random"
-        className="rounded-xl rounded-tl-none"
+        className="rounded-xl rounded-tl-none h-72 object-cover"
       />
       <div className="p-2 text-white">
-        <p className="text-sm font-light"> {secondaryname || "Competition"}</p>
-        <h2 className={`text-xl font-bold text-black ${Space.className}`}>
+        <p className="text-sm font-light uppercase text-yellow-700">
+          {" "}
+          {secondaryname || "Competition"}
+        </p>
+        <h2 className={`text-2xl font-bold text-black ${Space.className}`}>
           {eventName}
         </h2>
-        <p className="text-sm text-primary">{eventDeets?.deptName}</p>
+        <p className="text-sm text-primary mt-2">
+          {"/*"} {eventDeets?.deptName}
+        </p>
       </div>
     </Link>
   );

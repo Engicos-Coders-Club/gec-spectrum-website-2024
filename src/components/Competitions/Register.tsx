@@ -29,6 +29,10 @@ interface formProps {
   payment_screenshot: string;
 }
 
+interface ResponseDataProps {
+  msg: string;
+}
+
 export default function Register({
   minTeam,
   maxTeam,
@@ -57,9 +61,14 @@ export default function Register({
       // form.reset();
       toast.success("Registration Successful");
     },
-    onError: (err: AxiosError) => {
-      console.log(err.response?.data);
-      toast.error("Check console for error!");
+    onError: (err: AxiosError<ResponseDataProps>) => {
+      if (err.response?.data?.msg) {
+        toast.error(err.response?.data?.msg);
+        console.log(err.response?.data?.msg);
+      } else {
+        toast.error("Registration Failed");
+        console.log(err.response?.data);
+      }
     },
   });
 
@@ -146,7 +155,7 @@ export default function Register({
     <div className="w-full flex justify-center items-center bg-black mb-4 mt-20">
       <div className="p-3 w-3/4 sm:w-2/3 mb-4 bg-black border border-dashed border-[#FFBA25] flex justify-center">
         <form className="w-full flex flex-col" onSubmit={handleUserSubmit}>
-          <div className="p-3 mt-3 border flex space-x-2 items-start">
+          <div className="p-3 mt-3 border flex space-x-2 items-start text-center">
             <BiInfoCircle className="text-2xl text-tangerine hidden sm:block" />
             <p className="text-sm font-light flex">
               Registration confirmation will be communicated through email and
@@ -161,27 +170,16 @@ export default function Register({
               placeholder="example@email.com"
               type="email"
               name="leader"
+              helper="Ensure at least one member below shares the same email for all communications. "
             />
           </div>
 
           {members.map((member, index) => (
             <div key={index} className="w-full flex flex-col space-y-3 mt-10">
-              <div className="flex justify-between">
-                <p className="text-[#FFBA25] text-bold underline underline-offset-4 decoration-wavy">
-                  Member {index + 1}
-                </p>
-                <button
-                  type="button"
-                  className="hover:bg-gray-800 rounded p-2"
-                  onClick={handleDeleteMember.bind(null, index)}
-                >
-                  <MdDelete className="text-red-600 text-xl" />
-                </button>
-              </div>
-              <div key={index} className="w-full flex flex-col space-y-3 mt-10">
-                {/* <div className="flex justify-between">
-                  <p className="text-[#FFBA25] text-bold underline underline-offset-4 decoration-wavy">
-                    Member {index + 1}
+              <div key={index} className="w-full flex flex-col space-y-3">
+                <div className="flex justify-between">
+                  <p className="text-mango text-bold underline underline-offset-4 decoration-wavy decoration-primary font-medium uppercase">
+                    Member - {index + 1}
                   </p>
                   <button
                     type="button"
@@ -190,7 +188,7 @@ export default function Register({
                   >
                     <MdDelete className="text-red-600 text-xl" />
                   </button>
-                </div> */}
+                </div>
                 <div className="mt-3">
                   <CustomInput
                     label="Full Name"
@@ -209,6 +207,7 @@ export default function Register({
                     label="College Name"
                     type="text"
                     name={`member.${index}.college`}
+                    helper="Compulsory for school/college students."
                   />
                   <CustomInput
                     label="Phone Number"
@@ -216,6 +215,7 @@ export default function Register({
                     type="tel"
                     name={`member.${index}.contact`}
                     required={true}
+                    helper="For all future communications. Preferably Whatsapp."
                   />
                   <p className="text-white text-sm mt-5">
                     ID Card Photo/ID Proof
@@ -237,7 +237,7 @@ export default function Register({
           <button
             onClick={handleAddMember}
             type="button"
-            className="text-[#FFBA25] bg-yellow-700 rounded-full rounded-tl-none px-3 py-1 my-6 mx-auto flex gap-2 text-sm font-bold hover:bg-yellow-900 disabled:bg-gray-700 disabled:text-gray-500"
+            className="text-[#FFBA25] bg-yellow-700 rounded-full rounded-tl-none px-3 py-2 mt-6 mb-10 mx-auto flex gap-2 text-sm font-bold hover:bg-yellow-900 disabled:bg-gray-700 disabled:text-gray-500"
             disabled={members.length >= maxTeam}
           >
             <IoAdd className="text-xl" /> ADD MEMBER

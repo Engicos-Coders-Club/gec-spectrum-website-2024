@@ -176,6 +176,16 @@ const Navbar = () => {
         >
           CONTACT
         </Link>
+        <a
+          title="Download Brochure"
+          className="bg-primary p-2 px-5 rounded-full rounded-tl-none font-semibold hover:bg-violet-500"
+          download={true}
+          href="/GEC-Spectrum-Brochure-2024.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          BROCHURE
+        </a>
       </motion.div>
     </div>
   );

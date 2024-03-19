@@ -24,6 +24,7 @@ import {
 import { UrlObject } from "url";
 import { useQuery } from "@tanstack/react-query";
 import { axiosInstance } from "../../../../axios-config";
+import { getTeamData } from "@/utils/getTeamSize";
 
 const space = Space_Grotesk({
   weight: ["700", "500", "400"],
@@ -90,7 +91,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
           index: Key | null | undefined
         ) => (
           <Link key={index} href={`https://wa.me/91${coordinator.contact}`}>
-            <h2 className="font-semibold sm:leading-6 leading-3 sm:text-xl text-base mt-2 flex items-center sm:gap-2 gap-1 w-full">
+            <h2 className="font-semibold sm:leading-6 leading-3 sm:text-xl text-base mt-2 flex items-center sm:gap-2 gap-1 w-full hover:underline underline-offset-2">
               {coordinator.name}
               <span className="text-[#741CFF]">
                 <FaWhatsapp className="font-semibold text-xl" />
@@ -118,9 +119,9 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                   </p>
                 </Link>
               </div>
-              <div className="w-3/4 flex-1 h-full flex flex-col gap-5">
+              <div className="sm:w-3/4 flex-1 h-full flex flex-col gap-5">
                 <h2
-                  className={`${panchang.className} font-semibold text-lg md:text-3xl text-[#FA5622] uppercase`}
+                  className={`${panchang.className} font-semibold text-lg md:text-2xl lg:text-3xl text-[#FA5622] uppercase`}
                 >
                   {isSuccess &&
                     data &&
@@ -128,7 +129,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                       "Competition")}
                 </h2>
                 <h1
-                  className={`${panchang.className} font-bold break-words text-2xl md:text-6xl md:leading-[4rem]`}
+                  className={`${panchang.className} font-extrabold break-words text-2xl sm:text-4xl md:text-6xl md:leading-[4rem]`}
                 >
                   {isSuccess &&
                     data &&
@@ -170,10 +171,15 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                   <p className="font-bold mb-2 text-lg text-mango">
                     WHAT&apos;S IT?
                   </p>
-                  <p>{isSuccess && data && data?.event?.introduction}</p>
+                  <p className="text-justify">
+                    {isSuccess && data && data?.event?.introduction}
+                  </p>
                   <div className="flex gap-5 items-center mt-10">
                     <a
                       href={isSuccess ? data.event.rulebook : "#"}
+                      target="_blank"
+                      rel="noreferrer"
+                      title="Detailed Rulebook"
                       className="border border-primary rounded-full rounded-tl-none p-1.5 px-5 hover:bg-primary/30"
                     >
                       RULEBOOK
@@ -259,8 +265,10 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                   <div
                     className={`md:mr-7 ${space.className} text-[#FFBA25]  md:text-3xl text-xl font-bold`}
                   >
-                    {data && data?.event?.teamSize.min} -{" "}
-                    {data && data?.event?.teamSize.max}
+                    {getTeamData(
+                      data?.event?.teamSize.max,
+                      data?.event?.teamSize.max
+                    )}
                     {data && data?.event?.teamSize.max > 1 && (
                       <span className="text-lg italic font-normal"> TEAM</span>
                     )}
@@ -277,9 +285,6 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
               {isSuccess && (
                 <div className={`mr-7 ${space.className} text-[#FFBA25]`}>
                   <h2 className=" font-bold leading-10 md:text-3xl text-xl">
-                    {/* {new Date(data && data?.event?.date).getDay()}/
-                    {new Date(data && data?.event?.date).getMonth()}/
-                    {new Date(data && data?.event?.date).getFullYear()} */}
                     {new Date(data && data?.event?.date).toLocaleDateString(
                       "en-GB",
                       { day: "2-digit", month: "short", year: "numeric" }
@@ -291,14 +296,14 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
           </div>
         </div>
         <div className="p-10 md:p-20">
-          <div className="border border-primary py-10 px-7 flex justify-between items-center">
+          <div className="border border-primary py-4 sm:py-10 px-7 flex flex-col sm:flex-row justify-between items-center">
             <div
-              className={`h-full tracking-widest text-sm md:text-base  w-10 rotate-[270deg] ${space.className} font-bold flex justify-center items-center`}
+              className={`h-full tracking-widest text-sm md:text-base  w-10 sm:rotate-[270deg] ${space.className} font-bold flex justify-center items-center`}
             >
               CONTACT
             </div>
             <div
-              className={`${space.className} text-[#FFBA25] min-w-60 w-auto h-full flex flex-col items-end justify-center`}
+              className={`${space.className} text-[#FFBA25] min-w-60 w-auto h-full flex flex-col items-center mt-2 sm:mt-0 sm:items-end justify-center`}
             >
               {renderCoordinators()}
             </div>

@@ -8,6 +8,7 @@ import { axiosInstance } from "../../../axios-config";
 import { useQuery } from "@tanstack/react-query";
 import { CompetitionsProps } from "@/utils/types/CompetitionCard";
 import { useSearchParams } from "next/navigation";
+import Loading from "../loading";
 
 const Space = Space_Grotesk({ subsets: ["latin"], weight: ["700", "600"] });
 
@@ -17,7 +18,7 @@ export default function Competitions() {
   // const deptName = searchParams.get("deptName");
 
   const { isPending, isSuccess, isError, data } = useQuery({
-    queryKey: ["competitions"],
+    queryKey: ["competitions", dept],
     queryFn: async (): Promise<CompetitionsProps> => {
       const query = dept ? `events/department/${dept}` : "events/";
       const res = await axiosInstance.get(query);
@@ -26,7 +27,12 @@ export default function Competitions() {
   });
 
   if (isPending)
-    return <PageHead body="EXPLORE" title="COMPETITIONS" faltutext="**" />;
+    return (
+      <>
+        <PageHead body="EXPLORE" title="COMPETITIONS" faltutext="**" />{" "}
+        <Loading />
+      </>
+    );
   return (
     <main>
       <PageHead
@@ -34,6 +40,12 @@ export default function Competitions() {
         title="COMPETITIONS"
         faltutext={data?.events?.length || "/*"}
       />
+      {isSuccess && dept ? (
+        <h2 className="uppercase text-primary mx-auto sm:text-lg md:text-2xl text-center mt-10">
+          {data?.events[0]?.deptName}
+          <span className="text-mango">{" */"}</span>
+        </h2>
+      ) : null}
       {isSuccess && (
         <section className={`mt-8 ${Space.className} container mx-auto mb-20`}>
           <div className="grid grid-cols-1 p-5 sm:grid-cols-2 lg:grid-cols-3 gap-7">

@@ -6,6 +6,7 @@ import Register from "@/components/Competitions/Register";
 import Link from "next/link";
 import { HiExternalLink } from "react-icons/hi";
 import { GoLink, GoLinkExternal } from "react-icons/go";
+import { getTeamData } from "@/utils/getTeamSize";
 
 const panchang = localFont({
   src: "../../../../../public/Panchang-Variable.ttf",
@@ -46,10 +47,17 @@ const CompetitionsRegister = ({ params }: { params: { slug: string } }) => {
               </p>
               <div className="flex gap-2 mt-4">
                 <p className="text-lg lg:text-xl font-medium">Team Size:</p>
-                <div className={`text-2xl text-tangerine`}>
-                  {data && data?.event?.teamSize.min} -
-                  {data && data?.event?.teamSize.max}
-                  {data && data?.event?.teamSize.max > 1 && " (TEAM)"}
+                <div className="text-2xl text-tangerine font-medium">
+                  {getTeamData(
+                    data?.event?.teamSize.min,
+                    data?.event?.teamSize.max
+                  )}
+                  {data && data?.event?.teamSize.max > 1 && (
+                    <span className="text-sm font-normal italic">
+                      {" "}
+                      {"<"}TEAM{">"}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

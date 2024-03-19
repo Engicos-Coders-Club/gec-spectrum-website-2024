@@ -72,11 +72,14 @@ const Footer = () => {
               >
                 CONTACT US AT
               </p>
-              <p
+              <a
+                href="mailto:gecstudentscouncil@gmail.com"
+                target="_blank"
+                rel="noreferrer"
                 className={`${space.className} font-medium text-lg  md:text-2xl lg:text-3xl xl:text-3xl md:leading-[4rem] sm:leading-7 sm:text-xs `}
               >
                 gecstudentscouncil@gmail.com
-              </p>
+              </a>
             </div>
             <div>
               <p
@@ -176,6 +179,14 @@ const Footer = () => {
         transition={{ duration: 1 }}
       >
         GEC Spectrum © 2024 All Rights Reserved.
+      </motion.p>
+      <motion.p
+        className={`mt-2 mb-2 text-[#FEFEFE] ${space.className} font-normal sm:text-base text-xs leading-5`}
+        initial={{ y: 10, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        Made with ❤️ by GEC Coders&apos; Club
       </motion.p>
     </div>
   );
