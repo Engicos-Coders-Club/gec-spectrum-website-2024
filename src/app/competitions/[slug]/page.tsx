@@ -272,7 +272,10 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                       data?.event?.teamSize.max
                     )}
                     {data && data?.event?.teamSize.max > 1 && (
-                      <span className="text-lg italic font-normal"> TEAM</span>
+                      <span className="text-lg italic font-normal">
+                        {" "}
+                        / TEAM
+                      </span>
                     )}
                   </div>
                 )}
