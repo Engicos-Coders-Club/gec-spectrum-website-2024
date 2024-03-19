@@ -268,7 +268,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                     className={`md:mr-7 ${space.className} text-[#FFBA25]  md:text-3xl text-xl font-bold`}
                   >
                     {getTeamData(
-                      data?.event?.teamSize.max,
+                      data?.event?.teamSize.min,
                       data?.event?.teamSize.max
                     )}
                     {data && data?.event?.teamSize.max > 1 && (
