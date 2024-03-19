@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { CSVLink } from 'react-csv';
 
 interface Event {
   eventName: string;
@@ -95,11 +96,23 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
     }
   };
 
+  const csvData = teams.map(team => ({
+    Team: team.teamName,
+    Leader: team.leader,
+    Participants: team.participants.join(', '),
+    Paid: team.paid ? "Yes" : "No"
+  }));
+
   return (
     <div className="pt-40 md:mt-10 mt-10 sm:p-8  lg:pt-40 xl:p-20">
       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl justify-center">
         {event.eventName}
       </h1>
+      <button className="bg-green-400 p-2 mt-3">
+      <CSVLink data={csvData} filename={"teams.csv"} className="">
+  Download CSV
+</CSVLink>
+      </button>
    
       <table className="table-auto mt-10 w-full justify-center items-center mb-10">
         <thead>
