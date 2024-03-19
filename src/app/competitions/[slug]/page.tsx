@@ -131,7 +131,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                       "Competition")}
                 </h2>
                 <h1
-                  className={`${panchang.className} font-extrabold break-words text-2xl sm:text-4xl md:text-6xl md:leading-[4rem]`}
+                  className={`${panchang.className} font-extrabold break-words text-5xl sm:text-4xl md:text-6xl md:leading-[4rem]`}
                 >
                   {isSuccess &&
                     data &&
@@ -186,7 +186,13 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                     >
                       RULEBOOK
                     </a>
-                    <Link href={"https://unstop.com/p/spectrathon-spectrum-2024-goa-college-of-engineering-930111"}>
+                    <Link
+                      href={
+                        data?.event?.eventName?.split("(")[0] === "Spectrathon"
+                          ? "https://unstop.com/p/spectrathon-spectrum-2024-goa-college-of-engineering-930111"
+                          : pathname + "/register"
+                      }
+                    >
                       <button className=" border border-primary rounded-full rounded-tl-none p-1.5 px-5 bg-primary hover:bg-violet-700">
                         REGISTER
                       </button>
