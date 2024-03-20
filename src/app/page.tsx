@@ -1,6 +1,5 @@
 import Hero from "./components/Hero";
 import Tagline from "./components/Tagline";
-import Expo from "./components/Expo";
 import Sponsors from "./components/Sponsors";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -16,7 +15,6 @@ export default function Home() {
       <Hero />
       <Tagline />
       <Event />
-      <Expo />
       {/* <Sponsors /> */}
       <ExploreTile />
       <Footer />
@@ -24,3 +22,23 @@ export default function Home() {
     </main>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Don't delete plisssss

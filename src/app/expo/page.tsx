@@ -1,7 +1,7 @@
 "use client";
 import localFont from "next/font/local";
 import { Space_Grotesk } from "next/font/google";
-import ScrollingText from "./ScrollingText";
+import ScrollingText from "../components/ScrollingText";
 import GlowExpo from "../../../public/glow-expo-build.svg";
 import ExpoImage from "../../../public/expoImage.png";
 import Image from "next/image";
