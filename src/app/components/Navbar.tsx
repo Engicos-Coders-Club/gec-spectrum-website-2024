@@ -56,7 +56,7 @@ const Navbar = () => {
     {
       name: "EXPO",
       icon: <PiGlobeLight color="#FA5622" size={40} />,
-      link: "/#expo",
+      link: "/expo",
     },
     {
       name: "SPONSORS",
