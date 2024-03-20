@@ -7,6 +7,7 @@ import ExploreTile from "@/components/explore-tile/ExploreTile";
 import Event from "./components/Event";
 import Loading from "./loading";
 import { Suspense } from "react";
+import Organizers from "./components/Organizers";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Tagline />
       <Event />
       {/* <Sponsors /> */}
+      <Organizers/>
       <ExploreTile />
       <Footer />
      </Suspense>
