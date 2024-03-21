@@ -153,7 +153,7 @@ const Navbar = () => {
         </Link>
       </motion.div>
       <motion.div
-        className={`${space.className} hidden md:flex gap-1 sm:gap-7 sm:text-lg items-center justify-center `}
+        className={`${space.className} hidden md:flex gap-1 sm:gap-7 items-center justify-center uppercase`}
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -169,6 +169,12 @@ const Navbar = () => {
           className="hover:border-dotted hover:outline-dashed outline-1 p-2 rounded-full rounded-tl-none"
         >
           EXPO
+        </Link>
+        <Link
+          href={"/accommodation"}
+          className="hover:border-dotted hover:outline-dashed outline-1 p-2 rounded-full rounded-tl-none"
+        >
+          rooms
         </Link>
         <Link
           href={"/#contact"}
