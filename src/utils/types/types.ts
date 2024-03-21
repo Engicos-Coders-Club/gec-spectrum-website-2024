@@ -10,3 +10,7 @@ export interface CompetitionCardProps {
 export type CompetitionsProps = {
   events: CompetitionCardProps[];
 };
+
+export interface BackendResponseDataProps {
+  msg: string;
+}

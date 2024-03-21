@@ -6,7 +6,7 @@ import PageHead from "../components/PageHead";
 import { useEffect, useState } from "react";
 import { axiosInstance } from "../../../axios-config";
 import { useQuery } from "@tanstack/react-query";
-import { CompetitionsProps } from "@/utils/types/CompetitionCard";
+import { CompetitionsProps } from "@/utils/types/types";
 import { useSearchParams } from "next/navigation";
 import Loading from "../loading";
 import CompetitionSort from "../components/CompetitionSort";

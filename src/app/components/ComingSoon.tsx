@@ -1,21 +1,7 @@
-import localFont from "next/font/local";
-import { Space_Grotesk } from "next/font/google";
-
-const space = Space_Grotesk({
-  weight: ["400"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const panchang = localFont({
-  src: "../../../public/Panchang-Variable.ttf",
-  display: "swap",
-});
-
-const Coming = () => {
+const ComingSoon = () => {
   return (
     <div
-      className={`${space.className} w-screen h-full mt-10 flex items-center flex-col bg-black`}
+      className={`w-screen h-full mt-10 flex items-center flex-col bg-black`}
       id="Coming"
     >
       <div className="w-screen h-full flex items-center justify-center flex-col mt-10">
@@ -29,4 +15,4 @@ const Coming = () => {
   );
 };
 
-export default Coming;
+export default ComingSoon;
