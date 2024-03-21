@@ -71,17 +71,17 @@ const Tagline = () => {
 
         <div className="mt-5 pt-12 flex flex-col lg:flex-row justify-center items-center">
         <motion.div className={`${space.className} lg:mr-20 text-center`}>
-          <h1 className={`${panchang.className} text-5xl mt-16 py-2 text-yellow-500`}>5.5L+</h1>
+          <h1 className={`${panchang.className} text-4xl mt-16 pt-8 pb-2 lg:text-5xl text-yellow-500`}>5.5L+</h1>
           <p className="text-yellow-600">PRIZE POOL</p>
         </motion.div>
 
         <motion.div className={`${space.className} lg:mr-20 lg:px-2 text-center`}>
-          <h1 className={`${panchang.className} text-5xl mt-16 py-2 text-purple-500`}>22+</h1>
+          <h1 className={`${panchang.className} text-4xl mt-16 py-2 lg:text-5xl text-purple-500`}>22+</h1>
           <p className="text-purple-600">COMPETITIONS</p>
         </motion.div>
 
         <motion.div className={`${space.className} text-center`}>
-          <h1 className={`${panchang.className} text-5xl mt-16 py-2 text-orange-500`}>6+</h1>
+          <h1 className={`${panchang.className} text-4xl mt-16 pt-4 lg:text-5xl text-orange-500`}>6+</h1>
           <p className="text-orange-600">DEPARTMENTS</p>
         </motion.div>
       </div>
