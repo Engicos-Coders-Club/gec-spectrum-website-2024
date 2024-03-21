@@ -2,12 +2,19 @@
 import { motion } from "framer-motion";
 import { Space_Grotesk } from "next/font/google";
 import Image from "next/image";
+import localFont from 'next/font/local'
+
 
 const space = Space_Grotesk({
   weight: ["700"],
   subsets: ["latin"],
   display: "swap",
 });
+
+const panchang = localFont({
+  src: '../../../public/Panchang-Variable.ttf',
+  display: 'swap',
+})
 
 const Tagline = () => {
   return (
@@ -55,7 +62,7 @@ const Tagline = () => {
     whileInView={{ opacity: 1 }}
     transition={{ duration: 2, delay: 0.2 }}
   ></motion.div>
-  <p className="z-20 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+  <p className="z-20 mt-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
     “EMBRACE THE UNKNOWN & GLIDE <br /> WITH US THROUGH THE COSMIC <br />{" "}
     SPECTRUM”
   </p>
@@ -64,17 +71,17 @@ const Tagline = () => {
 
         <div className="mt-5 pt-12 flex flex-col lg:flex-row justify-center items-center">
         <motion.div className={`${space.className} lg:mr-20 text-center`}>
-          <h1 className="text-6xl mt-16 py-2 text-yellow-500">5.5L+</h1>
+          <h1 className={`${panchang.className} text-5xl mt-16 py-2 text-yellow-500`}>5.5L+</h1>
           <p className="text-yellow-600">PRIZE POOL</p>
         </motion.div>
 
         <motion.div className={`${space.className} lg:mr-20 lg:px-2 text-center`}>
-          <h1 className="text-6xl py-2 mt-16 text-purple-500">22+</h1>
+          <h1 className={`${panchang.className} text-5xl mt-16 py-2 text-purple-500`}>22+</h1>
           <p className="text-purple-600">COMPETITIONS</p>
         </motion.div>
 
         <motion.div className={`${space.className} text-center`}>
-          <h1 className="text-6xl py-2 mt-16 text-orange-500">6+</h1>
+          <h1 className={`${panchang.className} text-5xl mt-16 py-2 text-orange-500`}>6+</h1>
           <p className="text-orange-600">DEPARTMENTS</p>
         </motion.div>
       </div>
