@@ -12,9 +12,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Spectrum 2024",
+  title: {
+    template: "%s | GEC Spectrum 2024",
+    default: "GEC Spectrum 2024", // a default is required when creating a template
+  },
   description:
-    "Spectrum is the technical festival organized by the Goa College of Engineering.",
+    "Spectrum is the annual technical festival organized by the Goa College of Engineering. This year we bring to you a blend of technical events, workshops, and exhibitions. Join us for an unforgettable cosmic experience!",
   keywords: [
     "Techfest",
     "Technical",
@@ -25,10 +28,25 @@ export const metadata: Metadata = {
     "Fest",
     "Goa College of Engineering",
     "Hackathon",
+    "24 Hour Hackathon",
     "Robo Sumo",
     "RC Boat",
     "Coding",
+    "Drone Race",
   ],
+  // openGraph: {
+  //   title: "Technical Fest 2024",
+  //   description: "Join us for the most exciting technical fest of the year!",
+  //   images: [
+  //     {
+  //       url: "https://example.com/images/og-image.jpg",
+  //       width: 800,
+  //       height: 600,
+  //       alt: "GEC Spectrum 2024",
+  //     },
+  //   ],
+  //   siteName: "GEC Spectrum - Technical Fest",
+  // },
 };
 
 export default function RootLayout({

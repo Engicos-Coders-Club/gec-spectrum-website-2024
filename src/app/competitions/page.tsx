@@ -26,9 +26,7 @@ export default function Competitions() {
       return res.data;
     },
   });
-  useEffect(() => {
-    
-  },[dept]);
+  useEffect(() => {}, [dept]);
 
   if (isPending)
     return (

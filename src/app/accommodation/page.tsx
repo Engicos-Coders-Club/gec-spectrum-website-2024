@@ -1,16 +1,11 @@
-import Navbar from "@/components/Navbar";
 import localFont from "next/font/local";
-import Link from "next/link";
-import { Space_Grotesk } from "next/font/google";
-import Coming from "../ComingSoon/page";
 import PageHead from "../components/PageHead";
+import { Metadata } from "next";
 
-const Space = Space_Grotesk({ subsets: ["latin"], weight: ["700", "600"] });
-
-const panchang = localFont({
-  src: "../../../public/Panchang-Variable.ttf",
-  display: "swap",
-});
+export const metadata: Metadata = {
+  title: 'Accommodation',
+  description: "Travelling from far? Book yourself accomdation on GEC's campus for Spectrum 2024."
+}
 
 export default function Accommodation() {
   return (

@@ -61,7 +61,7 @@ const Navbar = () => {
     {
       name: "SPONSORS",
       icon: <GoPersonAdd color="#FA5622" size={40} />,
-      link: "/#sponsors",
+      link: "/sponsors",
     },
     {
       name: "ACCOMODATION",
