@@ -62,14 +62,14 @@ const Tagline = () => {
     whileInView={{ opacity: 1 }}
     transition={{ duration: 2, delay: 0.2 }}
   ></motion.div>
-  <p className="z-20 mt-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+  <p className="z-20 mt-10 mb-2 pt-8 pb-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
     “EMBRACE THE UNKNOWN & GLIDE <br /> WITH US THROUGH THE COSMIC <br />{" "}
     SPECTRUM”
   </p>
 </div>
 
 
-        <div className="mt-5 pt-12 flex flex-col lg:flex-row justify-center items-center">
+        <div className="mt-8 pt-12 flex flex-col lg:flex-row justify-center items-center">
         <motion.div className={`${space.className} lg:mr-20 text-center`}>
           <h1 className={`${panchang.className} text-4xl mt-16 pt-8 pb-2 lg:text-5xl text-yellow-500`}>5.5L+</h1>
           <p className="text-yellow-600">PRIZE POOL</p>
