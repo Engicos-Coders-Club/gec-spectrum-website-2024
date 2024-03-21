@@ -34,19 +34,6 @@ export const metadata: Metadata = {
     "Coding",
     "Drone Race",
   ],
-  // openGraph: {
-  //   title: "Technical Fest 2024",
-  //   description: "Join us for the most exciting technical fest of the year!",
-  //   images: [
-  //     {
-  //       url: "https://example.com/images/og-image.jpg",
-  //       width: 800,
-  //       height: 600,
-  //       alt: "GEC Spectrum 2024",
-  //     },
-  //   ],
-  //   siteName: "GEC Spectrum - Technical Fest",
-  // },
 };
 
 export default function RootLayout({

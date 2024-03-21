@@ -2,7 +2,7 @@ import Image from "next/image";
 import trophyImage from "../../../public/trophyImage.jpeg";
 import { Space_Grotesk } from "next/font/google";
 import Link from "next/link";
-import { CompetitionCardProps } from "@/utils/types/CompetitionCard";
+import { CompetitionCardProps } from "@/utils/types/types";
 
 const Space = Space_Grotesk({ subsets: ["latin"], weight: ["700", "600"] });
 
