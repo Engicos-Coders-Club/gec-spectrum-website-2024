@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Teamdata } from "@/assets/Teamdata";
+import { Teamdata } from "@/utils/data.example";
 import { Space_Grotesk } from 'next/font/google'
 import { motion } from "framer-motion";
 

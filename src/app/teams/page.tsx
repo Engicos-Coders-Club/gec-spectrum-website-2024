@@ -6,8 +6,8 @@ const page = () => {
   return (
     <div>
       <PageHead body="MEET THE" title="TEAM" faltutext="/*" />
-      {/* <TeamsData /> */}
-      <Coming></Coming>
+      <TeamsData />
+      {/* <Coming></Coming> */}
     </div>
   );
 };
