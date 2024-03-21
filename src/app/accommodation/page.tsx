@@ -64,8 +64,8 @@ export default function Accommodation() {
           </p>
           <ul className="list-disc ml-6">
             <li>
-              Each room can accommodate up to 3 members (boys). For girls, it's
-              1 member per room.
+              Each room can accommodate up to 3 members (boys). For girls,
+              it&apos;s 1 member per room.
             </li>
             <li>Accommodation will be available for 3 days.</li>
             <li>Boys and girls accommodation will be separate.</li>
