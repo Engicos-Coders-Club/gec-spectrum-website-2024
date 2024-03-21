@@ -1,4 +1,4 @@
-import Coming from "../ComingSoon/page";
+import Coming from "../components/ComingSoon";
 import PageHead from "../components/PageHead";
 
 const SponsorsPage = () => {

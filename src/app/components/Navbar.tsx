@@ -175,7 +175,7 @@ const Navbar = () => {
           href={"/accommodation"}
           className="hover:border-dotted hover:outline-dashed outline-1 p-2 rounded-full rounded-tl-none"
         >
-          rooms
+          ROOMS
         </Link>
         <Link
           href={"/#contact"}

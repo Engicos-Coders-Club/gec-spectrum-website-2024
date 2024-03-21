@@ -20,9 +20,10 @@ interface Team {
   paid: boolean;
   payment_screenshot: any;
 }
-
+let i = 1;
 const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
   const [teams, setTeams] = useState<Team[]>([]);
+  const [count, setCount] = useState<number>(0);
   const [token, setToken] = useState<string | null>(null);
   const { slug } = params;
   const searchParams = useSearchParams();
@@ -32,7 +33,6 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
     const token = JSON.parse(localStorage.getItem("user") || "");
     if (token != "") setToken(token);
   }, []);
-  console.log(token);
 
   const {
     data: teamsData,
@@ -41,7 +41,7 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
     error,
     isError,
   } = useQuery({
-    queryKey: ["eventTeams", slug],
+    queryKey: ["eventTeams", slug, count],
     queryFn: async (): Promise<Team[]> => {
       const res = await axiosInstance.get(`events/get-teams/${slug}`, {
         headers: {
@@ -59,7 +59,7 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
     isPending: isVerifyPending,
   } = useMutation({
     mutationFn: (teamId: any): Promise<any> => {
-      return axiosInstance.patch(`payments/update-payment-status/${teamId}`, {
+      return axiosInstance.patch(`payments/update-payment-status/${teamId}`,{}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -67,6 +67,7 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
     },
     onSuccess: () => {
       toast.success("Successfully updated payment status in as Admin!");
+      setCount((prev)=>prev+1)
     },
     onError: (error: AxiosError<BackendResponseDataProps, any>) => {
       console.log(error.response?.data);
@@ -172,12 +173,15 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
                     />
                   </td>
                   <td className="border text-black px-2 sm:px-4 py-2">
-                    <button
-                      onClick={() => updatePaymentStatus(team._id)}
-                      className="bg-green-500 p-4 hover:bg-green-600 rounded-md"
-                    >
-                      Approve
-                    </button>
+                    {
+                      !team.paid &&
+                      <button
+                        onClick={() => updatePaymentStatus(team._id)}
+                        className="bg-green-500 p-4 hover:bg-green-600 rounded-md"
+                      >
+                        Approve
+                      </button>
+                    }
                   </td>
                 </tr>
               ))}
