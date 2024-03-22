@@ -20,59 +20,6 @@ const space = Space_Grotesk({
   display: "swap",
 });
 
-let links = [
-  {
-    name: "HOME",
-    icon: <IoHomeOutline color="#FA5622" size={40} />,
-    link: "/",
-  },
-  // {
-  //   name: "ABOUT",
-  //   icon: <AiOutlineQuestion color="#FA5622" size={40} />,
-  //   link: "/",
-  // },
-  {
-    name: "SCHEDULE",
-    icon: <GoClock color="#FA5622" size={40} />,
-    link: "/schedule",
-  },
-  {
-    name: "COMPETITIONS",
-    icon: <BsTrophy color="#FA5622" size={40} />,
-    link: "/competitions",
-  },
-  // {
-  //   name: "EVENTS",
-  //   icon: <PiTicketThin color="#FA5622" size={40} />,
-  //   link: "/Events",
-  // },
-  {
-    name: "EXPO",
-    icon: <PiGlobeLight color="#FA5622" size={40} />,
-    link: "/#expo",
-  },
-  {
-    name: "SPONSORS",
-    icon: <GoPersonAdd color="#FA5622" size={40} />,
-    link: "/#sponsors",
-  },
-  {
-    name: "ACCOMODATION",
-    icon: <MdOutlineLocalHotel color="#FA5622" size={40} />,
-    link: "/accommodation",
-  },
-  {
-    name: "TEAM",
-    icon: <AiOutlineTeam color="#FA5622" size={40} />,
-    link: "/teams",
-  },
-  {
-    name: "CONTACT",
-    icon: <FiPhone color="#FA5622" size={40} />,
-    link: "/#contact",
-  },
-];
-
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -80,6 +27,58 @@ const Navbar = () => {
     setIsOpen(!isOpen);
     setMenu(!menu);
   };
+  let links = [
+    {
+      name: "HOME",
+      icon: <IoHomeOutline color="#FA5622" size={40} />,
+      link: "/",
+    },
+    // {
+    //   name: "ABOUT",
+    //   icon: <AiOutlineQuestion color="#FA5622" size={40} />,
+    //   link: "/",
+    // },
+    {
+      name: "SCHEDULE",
+      icon: <GoClock color="#FA5622" size={40} />,
+      link: "/schedule",
+    },
+    {
+      name: "COMPETITIONS",
+      icon: <BsTrophy color="#FA5622" size={40} />,
+      link: "/competitions",
+    },
+    // {
+    //   name: "EVENTS",
+    //   icon: <PiTicketThin color="#FA5622" size={40} />,
+    //   link: "/Events",
+    // },
+    {
+      name: "EXPO",
+      icon: <PiGlobeLight color="#FA5622" size={40} />,
+      link: "/expo",
+    },
+    {
+      name: "SPONSORS",
+      icon: <GoPersonAdd color="#FA5622" size={40} />,
+      link: "/#sponsors",
+    },
+    {
+      name: "ACCOMODATION",
+      icon: <MdOutlineLocalHotel color="#FA5622" size={40} />,
+      link: "/accommodation",
+    },
+    {
+      name: "TEAM",
+      icon: <AiOutlineTeam color="#FA5622" size={40} />,
+      link: "/teams",
+    },
+    {
+      name: "CONTACT",
+      icon: <FiPhone color="#FA5622" size={40} />,
+      link: "/#contact",
+    },
+  ];
 
   return (
     <div className="sticky border-b border-white top-0 left-0 w-full flex items-center justify-between z-[100] p-5 text-white sm:px-10 px-6 bg-bgDark">
@@ -166,7 +165,7 @@ const Navbar = () => {
           COMPETITIONS
         </Link>
         <Link
-          href={"/#expo"}
+          href={"/expo"}
           className="hover:border-dotted hover:outline-dashed outline-1 p-2 rounded-full rounded-tl-none"
         >
           EXPO
