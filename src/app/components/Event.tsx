@@ -22,7 +22,7 @@ const space = Space_Grotesk({
 const Event = () => {
   return (
     <div
-      className={`${space.className} w-screen mt-96 relative sm:mb-80 lg:mb-5`}
+      className={`${space.className} w-screen mt-20 relative sm:mb-80 lg:mb-5`}
     >
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50">
         <div className="absolute w-full h-full bg-gradient-to-br from-[#6B46C1] via-[#5933A6] to-[#4C1D95] rounded-[6rem] filter blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50"></div>

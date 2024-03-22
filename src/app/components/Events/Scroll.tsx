@@ -15,13 +15,13 @@ const ScrollText: React.FC<ScrollTextProps> = ({ text }) => {
   const Text = text.split("_");
 
   return (
-    <div className="flex mt-24 md:h-10 lg:h-16 border-y-2 whitespace-nowrap md:text-3xl text-xl w-full overflow-hidden bg-opacity-50 bg-gray-500">
+    <div className="flex mt-4 md:h-10 lg:h-16 border-y whitespace-nowrap md:text-2xl text-xl w-full overflow-hidden ">
       <motion.div
         className="flex items-center text-yellow-500"
         animate={{ x: "-100%" }}
         initial={{ x: "0%" }}
         transition={{
-          duration: 10,
+          duration: 20,
           repeat: Infinity,
           yoyo: Infinity,
           ease: "linear",
@@ -30,7 +30,7 @@ const ScrollText: React.FC<ScrollTextProps> = ({ text }) => {
         {Text.map((word, index) => (
           <p className={`${space.className} font-thin`} key={index}>
             <span className="mx-3">{word}</span>
-            <span className="mx-3">{"<<"}</span>
+            <span className="mx-3  text-gray-200 font-bold">{"<<"}</span>
           </p>
         ))}
       </motion.div>
@@ -39,7 +39,7 @@ const ScrollText: React.FC<ScrollTextProps> = ({ text }) => {
         animate={{ x: "-100%" }}
         initial={{ x: "0%" }}
         transition={{
-          duration: 10,
+          duration: 20,
           repeat: Infinity,
           yoyo: Infinity,
           ease: "linear",
@@ -48,7 +48,7 @@ const ScrollText: React.FC<ScrollTextProps> = ({ text }) => {
         {Text.map((word, index) => (
           <p className={`${space.className} font-thin`} key={index}>
             <span className="mx-3">{word}</span>
-            <span className="mx-3">{"<<"}</span>
+            <span className="mx-3 text-gray-200 font-bold">{"<<"}</span>
           </p>
         ))}
       </motion.div>

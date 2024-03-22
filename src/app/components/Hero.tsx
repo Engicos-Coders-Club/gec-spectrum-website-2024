@@ -17,8 +17,8 @@ const panchang = localFont({
 
 const Hero = () => {
   return (
-    <div className="h-screen w-full flex flex-col items-center justify-center headerbackground">
-      <div className="h-screen w-screen flex flex-col items-center justify-center text-center">
+    <div className="h-[83svh] w-full flex flex-col items-center justify-center headerbackground">
+      <div className="h-[80vh] w-screen flex flex-col items-center justify-center text-center">
         <motion.h1
           className={`${panchang.className} xl:text-9xl text-3xl font-bold line-clamp-1 md:text-7xl sm:text-6xl lg:text-8xl`}
           initial={{ opacity: 0 }}
@@ -39,19 +39,19 @@ const Hero = () => {
         </motion.div>
       </div>
       <motion.div
-        className="bg-[#FFBA25] w-11/12 md:h-16 rounded-xl rounded-tl-none flex items-center md:justify-between text-black md:flex-row flex-col justify-center my-5 md:text-2xl text-sm "
+        className="bg-[#FFBA25] w-11/12 md:h-16 rounded-xl rounded-tl-none flex items-center md:justify-between text-black md:flex-row flex-col justify-center my-5 "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 2, ease: "easeIn" }}
+        transition={{ duration: 2, ease: "easeIn" }}
       >
         <div>
-          <h3 className="md:ml-16 font-bold">
-            3<span className="text-purple-500">RD.</span> 4
-            <span className="text-purple-500">TH.</span> APRIL
+          <h3 className="md:ml-16 font-bold text-xl md:text-2xl">
+            3<span className="text-primary">RD.</span> 4
+            <span className="text-primary">TH.</span> APRIL
           </h3>
         </div>
         <div>
-          <h3 className="md:mr-16 font-bold">
+          <h3 className="md:mr-16 font-bold text-sm md:text-2xl">
             / * GOA COLLEGE OF ENGINEERING */
           </h3>
         </div>

@@ -12,8 +12,8 @@ interface ExploreTileProps {}
 
 const ExploreTile: React.FC<ExploreTileProps> = () => {
   return (
-    <div className="px-20 relative">
-      <div className="flex flex-row  items-center space-y-0 space-x-9">
+    <div className="mt-10 mb-24 px-8 sm:px-10 md:px-20 relative">
+      <div className="flex flex-row items-center justify-center md:justify-start space-y-0 space-x-9">
         <div className="relative">
           <h1
             className={`text-lg md:text-2xl lg:text-5xl text-white font-semibold uppercase ${panchang.className}`}
