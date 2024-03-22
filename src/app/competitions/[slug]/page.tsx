@@ -326,23 +326,27 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
               {renderCoordinators()}
             </div>
           </div>
-          <div className="flex flex-col gap-5 uppercase">
-            <p className="text-mango font-semibold text-3xl mt-10">DETAILS</p>
-            <p className="text-mango font-semibold text-xl">
+          <div className="flex flex-col gap-5">
+            <p className="text-mango font-semibold text-3xl mt-10 uppercase">
+              DETAILS
+            </p>
+            <p className="text-mango font-semibold text-xl uppercase">
               DURATION:{" "}
               <span className="text-white">
                 {isSuccess && data && data.event?.duration}
               </span>
             </p>
-            <p className="text-mango font-semibold text-xl">
+            <p className="text-mango font-semibold text-xl uppercase">
               max participation limit:{" "}
               <span className="text-white">
                 {isSuccess &&
                   checkParticipationLimit(data?.event?.participationLimit)}
               </span>
             </p>
-            <p className="font-semibold text-xl">Rules and Regulations</p>
-            <ul className=" list-disc ml-5">
+            <p className="font-semibold text-xl uppercase text-mango">
+              Rules and Regulations
+            </p>
+            <ul className=" list-disc ml-5 text-gray-200 text-justify md:text-left">
               {isSuccess &&
                 data &&
                 data.event?.rulesAndRegulations.map((rule: any, i: number) => (

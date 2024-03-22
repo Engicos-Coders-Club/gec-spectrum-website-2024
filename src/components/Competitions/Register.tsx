@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import CustomInput from "./Input";
-import Image from "next/image";
 import { MdDelete } from "react-icons/md";
 import { IoAdd, IoInformation } from "react-icons/io5";
 import { BiInfoCircle } from "react-icons/bi";

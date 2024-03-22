@@ -6,7 +6,7 @@ import { useState } from "react"
 import Link from "next/link"
 
 import FullWidth from "./FullWidth"
-import LoginModal from "@/app/components/LoginModal"
+import LoginModal from "../../app/components/Authentication/CoordinatorLoginModal";
 import { motion } from "framer-motion"
 function Navbar() {
   const [open, setOpen] = useState(false)

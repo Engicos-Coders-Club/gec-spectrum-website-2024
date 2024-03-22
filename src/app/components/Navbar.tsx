@@ -12,6 +12,7 @@ import { BsTrophy } from "react-icons/bs";
 import { PiGlobeLight, PiTicketThin } from "react-icons/pi";
 import { VscClose, VscMenu } from "react-icons/vsc";
 import Image from "next/image";
+import LoginModal from "./Authentication/CoordinatorLoginModal";
 
 const space = Space_Grotesk({
   weight: ["300"],
@@ -26,7 +27,6 @@ const Navbar = () => {
     setIsOpen(!isOpen);
     setMenu(!menu);
   };
-
   let links = [
     {
       name: "HOME",
@@ -171,6 +171,12 @@ const Navbar = () => {
           EXPO
         </Link>
         <Link
+          href={"/accommodation"}
+          className="hover:border-dotted hover:outline-dashed outline-1 p-2 rounded-full rounded-tl-none"
+        >
+          ROOMS
+        </Link>
+        <Link
           href={"/#contact"}
           className="hover:border-dotted hover:outline-dashed outline-1 p-2 rounded-full rounded-tl-none"
         >
@@ -186,7 +192,16 @@ const Navbar = () => {
         >
           BROCHURE
         </a>
+        {/* <button
+          className="bg-mango hover:bg-mango/80 p-2 px-5 rounded-full rounded-tl-none text-black font-semibold"
+          onClick={handleSignin}
+        >
+          SIGN IN
+        </button> */}
       </motion.div>
+
+      {/* login modal for participants */}
+      {/* {loginModal && <LoginModal onClose={handleSignin} />} */}
     </div>
   );
 };
