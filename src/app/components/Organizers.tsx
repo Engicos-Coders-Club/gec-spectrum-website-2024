@@ -8,10 +8,10 @@ const panchang = localFont({
 });
 const organizers = () => {
   return (
-    <div className="">
+    <div className=" pt-5 md:p-0">
       <div className="relative">
         <motion.h1
-          className={`${panchang.className} font-semibold bg-[#06050a] w-fit md:text-5xl ml-10 text-4xl`}
+          className={`${panchang.className} font-semibold bg-[#06050a] w-fit md:text-5xl ml-2 text-3xl `}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.2 }}
