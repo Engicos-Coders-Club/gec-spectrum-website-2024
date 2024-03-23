@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import { axiosInstance } from "../../../../../../axios-config";
 import { useSearchParams } from "next/navigation";
+import {CSVLink} from 'react-csv';
+
 
 interface Event {
   eventName: string;
@@ -48,13 +50,34 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
     enabled: !!token,
   });
 
+  const csvData = teamsData ? teamsData.map(team => ({
+    Team: team.teamName,
+    Leader: team.leader,
+    Participants: team.participants.map(participant => `${participant} `).join(', '),
+    Paid: team.paid ? "Yes" : "No"
+  })) : [];
+
+
+
+
   if (isError) <div className="text-white text-lg">Something went wrong!</div>;
   return (
     <div className="mt-10 mx-10 overflow-x-hidden">
+      <div className="mt-10 mx-10 overflow-x-hidden">
       <p className="text-mango uppercase font-semibold">Event Name</p>
+      <div className="flex gap-6">
+
+      
       <h1 className="text-2xl sm:text-3xl md:text-4xl justify-center capitalize">
         {eventName}
+  
       </h1>
+      <CSVLink data={csvData} filename={`${eventName}`} className="bg-green-400 p-3 ">
+  Download CSV
+</CSVLink>
+</div>
+</div>
+    
 
       <div className="flex justify-between items-center uppercase font-semibold mt-8">
         <p className="text-mango ">Team Details</p>
