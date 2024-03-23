@@ -3,9 +3,10 @@ import PageHead from "../components/PageHead";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Accommodation',
-  description: "Travelling from far? Book yourself accomdation on GEC's campus for Spectrum 2024."
-}
+  title: "Accommodation",
+  description:
+    "Travelling from far? Book yourself accomdation on GEC's campus for Spectrum 2024.",
+};
 
 export default function Accommodation() {
   return (
@@ -60,9 +61,11 @@ export default function Accommodation() {
           <ul className="list-disc ml-6">
             <li>
               Each room can accommodate up to 3 members (boys). For girls,
-              it&apos;s 1 member per room.
+              it&apos;s 1 or 2 members per room.
             </li>
-            <li>Accommodation will be available for 3 days.</li>
+            <li>
+              Accommodation will be available for 3 days (starting 2nd Apr).
+            </li>
             <li>Boys and girls accommodation will be separate.</li>
             <li>
               Attached washrooms are not available. Only common washrooms are
@@ -74,10 +77,15 @@ export default function Accommodation() {
             <strong>Payment Details:</strong>
           </p>
           <ul className="list-disc ml-6">
-            <li>Rooms can be booked as a team or on an individual basis:</li>
+            <li>Total Accommodation Cost from 2nd to 5th April:</li>
             <ul className="list-square ml-6">
-              <li>Team Payment - ₹ 1500 / team (3 days)</li>
-              <li>Individual Payment - ₹ 500 / person (3 days)</li>
+              <li>
+                <strong>Male:</strong> ₹500/person (Double/Triple Sharing)
+              </li>
+              <li>
+                <strong>Female:</strong> ₹500/person (Double Sharing) OR ₹1000
+                (Individual).
+              </li>
             </ul>
             <li>
               <strong className="text-mango">Note:</strong> Payment will be
@@ -108,8 +116,8 @@ export default function Accommodation() {
             </li>
             <li>Guests are expected not to litter.</li>
             <li>
-              Guests are expected to vacate the rooms by 5th April 2024, 4:00
-              PM.
+              Guests are expected to vacate the rooms by 5th April 2024, 10:00
+              AM.
             </li>
             <li>No refunds for full 3 days of accommodation.</li>
             <li>
@@ -127,7 +135,7 @@ export default function Accommodation() {
             Got Doubts? Contact
           </h2>
           <p>
-            Samarth Gopal{" "}
+            Samarth Narvekar
             <a
               href="https://api.whatsapp.com/send?phone=+919834941891"
               className="text-blue-500 hover:text-blue-200 mx-2"

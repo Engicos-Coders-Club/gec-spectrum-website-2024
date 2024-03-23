@@ -33,6 +33,23 @@ const checkParticipationLimit = (limit: number): string => {
   return limit.toString();
 };
 
+const generatePriceLabel = (eventId: string): string => {
+  if (
+    eventId === "65f738fad2db77daa4efccc2" ||
+    eventId === "65f73980d2db77daa4efcdfd"
+  )
+    return "/ BOT";
+  return "/ TEAM";
+};
+
+const reRouteCompetitionLink = (eventId: string, pathname: string): string => {
+  if (eventId === "65f5c3460197f7897ad54efa")
+    return "https://unstop.com/hackathons/spectrathon-goa-college-of-engineering-930111";
+  else if (eventId === "65f5b01e0197f7897ad54ecb")
+    return "https://unstop.com/p/celestial-canvas-uiux-design-competition-goa-college-of-engineering-939386";
+  return pathname + "/register";
+};
+
 const getDateFormat = (dateString: string): string => {
   const date = new Date(dateString);
 
@@ -104,7 +121,10 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
       );
   };
 
-  if (isError) return <div>Oops! We lost data in the space 🚀</div>;
+  if (isError)
+    return (
+      <div className="text-center my-4">Oops! We lost data in the space 🚀</div>
+    );
   return (
     <div className="min-h-screen w-screen overflow-hidden">
       <div className="w-screen">
@@ -158,14 +178,14 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                     }}
                     className="border flex items-center gap-2 border-gray-500 text-sm py-1 px-4 rounded-full"
                   >
-                    <RiLink />
+                    <RiLink className="text-blue-500" />
                     SHARE EVENT
                   </button>
                   <Link
                     href={"https://www.instagram.com/gecspectrum/"}
                     className="border flex items-center gap-2 border-gray-500 text-sm py-1 px-4 rounded-full"
                   >
-                    <FaInstagram />
+                    <FaInstagram className="text-pink-500" />
                     FOLLOW US
                   </Link>
                 </div>
@@ -176,7 +196,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                   <p className="text-justify">
                     {isSuccess && data && data?.event?.introduction}
                   </p>
-                  <div className="flex gap-5 items-center mt-10">
+                  <div className="flex gap-5 items-center mt-10 flex-wrap">
                     <a
                       href={isSuccess ? data.event.rulebook : "#"}
                       target="_blank"
@@ -186,17 +206,24 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                     >
                       RULEBOOK
                     </a>
-                    <Link
-                      href={
-                        data?.event?.eventName?.split("(")[0] === "Spectrathon"
-                          ? "https://unstop.com/p/spectrathon-spectrum-2024-goa-college-of-engineering-930111"
-                          : pathname + "/register"
-                      }
-                    >
-                      <button className=" border border-primary rounded-full rounded-tl-none p-1.5 px-5 bg-primary hover:bg-violet-700">
-                        REGISTER
-                      </button>
-                    </Link>
+                    {isSuccess && (
+                      <Link
+                        href={reRouteCompetitionLink(data.event._id, pathname)}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <button className=" border border-primary rounded-full rounded-tl-none p-1.5 px-5 bg-primary hover:bg-violet-700">
+                          REGISTER
+                        </button>
+                      </Link>
+                    )}
+                    {data?.event?._id === "65f5c3460197f7897ad54efa" && (
+                      <Link href="https://docs.google.com/document/d/13L4HzIT0P11BKg1DkxAILj7Zgb-dKQQHr4is51iX7Zg/edit?usp=drivesdk">
+                        <button className=" border border-mango rounded-full rounded-tl-none p-1.5 px-5 bg-mango hover:bg-yellow-500 text-bgDark">
+                          PROBLEM STATEMENTS
+                        </button>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -258,10 +285,14 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                 FEE
               </div>
               {isSuccess && (
-                <div className={`mr-7 ${space.className} text-[#FFBA25]`}>
-                  <h2 className=" font-bold leading-10 md:text-3xl text-xl">
-                    ₹ {data && data?.event?.fee}
-                  </h2>
+                <div
+                  className={`mr-7 ${space.className} text-[#FFBA25] md:text-3xl text-xl font-bold`}
+                >
+                  ₹ {data && data?.event?.fee}
+                  <span className="text-lg italic font-normal">
+                    {" "}
+                    {generatePriceLabel(data.event._id)}
+                  </span>
                 </div>
               )}
             </div>

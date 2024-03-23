@@ -4,7 +4,6 @@ import { axiosInstance } from "../../../../../axios-config";
 import localFont from "next/font/local";
 import Register from "@/components/Competitions/Register";
 import Link from "next/link";
-import { HiExternalLink } from "react-icons/hi";
 import { GoLink, GoLinkExternal } from "react-icons/go";
 import { getTeamData } from "@/utils/getTeamSize";
 import { useEffect } from "react";
@@ -24,15 +23,18 @@ const CompetitionsRegister = ({ params }: { params: { slug: string } }) => {
     },
   });
 
-  // Hackathon redirect
+  // Hackathon, UI/UX redirect
   useEffect(() => {
     if (params.slug === "65f5c3460197f7897ad54efa")
       redirect(
         "https://unstop.com/p/spectrathon-spectrum-2024-goa-college-of-engineering-930111"
       );
+    else if (params.slug === "65f5b01e0197f7897ad54ecb")
+      redirect(
+        "https://unstop.com/p/celestial-canvas-uiux-design-competition-goa-college-of-engineering-939386"
+      );
   }, [params.slug]);
 
-  // console.log(data);
   return (
     <div className="w-full my-6">
       {isSuccess && (
