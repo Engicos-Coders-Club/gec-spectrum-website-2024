@@ -117,7 +117,7 @@ const Footer = () => {
               </p>
               <div className="flex justify-center md:justify-normal gap-5 sm:mx-0 mx-10">
                 <Link
-                  href="https://www.instagram.com/gec.students.council24/"
+                  href="https://www.instagram.com/gecspectrum/"
                   className="size-9 bg-mango text-black hover:bg-mango/80 rounded-md flex justify-center items-center"
                   title="Instagram"
                 >

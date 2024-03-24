@@ -12,6 +12,7 @@ import { fileToBase64 } from "@/utils/base64Conversion";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import { freeEventImage } from "./FreeEventImg";
+import IdImageUploadField from "./IdImageUploadField";
 
 type Member = {
   name: string;
@@ -153,6 +154,18 @@ export default function Register({
     setMembers((members) => members.filter((_, i) => i !== index));
   };
 
+  const handleImageChange = (event) => {
+    const selectedImage = event.target.files[0];
+    // Check if image size exceeds limit (in bytes)
+    const maxSize = 5 * 1024 * 1024; // 5MB (example limit)
+    if (selectedImage && selectedImage.size <= maxSize) {
+      setImage(selectedImage);
+    } else {
+      alert("Image size exceeds limit (5MB)");
+      setImage(null);
+    }
+  };
+
   return !isSuccess ? (
     <div className="w-full flex justify-center items-center bg-black mb-4 mt-20">
       <div className="p-3 w-3/4 sm:w-2/3 mb-4 bg-black border border-dashed border-[#FFBA25] flex justify-center">
@@ -219,15 +232,7 @@ export default function Register({
                     required={true}
                     helper="For all future communications. Preferably Whatsapp."
                   />
-                  <p className="text-white text-sm mt-5">
-                    ID Card Photo/ID Proof
-                  </p>
-                  <input
-                    type="file"
-                    required={true}
-                    name={`member.${index}.idcard`}
-                    className="mt-3 p-2 border-b border-[#FFBA25] bg-black w-full outline-none"
-                  />
+                  <IdImageUploadField index={index} />
                 </div>
               </div>
             </div>
