@@ -29,10 +29,10 @@ const CompetitionsRegister = ({ params }: { params: { slug: string } }) => {
       redirect(
         "https://unstop.com/p/spectrathon-spectrum-2024-goa-college-of-engineering-930111"
       );
-    else if (params.slug === "65f5b01e0197f7897ad54ecb")
-      redirect(
-        "https://unstop.com/p/celestial-canvas-uiux-design-competition-goa-college-of-engineering-939386"
-      );
+    // else if (params.slug === "65f5b01e0197f7897ad54ecb")
+    //   redirect(
+    //     "https://unstop.com/p/celestial-canvas-uiux-design-competition-goa-college-of-engineering-939386"
+    //   );
   }, [params.slug]);
 
   return (

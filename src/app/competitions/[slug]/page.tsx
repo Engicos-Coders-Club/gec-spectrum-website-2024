@@ -45,8 +45,8 @@ const generatePriceLabel = (eventId: string): string => {
 const reRouteCompetitionLink = (eventId: string, pathname: string): string => {
   if (eventId === "65f5c3460197f7897ad54efa")
     return "https://unstop.com/hackathons/spectrathon-goa-college-of-engineering-930111";
-  else if (eventId === "65f5b01e0197f7897ad54ecb")
-    return "https://unstop.com/p/celestial-canvas-uiux-design-competition-goa-college-of-engineering-939386";
+  // else if (eventId === "65f5b01e0197f7897ad54ecb")
+  //   return "https://unstop.com/p/celestial-canvas-uiux-design-competition-goa-college-of-engineering-939386";
   return pathname + "/register";
 };
 
