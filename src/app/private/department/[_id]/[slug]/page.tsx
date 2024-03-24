@@ -4,8 +4,7 @@ import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import { axiosInstance } from "../../../../../../axios-config";
 import { useSearchParams } from "next/navigation";
-import {CSVLink} from 'react-csv';
-
+import Link from "next/link";
 
 interface Event {
   eventName: string;
@@ -50,12 +49,7 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
     enabled: !!token,
   });
 
-  const csvData = teamsData ? teamsData.map(team => ({
-    Team: team.teamName,
-    Leader: team.leader,
-    Participants: team.participants.map(participant => `${participant} `).join(', '),
-    Paid: team.paid ? "Yes" : "No"
-  })) : [];
+
 
 
 
@@ -70,12 +64,22 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
       
       <h1 className="text-2xl sm:text-3xl md:text-4xl justify-center capitalize">
         {eventName}
-  
+     
+
       </h1>
-      <CSVLink data={csvData} filename={`${eventName}`} className="bg-green-400 p-3 ">
-  Download CSV
-</CSVLink>
+      <Link href={`/private/teams_data/${slug}`}>
+          <button className="bg-mango p-3 rounded-lg">
+            View all data 
+          </button>
+        </Link>
+      
+
+      
+
+
+
 </div>
+
 </div>
     
 
@@ -125,7 +129,8 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
             {isSuccess &&
               teamsData.map((team, index) => (
                 <tr key={index} className="bg-white">
-                  <td className="border text-black px-2 sm:px-4 py-2">
+
+                  <td className="border text-black cursor-pointer hover:translate-x-5  hover:font-bold px-2 sm:px-4 py-2">
                     {team.teamName}
                   </td>
                   <td className="border text-black px-2 sm:px-4 py-2">
