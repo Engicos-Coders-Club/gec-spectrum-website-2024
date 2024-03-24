@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     "Coding",
     "Drone Race",
   ],
+  metadataBase: new URL("https://gecspectrum.com"),
 };
 
 export default function RootLayout({

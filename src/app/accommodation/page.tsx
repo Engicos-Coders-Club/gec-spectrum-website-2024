@@ -60,8 +60,8 @@ export default function Accommodation() {
           </p>
           <ul className="list-disc ml-6">
             <li>
-              Each room can accommodate up to 3 members (boys). For girls,
-              it&apos;s 1 or 2 members per room.
+              For boys, each room can accommodate up to 3 members (boys). For
+              girls, it&apos;s 1 or 2 members per room.
             </li>
             <li>
               Accommodation will be available for 3 days (starting 2nd Apr).
@@ -80,7 +80,8 @@ export default function Accommodation() {
             <li>Total Accommodation Cost from 2nd to 5th April:</li>
             <ul className="list-square ml-6">
               <li>
-                <strong>Male:</strong> ₹500/person (Double/Triple Sharing)
+                <strong>Male:</strong> ₹500/person (Double/Triple Sharing) OR
+                ₹1000 (Individual).
               </li>
               <li>
                 <strong>Female:</strong> ₹500/person (Double Sharing) OR ₹1000
@@ -99,6 +100,7 @@ export default function Accommodation() {
             T & C
           </h2>
           <ul className="list-disc ml-6">
+            <li>Check in starts on 2nd April 2024, 3:00PM onwards.</li>
             <li>
               Guests should carry a valid Gov ID proof and College ID (if
               applicable) during the time of payment.
