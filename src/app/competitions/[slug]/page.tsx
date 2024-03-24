@@ -38,8 +38,13 @@ const generatePriceLabel = (eventId: string): string => {
     eventId === "65f738fad2db77daa4efccc2" ||
     eventId === "65f73980d2db77daa4efcdfd"
   )
-    return "/ BOT";
-  return "/ TEAM";
+    return " / BOT";
+  return " / TEAM";
+};
+
+const displayFee = (fee: number): string => {
+  if (fee === 0) return "FREE";
+  return `₹ ${fee}`;
 };
 
 const reRouteCompetitionLink = (eventId: string, pathname: string): string => {
@@ -288,9 +293,8 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                 <div
                   className={`mr-7 ${space.className} text-[#FFBA25] md:text-3xl text-xl font-bold`}
                 >
-                  ₹ {data && data?.event?.fee}
+                  {displayFee(data?.event?.fee)}
                   <span className="text-lg italic font-normal">
-                    {" "}
                     {generatePriceLabel(data.event._id)}
                   </span>
                 </div>

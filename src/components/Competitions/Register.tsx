@@ -11,6 +11,7 @@ import PaymentPreview from "./PaymentPreview";
 import { fileToBase64 } from "@/utils/base64Conversion";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { freeEventImage } from "./FreeEventImg";
 
 type Member = {
   name: string;
@@ -36,10 +37,12 @@ export default function Register({
   minTeam,
   maxTeam,
   eventId,
+  eventFee,
 }: {
   minTeam: number;
   maxTeam: number;
   eventId: string;
+  eventFee: number;
 }) {
   const [members, setMembers] = useState<{ count: number }[]>([]);
 
@@ -86,9 +89,6 @@ export default function Register({
     e.preventDefault();
     const form = e.currentTarget as HTMLFormElement;
     const formData = new FormData(form);
-    // const paymentFormData = new FormData();
-    // upload payment to formdata
-    // paymentFormData.append("file", formData.get("paymentSS") as Blob);
 
     // Convert id files to base64 for all members
     const memberPromises = members.map(async (count, index) => {
@@ -101,10 +101,15 @@ export default function Register({
     // Wait for all member promises to complete
     await Promise.all(memberPromises);
 
-    const updatePayment = formData.get(`payment_screenshot`) as File;
-    const base64idcard = await fileToBase64(updatePayment);
-    formData.delete(`payment_screenshot`);
-    formData.append(`payment_screenshot`, base64idcard);
+    // if event is paid, show payment screenshot; else show 'free event' image
+    if (eventFee > 0) {
+      const updatePayment = formData.get(`payment_screenshot`) as File;
+      const base64idcard = await fileToBase64(updatePayment);
+      formData.delete(`payment_screenshot`);
+      formData.append(`payment_screenshot`, base64idcard);
+    } else {
+      formData.append(`payment_screenshot`, freeEventImage);
+    }
 
     // form object to be sent to backend
     const dataObj = {} as formProps;
@@ -124,8 +129,6 @@ export default function Register({
     dataObj.teamName = formData.get("teamName") as string;
     dataObj.payment_screenshot = formData.get("payment_screenshot") as string;
     onDetailsSubmit(dataObj);
-
-    // onPaymentSubmit(paymentFormData);
   };
 
   // handle add member
@@ -242,7 +245,7 @@ export default function Register({
             <IoAdd className="text-xl" /> ADD MEMBER
           </button>
 
-          <PaymentPreview />
+          {eventFee > 0 && <PaymentPreview />}
           <button
             className="mx-auto bg-[#FFBA25] text-black text-lg my-7 w-[269px] px-3 py-2 rounded-full rounded-tl-none hover:bg-yellow-600 uppercase font-bold disabled:bg-gray-500"
             type="submit"

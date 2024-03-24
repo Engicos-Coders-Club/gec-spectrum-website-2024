@@ -107,6 +107,7 @@ const CompetitionsRegister = ({ params }: { params: { slug: string } }) => {
             minTeam={data?.event.teamSize.min}
             maxTeam={data?.event.teamSize.max}
             eventId={params.slug}
+            eventFee={data?.event.fee}
           />
         </>
       )}
