@@ -2,12 +2,9 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
-import { axiosInstance } from "../../../../../../axios-config";
+import { axiosInstance } from "../../../../../axios-config";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { CSVLink } from "react-csv";
-import { FaDownload } from "react-icons/fa6";
-
 interface Event {
     eventName: string;
   }
@@ -42,8 +39,6 @@ interface TeamData {
 const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
   const { slug } = params;
   const [token, setToken] = useState<string | null>(null);
-  const searchParams = useSearchParams();
-  const eventName = searchParams.get("eventName");
   
 
   useEffect(() => {
@@ -51,7 +46,7 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
     if (token != "") setToken(token);
     
   }, []);
-  
+  const eventName = localStorage.getItem("eventName");
 
 
 
@@ -83,57 +78,15 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
     return <div className="text-white text-lg">Something went wrong!</div>;
   }
 
-  const csvData = teamsData.flatMap(team => {
-    // Create an array for the team data
-    const teamData: { [key: string]: string }[] = [];
-  
-    // Flatten the team.participants array
-    const flatParticipants = team.participants.flat();
-  
-    // If there are no participants, add a row for the team only
-    if (flatParticipants.length === 0) {
-      teamData.push({
-        Team: team.team.teamName || '',
-        Leader: team.team.leader || '',
-        Paid: team.team.paid ? "Yes" : "No",
-        'Participant Name': '',
-        'Participant Email': '',
-        'Participant Contact': ''
-      });
-    } else {
-      // Add a row for each participant
-      team.participants.forEach((participantGroup, groupIndex) => {
-        participantGroup.forEach((participant, participantIndex) => {
-          teamData.push({
-            Team: team.team.teamName || '',
-            Leader: team.team.leader || '',
-            Paid: team.team.paid ? "Yes" : "No",
-            'Participant Name': participant.name || '',
-            'Participant Email': participant.email || '',
-            'Participant Contact': participant.contact || ''
-          });
-        });
-      });
-    }
-  
-    return teamData;
-  });
   return (
     <div className="mt-10 mx-10 overflow-x-hidden">
       <div className="mt-10 mx-10 overflow-x-hidden">
-      <p className="text-mango uppercase font-semibold">Event Name</p>
-      <div className="flex gap-4">
-  
-  <h1 className="text-3xl">{eventName}</h1>
-  <CSVLink data={csvData} className="bg-green-400 p-2 flex gap-2" filename={`${eventName}.csv`}>
-  <FaDownload size={20} />
-    Download CSV
-  </CSVLink>
-</div>
+        <p className="text-mango uppercase font-semibold">Event Name</p>
      
+     {
+eventName
+     }
       </div>
-  
-  
 
       <div className="flex justify-between items-center uppercase font-semibold mt-8">
         <p className="text-mango ">Team Details</p>

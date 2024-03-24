@@ -108,12 +108,20 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
   //   }
   // };
 
+
   return (
     <div className="mt-10 mx-10 overflow-x-hidden">
       <p className="text-mango uppercase font-semibold">Event Name</p>
+      <div className="flex gap-6">
+
+      
       <h1 className="text-2xl sm:text-3xl md:text-4xl justify-center capitalize">
         {eventName}
+  
       </h1>
+ 
+</div>
+   
 
       <p className="text-sm text-gray-200 block md:hidden mt-2">
         (scroll horizontal =&gt;)
