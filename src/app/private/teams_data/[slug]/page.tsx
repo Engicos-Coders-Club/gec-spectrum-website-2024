@@ -5,6 +5,9 @@ import { useQuery } from "@tanstack/react-query";
 import { axiosInstance } from "../../../../../axios-config";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+interface Event {
+    eventName: string;
+  }
 interface Participant {
   _id: string;
   name: string;
@@ -36,14 +39,16 @@ interface TeamData {
 const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
   const { slug } = params;
   const [token, setToken] = useState<string | null>(null);
-  const searchParams = useSearchParams();
-
-  const eventName = searchParams.get("eventName");
+  
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("user") || "");
     if (token != "") setToken(token);
+    
   }, []);
+  const eventName = localStorage.getItem("eventName");
+
+
 
   const {
     data: teamsData,
@@ -77,6 +82,10 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
     <div className="mt-10 mx-10 overflow-x-hidden">
       <div className="mt-10 mx-10 overflow-x-hidden">
         <p className="text-mango uppercase font-semibold">Event Name</p>
+     
+     {
+eventName
+     }
       </div>
 
       <div className="flex justify-between items-center uppercase font-semibold mt-8">
