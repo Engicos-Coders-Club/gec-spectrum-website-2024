@@ -23,7 +23,8 @@ const AdminNavbar = () => {
 
   return (
     <>
-      <div className="max-w-screen-xl mx-auto mt-10 flex justify-end gap-4">
+      <br />
+      <div className="mx-4 sm:mx-10 flex justify-center sm:justify-end gap-4">
         {userRole === "admin" && (
           <Link
             href="/private/department"
@@ -55,6 +56,8 @@ const AdminNavbar = () => {
         )}
         <LogoutButton />
       </div>
+      <br />
+      <hr className="border-slate-500" />
     </>
   );
 };

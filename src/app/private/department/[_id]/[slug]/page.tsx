@@ -7,10 +7,11 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { CSVLink } from "react-csv";
 import { FaDownload } from "react-icons/fa6";
+import { GoArrowRight } from "react-icons/go";
 
 interface Event {
-    eventName: string;
-  }
+  eventName: string;
+}
 interface Participant {
   _id: string;
   name: string;
@@ -44,16 +45,11 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
   const [token, setToken] = useState<string | null>(null);
   const searchParams = useSearchParams();
   const eventName = searchParams.get("eventName");
-  
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("user") || "");
     if (token != "") setToken(token);
-    
   }, []);
-  
-
-
 
   const {
     data: teamsData,
@@ -83,57 +79,60 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
     return <div className="text-white text-lg">Something went wrong!</div>;
   }
 
-  const csvData = teamsData.flatMap(team => {
+  const csvData = teamsData.flatMap((team) => {
     // Create an array for the team data
     const teamData: { [key: string]: string }[] = [];
-  
+
     // Flatten the team.participants array
     const flatParticipants = team.participants.flat();
-  
+
     // If there are no participants, add a row for the team only
     if (flatParticipants.length === 0) {
       teamData.push({
-        Team: team.team.teamName || '',
-        Leader: team.team.leader || '',
+        Team: team.team.teamName || "",
+        Leader: team.team.leader || "",
         Paid: team.team.paid ? "Yes" : "No",
-        'Participant Name': '',
-        'Participant Email': '',
-        'Participant Contact': ''
+        "Participant Name": "",
+        "Participant Email": "",
+        "Participant Contact": "",
+        "Participant College": "",
       });
     } else {
       // Add a row for each participant
       team.participants.forEach((participantGroup, groupIndex) => {
         participantGroup.forEach((participant, participantIndex) => {
           teamData.push({
-            Team: team.team.teamName || '',
-            Leader: team.team.leader || '',
+            Team: team.team.teamName || "",
+            Leader: team.team.leader || "",
             Paid: team.team.paid ? "Yes" : "No",
-            'Participant Name': participant.name || '',
-            'Participant Email': participant.email || '',
-            'Participant Contact': participant.contact || ''
+            "Participant Name": participant.name || "",
+            "Participant Email": participant.email || "",
+            "Participant Contact": participant.contact || "",
+            "Participant College": participant.college || "",
           });
         });
       });
     }
-  
+
     return teamData;
   });
+
   return (
     <div className="mt-10 mx-10 overflow-x-hidden">
-      <div className="mt-10 mx-10 overflow-x-hidden">
-      <p className="text-mango uppercase font-semibold">Event Name</p>
-      <div className="flex gap-4">
-  
-  <h1 className="text-3xl">{eventName}</h1>
-  <CSVLink data={csvData} className="bg-green-400 p-2 flex gap-2" filename={`${eventName}.csv`}>
-  <FaDownload size={20} />
-    Download CSV
-  </CSVLink>
-</div>
-     
+      <div className="overflow-x-hidden">
+        <p className="text-mango uppercase font-semibold">Event Name</p>
+        <div className="flex gap-4 flex-wrap justify-between w-full">
+          <h1 className="font-semibold text-2xl md:text-3xl">{eventName}</h1>
+          <CSVLink
+            data={csvData}
+            className="text-sm md:text-base bg-lime-400 p-2 flex gap-2 text-black"
+            filename={`${eventName}_${new Date().toLocaleString("en-GB")}.csv`}
+          >
+            <FaDownload size={20} />
+            Download CSV
+          </CSVLink>
+        </div>
       </div>
-  
-  
 
       <div className="flex justify-between items-center uppercase font-semibold mt-8">
         <p className="text-mango ">Team Details</p>
@@ -142,8 +141,8 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
         </p>
       </div>
 
-      <p className="text-sm text-gray-200 block md:hidden">
-        (scroll horizontal =&gt;)
+      <p className="text-sm text-gray-200 md:hidden flex items-center gap-2 mt-4">
+        scroll horizontal <GoArrowRight className="size-3" />
       </p>
       <div className="overflow-x-auto">
         <table className="table-auto mt-2 w-full justify-center items-center mb-10 text-left">
@@ -188,14 +187,14 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
                   {teamData.team && teamData.team.leader}
                 </td>
                 <td className="border flex flex-col text-black px-2 sm:px-4 py-2">
-                  <table >
+                  <table>
                     <thead>
                       <tr>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Contact</th>
                         <th>College</th>
-                        
+
                         <th>ID Card</th>
                       </tr>
                     </thead>
@@ -207,12 +206,12 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
                               participant: Participant,
                               participantIndex: number
                             ) => (
-                              <tr key={`${groupIndex}-${participantIndex}`} >
+                              <tr key={`${groupIndex}-${participantIndex}`}>
                                 <td>{participant.name}</td>
                                 <td>{participant.email}</td>
                                 <td className="p-3">{participant.contact}</td>
-                                <td className="p-3" >{participant.college}</td>
-                               
+                                <td className="p-3">{participant.college}</td>
+
                                 <td>
                                   <Image
                                     src={participant.idcard}
