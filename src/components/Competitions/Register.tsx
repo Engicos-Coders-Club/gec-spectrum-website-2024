@@ -154,18 +154,6 @@ export default function Register({
     setMembers((members) => members.filter((_, i) => i !== index));
   };
 
-  const handleImageChange = (event) => {
-    const selectedImage = event.target.files[0];
-    // Check if image size exceeds limit (in bytes)
-    const maxSize = 5 * 1024 * 1024; // 5MB (example limit)
-    if (selectedImage && selectedImage.size <= maxSize) {
-      setImage(selectedImage);
-    } else {
-      alert("Image size exceeds limit (5MB)");
-      setImage(null);
-    }
-  };
-
   return !isSuccess ? (
     <div className="w-full flex justify-center items-center bg-black mb-4 mt-20">
       <div className="p-3 w-3/4 sm:w-2/3 mb-4 bg-black border border-dashed border-[#FFBA25] flex justify-center">
