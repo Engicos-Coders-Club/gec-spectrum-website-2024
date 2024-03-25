@@ -1,6 +1,6 @@
 import PageHead from "../components/PageHead";
 import chetak from "@/assets/sponsors/chetak-event.svg";
-import ktm from "@/assets/sponsors/ktm-event.jpg";
+import ktm from "@/assets/sponsors/KTM-event.jpg";
 import yanni from "@/assets/sponsors/yanni-plast.jpg";
 import husqvarna from "@/assets/sponsors/husqvarna-motorcycles-event.png";
 import Image from "next/image";
