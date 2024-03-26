@@ -5,6 +5,7 @@ import { IoAdd } from "react-icons/io5";
 import { useMutation } from "@tanstack/react-query";
 import { axiosInstance } from "../../../axios-config";
 import { AxiosError } from "axios";
+import RedirectUser from "./RedirectUser";
 
 interface ResponseDataProps {
   msg: string;
@@ -22,13 +23,13 @@ const AddParticipants = ({
   const [teamId, setTeamId] = useState<string | null>(null);
   //   set min max and current remaning participants in local storage
   useEffect(() => {
-    localStorage.setItem("ogMin", JSON.stringify(minTeam));
-    localStorage.setItem("ogMax", JSON.stringify(maxTeam));
-    localStorage.setItem("currentParticipants", JSON.stringify(1));
+    // localStorage.setItem("ogMin", JSON.stringify(minTeam));
+    // localStorage.setItem("ogMax", JSON.stringify(maxTeam));
+    // localStorage.setItem("currentParticipants", JSON.stringify(1));
 
     // get team id
     setTeamId(JSON.parse(localStorage.getItem("teamId") || "null"));
-  }, [maxTeam, minTeam]);
+  }, []);
 
   //   Reload page confirmation
   useEffect(() => {
@@ -79,7 +80,7 @@ const AddParticipants = ({
         setSubmit(true);
         localStorage.clear();
       } else if (variables.type === "add") {
-        toast.success("Member Added Successfully");
+        toast.success("Member Added Successfully! Add more 👇");
         setCurrParticipants((prev) => prev + 1);
         (document.getElementById("participantForm") as HTMLFormElement).reset();
       }
@@ -101,6 +102,7 @@ const AddParticipants = ({
     type: string
   ) => {
     e.preventDefault(); // Prevent default form submission
+    // if team id doesn't exist, don't submit team
     if (!teamId) {
       toast.error("Team ID not found! Create a team");
       return false;
@@ -141,17 +143,19 @@ const AddParticipants = ({
       "college",
       (document.getElementById("memberCollege") as HTMLInputElement).value
     );
-    const obj = Object.fromEntries(formData.entries());
-    console.log(obj);
+    // const obj = Object.fromEntries(formData.entries());
+    // console.log(obj);
     onDetailsSubmit({ data: formData, type: type });
   };
 
-  console.log("Current Participants: ", currParticipants);
   return (
     <>
+      {!submit && (
+        <h2 className="text-mango text-2xl text-center">Add More Members</h2>
+      )}
       {!submit ? (
-        <form id="participantForm">
-          <div className="w-full flex flex-col space-y-3">
+        <form id="participantForm" className="w-full flex flex-col">
+          <div className="grow flex flex-col space-y-3">
             <p className="text-mango text-bold underline underline-offset-4 decoration-wavy decoration-primary font-medium uppercase">
               Member - {currParticipants + 1}
             </p>
@@ -199,15 +203,17 @@ const AddParticipants = ({
             </div>
           </div>
 
-          <p className="text-center text-red-600 mt-5">
-            {currParticipants >= maxTeam ? "Max team size reached." : ""}
+          <p className="text-center text-red-600 mt-5 font-medium">
+            {currParticipants >= maxTeam
+              ? "Max team size reached."
+              : `${maxTeam - currParticipants} members can be added`}
           </p>
 
           {/* ------- to add team member ------- */}
           <button
             type="submit"
             onClick={(e) => handleAddMember(e, "add")}
-            className="text-[#FFBA25] bg-yellow-700 rounded-full rounded-tl-none px-3 py-2 mt-6 mb-10 mx-auto flex gap-2 text-sm font-bold hover:bg-yellow-900 disabled:bg-gray-700 disabled:text-gray-500"
+            className="text-bgDark bg-mango rounded-full rounded-tl-none px-3 py-2 mt-6 mb-10 mx-auto flex gap-2 text-sm font-bold hover:bg-yellow-900 disabled:bg-gray-700 disabled:text-gray-500"
             disabled={currParticipants >= maxTeam || isPending}
           >
             <IoAdd className="text-xl" />{" "}
@@ -220,11 +226,11 @@ const AddParticipants = ({
             type="submit"
             disabled={currParticipants < minTeam || isPending}
           >
-            submit team
+            {isPending ? "Adding..." : "SUBMIT FINAL TEAM"}
           </button>
         </form>
       ) : (
-        <p>Team Submitted</p>
+        <RedirectUser />
       )}
     </>
   );
