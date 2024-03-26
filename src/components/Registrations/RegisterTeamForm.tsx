@@ -17,8 +17,8 @@ const RegisterTeamForm = ({
         <div className="p-3 mt-3 border flex space-x-2 items-start text-center">
           <BiInfoCircle className="text-2xl text-tangerine hidden sm:block" />
           <p className="text-sm font-light flex">
-            Registration confirmation will be communicated through email and
-            will reflect on your profile in 1-2 days.
+            Please fill all members details at once. Members cannot be added
+            individually later.
           </p>
         </div>
         <div className="w-full flex flex-col justify-center mt-3 space-y-3 text-[#FFBA25]">
