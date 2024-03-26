@@ -8,6 +8,7 @@ import { GoLink, GoLinkExternal } from "react-icons/go";
 import { getTeamData } from "@/utils/getTeamSize";
 import { useEffect } from "react";
 import { redirect } from "next/navigation";
+import RegisterForm from "@/components/Registrations/RegisterForm";
 
 const panchang = localFont({
   src: "../../../../../public/Panchang-Variable.ttf",
@@ -103,7 +104,7 @@ const CompetitionsRegister = ({ params }: { params: { slug: string } }) => {
                 ))}
             </div>
           </div>
-          <Register
+          <RegisterForm
             minTeam={data?.event.teamSize.min}
             maxTeam={data?.event.teamSize.max}
             eventId={params.slug}

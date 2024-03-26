@@ -44,7 +44,7 @@ const PaymentPreview = () => {
           accept="image/*"
           required={true}
           onChange={(e) => handleFileUpload(e)}
-          name={`payment_screenshot`}
+          name={`payment`}
           className="bg-gray-700 w-3/4"
         />
         <p className="text-mango font-bold">Upload Screenshot of Payment</p>
