@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
+import { axiosInstance } from "../../../../axios-config";
 
 type Event = {
   eventId: string;
@@ -57,27 +58,21 @@ const Page = () => {
   }, []);
 
   useEffect(() => {
-    isAdmin &&
-      fetch("https://gec-spectrum-backend-2024.2.sg-1.fl0.io/api/v1/events")
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          return response.text(); // use text(), not json()
-        })
-        .then((data) => {
-          console.log(data);
-          // If the data is in JSON format, parse it
-          if (data) {
-            const jsonData = JSON.parse(data);
-            console.log(jsonData.events);
-            setEvents(jsonData.events);
-          }
-        })
-        .catch((error) => {
-          console.log("Fetch error: ", error);
-        });
-  }, [isAdmin]);
+  isAdmin && axiosInstance.get("events")
+    .then((response) => {
+      if (response.status !== 200) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.data;
+    })
+    .then((data) => {
+      console.log(data.events);
+      setEvents(data.events);
+    })
+    .catch((error) => {
+      console.log("Axios error: ", error);
+    });
+}, [isAdmin]);
 
   return (
     <div className="pt-20 sm:p-8 md:pt-20 lg:p-16 xl:p-20">
