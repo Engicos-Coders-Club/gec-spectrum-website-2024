@@ -9,13 +9,26 @@ const SponsorsPage = () => {
   return (
     <>
       <PageHead title="Sponsors" faltutext="$*" body="esteemed" />
-      {/* <div className="w-full h-full flex items-center justify-center flex-col mt-10">
-        <h3 className="text-4xl my-6">TITLE SPONSORS</h3>
-        <div className="w-2/3 h-3/5 md:w-3/5 md:h-2/3 flex gap-5 flex-col md:flex-row">
+      <div className="w-full h-full flex items-center justify-center flex-col mt-10">
+        <h3 className="text-4xl my-6 font-semibold">CO SPONSORS</h3>
+        <div className="mx-auto w-full">
+          <a
+            title="Yanni Infra Projects"
+            href="https://www.yanniinfraprojects.com/"
+            className={`bg-[#fff] w-32 mx-auto h-14 md:w-64 md:h-32 relative object-contain hover:scale-105 transition-transform duration-300 ease-in-out py-2 px-3 md:py-5 flex justify-center rounded-xl border-gray-400 border-4`}
+          >
+            <Image
+              src={yanni}
+              height={yanni.height}
+              width={yanni.width}
+              alt="Yanni Infra Projects"
+              className="object-contain"
+            />
+          </a>
           <div className="bg-white w-full h-full"></div>
           <div className="bg-white w-full h-full"></div>
         </div>
-      </div> */}
+      </div>
       <div className="w-full h-full flex items-center justify-center flex-col mb-10">
         <h3 className="text-xl md:text-3xl mt-10 mb-6 uppercase font-semibold flex items-center gap-2">
           <span className="bg-primary size-3 md:size-5 rounded-full block">
@@ -47,19 +60,6 @@ const SponsorsPage = () => {
               height={ktm.height}
               width={ktm.width}
               alt="KTM Race Motorcycles"
-              className="object-contain"
-            />
-          </a>
-          <a
-            title="Yanni Infra Projects"
-            href="https://www.yanniinfraprojects.com/"
-            className={`bg-[#fff] w-32 h-14 md:w-64 md:h-32 relative object-contain hover:scale-105 transition-transform duration-300 ease-in-out py-2 px-3 md:py-5 flex justify-center rounded-xl border-gray-400 border-4`}
-          >
-            <Image
-              src={yanni}
-              height={yanni.height}
-              width={yanni.width}
-              alt="Yanni Infra Projects"
               className="object-contain"
             />
           </a>
