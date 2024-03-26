@@ -4,13 +4,11 @@ import { RiLink } from "react-icons/ri";
 import Link from "next/link";
 import { FaInstagram } from "react-icons/fa";
 import Image from "next/image";
-import Ticket from "./Ticket";
 export default function starparty() {
   return (
     <main>
       <PageHead body="CAMP OUT" faltutext="(*)" title="STAR PARTY" />
       <div className="flex">
-        <Ticket></Ticket>
       </div>
 
       <section className="flex gap-4 items-start flex-wrap md:flex-nowrap mx-5 xl:max-w-screen-xl xl:mx-auto my-5">
