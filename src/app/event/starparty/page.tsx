@@ -9,19 +9,27 @@ export default function starparty() {
     <main>
       <PageHead body="CAMP OUT" faltutext="**" title="STAR PARTY" />
       <div className=" pt-8 pb-8 hidden lg:flex">
-        <img className=" h-[9rem] ml-[-12rem] w-auto" src="/astroticket.png" alt="" />
-        <img className=" h-[9rem] w-auto"   src="/astroticket.png" alt="" />
+        <img
+          className=" h-[9rem] ml-[-12rem] w-auto"
+          src="/astroticket.png"
+          alt=""
+        />
+        <img className=" h-[9rem] w-auto" src="/astroticket.png" alt="" />
 
-        <img className=" h-[9rem] w-auto  "  src="/astroticket.png" alt="" />
+        <img className=" h-[9rem] w-auto  " src="/astroticket.png" alt="" />
 
-        <img className=" h-[9rem] w-auto "  src="/astroticket.png" alt="" />
-        <img className=" h-[9rem] w-auto"  src="/astroticket.png" alt="" />
-        <img className=" h-[9rem] w-auto "  src="/astroticket.png" alt="" />
-        <img className=" h-[9rem] mr-[-5rem] w-auto hidden lg:block "  src="/astroticket.png" alt="" />
+        <img className=" h-[9rem] w-auto " src="/astroticket.png" alt="" />
+        <img className=" h-[9rem] w-auto" src="/astroticket.png" alt="" />
+        <img className=" h-[9rem] w-auto " src="/astroticket.png" alt="" />
+        <img
+          className=" h-[9rem] mr-[-5rem] w-auto hidden lg:block "
+          src="/astroticket.png"
+          alt=""
+        />
       </div>
       <section className="flex gap-4 items-start flex-wrap md:flex-nowrap mx-5 xl:max-w-screen-xl xl:mx-auto my-5">
-        <div >
-        <div className="lg:px-6 py-4 px-1  bg-white/10  my-4 flex flex-col gap-5 w-full md:w-fit">
+        <div>
+          <div className="lg:px-6 py-4 px-1  bg-white/10  my-4 flex flex-col gap-5 w-full md:w-fit">
             <div className="flex font-bold flex-col gap-1 justify-start">
               <p className="text-sm">Date</p>{" "}
               <p className="text-lg md:text-xl font-bold text-mango">
@@ -114,9 +122,9 @@ export default function starparty() {
             <li>
               <strong className=" text-[#FFBA25]">Campfire:</strong> Gather
               around the crackling fire as we share stories, laughter, and
-              warmth under the vast expanse of the night sky. It's the perfect
-              opportunity to connect with fellow enthusiasts and share your
-              passion for astronomy.{" "}
+              warmth under the vast expanse of the night sky. It&apos;s the
+              perfect opportunity to connect with fellow enthusiasts and share
+              your passion for astronomy.{" "}
             </li>
             <br />
             <li>
@@ -145,7 +153,7 @@ export default function starparty() {
                 GEC Campus Trail:
               </strong>{" "}
               Embark on a guided trail around the GEC campus and discover hidden
-              gems and scenic spots under the moonlit sky. It's a chance to
+              gems and scenic spots under the moonlit sky. It&apos;s a chance to
               explore the beauty of our surroundings and soak in the serenity of
               the night.
             </li>
@@ -161,10 +169,10 @@ export default function starparty() {
             </li>
             <br />
             <li className=" font-bold">
-              But that's not all! Our Star Party will also feature a special
-              treat: the Morning Planet Parade. Witness the breathtaking sight
-              of the planets as they align in the predawn sky, a rare spectacle
-              that you won't want to miss.
+              But that&apos;s not all! Our Star Party will also feature a
+              special treat: the Morning Planet Parade. Witness the breathtaking
+              sight of the planets as they align in the predawn sky, a rare
+              spectacle that you won&apos;t want to miss.
             </li>
           </ul>
           {/* --------------------------  event tnc -------------------------- */}
@@ -203,11 +211,11 @@ export default function starparty() {
           </h3>
           <ul className="list-disc ml-6">
             <li>
-              Participants shouldn't be under any kind of influence like
+              Participants shouldn&apos;t be under any kind of influence like
               ALCOHOL/ CIGARETTE.
             </li>
             <li>
-              Participants shouldn't be in possession of any
+              Participants shouldn&apos;t be in possession of any
               alcoholic/tobacco/narcotics substances.
             </li>
           </ul>
