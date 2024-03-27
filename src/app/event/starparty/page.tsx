@@ -7,13 +7,21 @@ import Image from "next/image";
 export default function starparty() {
   return (
     <main>
-      <PageHead body="CAMP OUT" faltutext="(*)" title="STAR PARTY" />
-      <div className="flex">
-      </div>
+      <PageHead body="CAMP OUT" faltutext="**" title="STAR PARTY" />
+      <div className=" pt-8 pb-8 hidden lg:flex">
+        <img className=" h-[9rem] ml-[-12rem] w-auto" src="/astroticket.png" alt="" />
+        <img className=" h-[9rem] w-auto"   src="/astroticket.png" alt="" />
 
+        <img className=" h-[9rem] w-auto  "  src="/astroticket.png" alt="" />
+
+        <img className=" h-[9rem] w-auto "  src="/astroticket.png" alt="" />
+        <img className=" h-[9rem] w-auto"  src="/astroticket.png" alt="" />
+        <img className=" h-[9rem] w-auto "  src="/astroticket.png" alt="" />
+        <img className=" h-[9rem] mr-[-5rem] w-auto hidden lg:block "  src="/astroticket.png" alt="" />
+      </div>
       <section className="flex gap-4 items-start flex-wrap md:flex-nowrap mx-5 xl:max-w-screen-xl xl:mx-auto my-5">
-        <div>
-          <div className="px-6 py-4 bg-white/10  my-4 flex flex-col gap-5 w-full md:w-fit">
+        <div >
+        <div className="lg:px-6 py-4 px-1  bg-white/10  my-4 flex flex-col gap-5 w-full md:w-fit">
             <div className="flex font-bold flex-col gap-1 justify-start">
               <p className="text-sm">Date</p>{" "}
               <p className="text-lg md:text-xl font-bold text-mango">
@@ -81,7 +89,7 @@ export default function starparty() {
             </div>
           </div>
           <Image
-            className=" h-[30rem] w-auto"
+            className=" h-[30rem] w-auto hidden lg:block"
             src="https://s3-alpha-sig.figma.com/img/f972/7036/2937d51126333d078052e33941f4ad86?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=SCpUBCVyc1vC625up7GA78bzAGKaILn2tsuJ7CYY-lzQZPa3V4~0THkGG5K4rD3rWr55qAtjxFVYfj7iYJzA7p-d1KRX~KNAg3FLPSR73COLKBy~w1J4ebzCnG2TF7caCKArmEqIW39aQZAdZ0JZgMyZC9fKFG7cx4Z~EZWfzNyNPk3BKHPEF1lW1DkK5FDsdNgnZlNTHHorQ4XKk3s6do4mP7eMnbJ8L~uJMIQxPJsB3OAAuDQfQKRAYTZGyuLPvaQCGNy75GBZOTFLYlIQTL~Rp7-tYNbX6Nx8A9sJSEL6auJcUKbW21M3sOGf0VvSBkYg2hSDH9RlO-05F1vmDw__"
             height={200}
             width={200}
@@ -210,23 +218,23 @@ export default function starparty() {
           </p>
 
           {/* --------------------------  event contact -------------------------- */}
-          <h2 className="font-bold mt-6 mb-2 text-lg md:text-2xl text-tangerine">
+          <h2 className="font-bold mt-6 mb-2 text-lg md:text-2xl text-tangerine text-center lg:text-left">
             CONTACTS */{" "}
           </h2>
-          <p>
+          <p className="text-center lg:text-left">
             Omkar Gavade (President):
             <a
               href="https://api.whatsapp.com/send?phone=918010969462"
-              className="text-blue-500 hover:text-blue-200 mx-2"
+              className="text-blue-500 hover:text-blue-200 mx-2 text-nowrap"
             >
               (+91 80109 69462)
             </a>
           </p>
-          <p>
+          <p className="text-center lg:text-left">
             Siya Pockle (Tech advisor):
             <a
               href="https://api.whatsapp.com/send?phone=917057292485"
-              className="text-blue-500 hover:text-blue-200 mx-2"
+              className="text-blue-500 hover:text-blue-200 mx-2 text-nowrap"
             >
               (+91 70572 92485)
             </a>
