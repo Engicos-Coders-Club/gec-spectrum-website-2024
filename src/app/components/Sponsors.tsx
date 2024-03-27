@@ -19,10 +19,10 @@ const panchang = localFont({
 const Sponsors = () => {
   return (
     <div
-      className={`${space.className} w-screen h-screen flex items-center  flex-col`}
+      className={`${space.className} w-screen h-screen flex items-center flex-col my-10`}
       id="sponsors"
     >
-      <div className="flex w-full items-center justify-center relative mt-20">
+      <div className="flex w-full items-center justify-center relative mt-10">
         <div className="h-0.5 gradient-five-colors w-full absolute"></div>
         <h2
           className={`${panchang.className} text-4xl sm:text-5xl md:text-7xl font-bold z-10 bg-[#06050a]`}
@@ -31,7 +31,12 @@ const Sponsors = () => {
         </h2>
       </div>
       <div className="w-full flex items-center justify-center flex-col mt-10">
-        <h3 className="text-5xl my-6 font-semibold">CO SPONSORS</h3>
+        <h3 className="text-xl md:text-3xl mt-10 mb-6 uppercase font-semibold flex items-center gap-2">
+          <span className="bg-mango size-3 md:size-5 rounded-full block">
+            {" "}
+          </span>{" "}
+          Co SPONSORS
+        </h3>
         <div className="mx-auto w-full">
           <a
             title="Yanni Infra Projects"
