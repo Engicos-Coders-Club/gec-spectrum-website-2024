@@ -10,7 +10,7 @@ const SponsorsPage = () => {
     <>
       <PageHead title="Sponsors" faltutext="$*" body="esteemed" />
       <div className="w-full h-full flex items-center justify-center flex-col mt-10">
-        <h3 className="text-4xl my-6 font-semibold">CO SPONSORS</h3>
+        <h3 className="text-5xl my-6 font-semibold">CO SPONSORS</h3>
         <div className="mx-auto w-full">
           <a
             title="Yanni Infra Projects"

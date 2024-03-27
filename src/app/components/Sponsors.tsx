@@ -24,7 +24,7 @@ const Sponsors = () => {
         <h2 className={`${panchang.className} text-4xl sm:text-5xl md:text-7xl font-bold z-10 bg-[#06050a]`}>SPONSORS</h2>
        </div>
        <div className="w-full flex items-center justify-center flex-col mt-10">
-        <h3 className="text-4xl my-6 font-semibold">CO SPONSORS</h3>
+        <h3 className="text-5xl my-6 font-semibold">CO SPONSORS</h3>
         <div className="mx-auto w-full">
           <a
             title="Yanni Infra Projects"
