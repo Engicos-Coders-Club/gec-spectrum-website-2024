@@ -32,6 +32,8 @@ const SponsorsPage = () => {
           </a>
         </div>
       </div>
+      <br />
+      {/* ------------ Event sponsors ----------------- */}
       <div className="w-full h-full flex items-center justify-center flex-col mb-10">
         <h3 className="text-xl md:text-3xl mt-10 mb-6 uppercase font-semibold flex items-center gap-2">
           <span className="bg-primary size-3 md:size-5 rounded-full block">

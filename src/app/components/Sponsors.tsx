@@ -31,12 +31,7 @@ const Sponsors = () => {
         </h2>
       </div>
       <div className="w-full flex items-center justify-center flex-col mt-10">
-        <h3 className="text-xl md:text-3xl mt-10 mb-6 uppercase font-semibold flex items-center gap-2">
-          <span className="bg-primary size-3 md:size-5 rounded-full block">
-            {" "}
-          </span>{" "}
-          Co SPONSORS
-        </h3>
+        <h3 className="text-5xl my-6 font-semibold">CO SPONSORS</h3>
         <div className="mx-auto w-full">
           <a
             title="Yanni Infra Projects"
@@ -53,6 +48,8 @@ const Sponsors = () => {
           </a>
         </div>
       </div>
+      <br />
+      <br />
       <div className="w-full h-full flex items-center justify-center flex-col bg-black">
         <h3 className="text-xl md:text-3xl mt-10 mb-6 uppercase font-semibold flex items-center gap-2">
           <span className="bg-primary size-3 md:size-5 rounded-full block">

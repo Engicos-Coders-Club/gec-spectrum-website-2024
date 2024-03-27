@@ -100,7 +100,7 @@ const RegisterForm = ({
     <>
       <div className="w-full flex justify-center items-center bg-black mb-4 mt-20">
         {!submit ? (
-          <div className="p-3 w-3/4 sm:w-2/3 mb-4 bg-black border border-dashed border-[#FFBA25] flex justify-start flex-col gap-3">
+          <div className="p-3 mx-2 w-full sm:w-2/3 mb-4 bg-black border border-dashed border-[#FFBA25] flex justify-start flex-col gap-3">
             {!teamId && (
               <RegisterTeamForm
                 eventFee={eventFee}

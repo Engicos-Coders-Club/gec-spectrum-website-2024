@@ -17,8 +17,8 @@ const RegisterTeamForm = ({
         <div className="p-3 mt-3 border flex space-x-2 items-start text-center">
           <BiInfoCircle className="text-2xl text-tangerine hidden sm:block" />
           <p className="text-sm font-light flex">
-            Please fill all members details at once. Members cannot be added
-            individually later.
+            Team details are submitted first, followed by member details. Form
+            progress cannot be saved for later.
           </p>
         </div>
         <div className="w-full flex flex-col justify-center mt-3 space-y-3 text-[#FFBA25]">
@@ -57,16 +57,19 @@ const RegisterTeamForm = ({
             accept="image/*"
             name="idcard"
           />
-          {eventFee > 0 && <PaymentPreview />}
         </div>
+        {eventFee > 0 && <PaymentPreview />}
 
         <button
-          className="mx-auto bg-[#FFBA25] text-black text-lg my-7 w-[269px] px-3 py-2 rounded-full rounded-tl-none hover:bg-yellow-600 uppercase font-bold disabled:bg-gray-500"
+          className="mx-auto bg-[#FFBA25] text-black md:text-lg my-7 px-8 py-2 rounded-full rounded-tl-none hover:bg-yellow-600 uppercase font-bold disabled:bg-gray-500"
           type="submit"
           disabled={isPending}
         >
           {isPending ? "Registering..." : "Submit Team"}
         </button>
+        <p className="text-sm text-center">
+          Members are added after submitting team.
+        </p>
       </form>
     </>
   );
