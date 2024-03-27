@@ -48,11 +48,11 @@ const Navbar = () => {
       icon: <BsTrophy color="#FA5622" size={40} />,
       link: "/competitions",
     },
-    // {
-    //   name: "EVENTS",
-    //   icon: <PiTicketThin color="#FA5622" size={40} />,
-    //   link: "/Events",
-    // },
+    {
+      name: "EVENTS",
+      icon: <PiTicketThin color="#FA5622" size={40} />,
+      link: "/event",
+    },
     {
       name: "EXPO",
       icon: <PiGlobeLight color="#FA5622" size={40} />,
@@ -125,10 +125,10 @@ const Navbar = () => {
                     <Link
                       href={link.link}
                       onClick={handleClick}
-                      className="h-[12.5%] w-full flex border-y border-[#FA5622] group text-white hover:bg-white hover:text-black duration-500 hover:font-semibold text-lg sm:text-2xl md:text-7xl justify-center items-center gap-5"
+                      className="h-[11.1%] w-full flex border-y border-[#FA5622] group text-white hover:bg-white hover:text-black duration-500 hover:font-semibold text-lg sm:text-2xl md:text-7xl justify-center items-center gap-5"
                       key={index}
                     >
-                      <div className="w-[12.5%] group-hover:w-0 h-full flex items-center justify-center ml-5 sm:ml-0">
+                      <div className="w-[11.1%] group-hover:w-0 h-full flex items-center justify-center ml-5 sm:ml-0">
                         {link.icon}
                       </div>
                       <div className="w-[90%] group-hover:w-full group-hover:ml-10 h-full flex justify-between sm:text-3xl text-2xl items-center duration-500">
@@ -153,7 +153,7 @@ const Navbar = () => {
         </Link>
       </motion.div>
       <motion.div
-        className={`${space.className} hidden md:flex gap-1 sm:gap-7 items-center justify-center uppercase`}
+        className={`${space.className} hidden md:flex gap-1 sm:gap-7 items-center justify-center uppercase text-sm`}
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -163,6 +163,12 @@ const Navbar = () => {
           className="hover:border-dotted hover:outline-dashed outline-1 p-2 rounded-full rounded-tl-none"
         >
           COMPETITIONS
+        </Link>
+        <Link
+          href={"/event"}
+          className="hover:border-dotted hover:outline-dashed outline-1 p-2 rounded-full rounded-tl-none"
+        >
+          EVENTS
         </Link>
         <Link
           href={"/sponsors"}
