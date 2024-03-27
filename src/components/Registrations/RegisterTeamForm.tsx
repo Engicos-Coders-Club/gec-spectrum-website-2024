@@ -44,9 +44,11 @@ const RegisterTeamForm = ({
           />
           <CustomInput
             label="Team Leader College"
+            required={true}
             placeholder="College Full Name (Location)"
             type="text"
             name="leaderCollege"
+            helper="If not applicable to you, type 'NA'."
           />
           <CustomInput
             label="ID Card"

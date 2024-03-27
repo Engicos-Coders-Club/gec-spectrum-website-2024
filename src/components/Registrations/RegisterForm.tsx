@@ -26,7 +26,7 @@ const RegisterForm = ({
 }) => {
   const [teamId, setTeamId] = useState<string | null>(null);
   const [submit, setSubmit] = useState(false);
-
+  const [addParticipant, setAddParticipant] = useState<Boolean>(false);
   // remove any previous localstorage data
   useEffect(() => {
     localStorage.clear();
@@ -54,6 +54,7 @@ const RegisterForm = ({
       //   temporarily store team id in local storage
       localStorage.setItem("teamId", JSON.stringify(data.teamId));
       setTeamId(data.teamId);
+      addParticipantsCheckHandler(maxTeam, minTeam);
     },
     onError: (err: AxiosError<ResponseDataProps>) => {
       if (err.response?.data?.msg) {
@@ -69,13 +70,13 @@ const RegisterForm = ({
   // HANDLERS -----------------------------------
   const addParticipantsCheckHandler = (max: number, min: number) => {
     if (min === 1 && max - 1 > 0) {
-      toast.success("Team Added");
       const response = confirm("Do you want to add more participants?");
-      if (response === true) return true;
-      setSubmit(true);
-      return false;
-    }
-    return max - 1;
+      if (response === true) setAddParticipant(true);
+      else {
+        setAddParticipant(false);
+        setSubmit(true);
+      }
+    } else setAddParticipant(Boolean(max - 1));
   };
 
   const handleTeamSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -107,10 +108,13 @@ const RegisterForm = ({
                 isPending={isTeamSubmitPending}
               />
             )}
-            {isTeamSuccess && addParticipantsCheckHandler(maxTeam, minTeam) && (
+
+            {isTeamSuccess && addParticipant && (
               <AddParticipants minTeam={minTeam - 1} maxTeam={maxTeam - 1} />
             )}
-            {isTeamSuccess && maxTeam - 1 === 0 && <h2>Team Registered</h2>}
+            {isTeamSuccess && maxTeam - 1 === 0 && (
+              <h2 className="text-center">Team Registered</h2>
+            )}
           </div>
         ) : (
           // If team is submitted and no more participants to add
