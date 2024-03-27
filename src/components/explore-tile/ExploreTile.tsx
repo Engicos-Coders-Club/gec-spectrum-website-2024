@@ -28,6 +28,7 @@ const ExploreTile: React.FC<ExploreTileProps> = () => {
         <Tile href="/sponsors" text="* Sponsors" subStr="esteemed" />
         <Tile href="/accommodation" text="* rooms" subStr="book" />
         <Tile href="/teams" text="* team" subStr="meet the" />
+        <Tile href="/event" text="* events" subStr="interesting" />
       </div>
     </div>
   );
