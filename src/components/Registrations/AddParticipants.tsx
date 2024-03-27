@@ -6,6 +6,9 @@ import { useMutation } from "@tanstack/react-query";
 import { axiosInstance } from "../../../axios-config";
 import { AxiosError } from "axios";
 import RedirectUser from "./RedirectUser";
+import { BiInfoCircle } from "react-icons/bi";
+import { VscLoading } from "react-icons/vsc";
+import { PiCheckBold } from "react-icons/pi";
 
 interface ResponseDataProps {
   msg: string;
@@ -118,11 +121,20 @@ const AddParticipants = ({
     ).value;
     const file = (document.getElementById("memberIdCard") as HTMLInputElement)
       .files?.[0];
+    const college = (
+      document.getElementById("memberCollege") as HTMLInputElement
+    ).value;
 
     // Regular expression for email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (name == "" || email == "" || contact == "" || file == null) {
+    if (
+      name == "" ||
+      email == "" ||
+      contact == "" ||
+      file == null ||
+      college == ""
+    ) {
       toast.error("All marked fields are required");
       return false;
     } else if (!emailRegex.test(email)) {
@@ -179,9 +191,10 @@ const AddParticipants = ({
                 label="College Name"
                 type="text"
                 name={`college`}
+                required={true}
                 id="memberCollege"
                 placeholder="College Full Name (Location)"
-                helper="Compulsory for school/college students."
+                helper="If not applicable to you, type 'NA'."
               />
               <CustomInput
                 label="Phone Number"
@@ -203,30 +216,45 @@ const AddParticipants = ({
             </div>
           </div>
 
-          <p className="text-center text-red-600 mt-5 font-medium">
-            {currParticipants >= maxTeam
-              ? "Max team size reached."
-              : `${maxTeam - currParticipants} members can be added`}
-          </p>
+          {currParticipants >= maxTeam ? (
+            <p className="text-center text-red-600 mt-5 font-medium">
+              Max team size reached.
+            </p>
+          ) : (
+            <p className="text-center text-yellow-500 mt-5 font-medium text-sm">
+              <span className="text-red-500">
+                {maxTeam - currParticipants} members
+              </span>{" "}
+              can be added. Click below to submit current member & add more.
+            </p>
+          )}
 
           {/* ------- to add team member ------- */}
           <button
             type="submit"
             onClick={(e) => handleAddMember(e, "add")}
-            className="text-bgDark bg-mango rounded-full rounded-tl-none px-3 py-2 mt-6 mb-10 mx-auto flex gap-2 text-sm font-bold hover:bg-yellow-900 disabled:bg-gray-700 disabled:text-gray-500"
+            className="mx-auto bg-mango hover:bg-yellow-200 text-black my-7 px-8 py-2 rounded-full rounded-tl-none  capitalize font-bold disabled:bg-gray-500 flex gap-2 items-center"
             disabled={currParticipants >= maxTeam || isPending}
           >
             <IoAdd className="text-xl" />{" "}
-            {isPending ? "Adding..." : "ADD MEMBER"}
+            {isPending ? "Submitting current" : "Add another Member"}
           </button>
+          {/* divider */}
+          <div className="flex gap-2 items-center w-full">
+            <div className="bg-slate-700 h-[1px] w-full"></div>{" "}
+            <p className="uppercase text-center">or</p>{" "}
+            <div className="bg-slate-700 h-[1px] w-full"></div>
+          </div>
           {/* ------- to submit final team ------- */}
+
           <button
             onClick={(e) => handleAddMember(e, "submit")}
-            className="text-while bg-tangerine/90 rounded-full rounded-tl-none px-3 py-2 mt-6 mb-10 mx-auto flex gap-2 text-sm font-bold hover:bg-red-900 disabled:bg-gray-700 disabled:text-gray-500 uppercase"
+            className="mx-auto bg-lime-600 text-black my-7 px-8 py-2 rounded-full rounded-tl-none hover:bg-lime-500 capitalize font-bold disabled:bg-gray-500 flex gap-2 items-center"
             type="submit"
             disabled={currParticipants < minTeam || isPending}
           >
-            {isPending ? "Adding..." : "SUBMIT FINAL TEAM"}
+            {isPending ? <VscLoading /> : <PiCheckBold />}
+            submit final member
           </button>
         </form>
       ) : (

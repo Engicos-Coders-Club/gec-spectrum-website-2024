@@ -39,7 +39,7 @@ const Hero = () => {
         </motion.div>
       </div>
       <motion.div
-        className="bg-[#FFBA25] w-11/12 md:h-16 rounded-xl rounded-tl-none flex items-center md:justify-between text-black md:flex-row flex-col justify-center my-5 "
+        className="bg-[#FFBA25] w-11/12 md:h-16 rounded-xl rounded-tl-none flex items-center md:justify-between text-black md:flex-row flex-col justify-center my-5 py-1"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: "easeIn" }}
