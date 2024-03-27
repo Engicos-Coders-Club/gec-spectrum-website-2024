@@ -33,7 +33,7 @@ export default function Datacard({
         alt="random"
         width={512}
         height={712}
-        className="h-72 object-cover"
+        className="h-52 md:h-72 object-cover"
       />
       <div className="p-2 text-white">
         <p className="text-sm font-light uppercase text-primary">{clubname}</p>
@@ -42,9 +42,11 @@ export default function Datacard({
         >
           {eventName}
         </h2>
-        <p className="text-sm text-white/50 mt-3 font-light hidden w-0  group-hover:w-full group-hover:block">
-          {desc}
-        </p>
+        {desc && (
+          <p className="text-sm text-white/50 mt-3 font-light hidden w-0  group-hover:w-full group-hover:block">
+            {desc}
+          </p>
+        )}
       </div>
     </Link>
   );

@@ -83,7 +83,7 @@ const Navbar = () => {
   return (
     <div className="sticky border-b border-white top-0 left-0 w-full flex items-center justify-between z-[100] p-5 text-white sm:px-10 px-6 bg-bgDark">
       <motion.div
-        className="flex items-center justify-between w-full md:w-auto md:justify-start sm:gap-6 gap-14"
+        className="flex items-center justify-between w-full lg:w-auto lg:justify-start sm:gap-6 gap-14"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -146,14 +146,15 @@ const Navbar = () => {
           <Image
             src="/spectrum-logo.png"
             alt="Logo"
-            width={250}
-            height={100}
-            className="w-64 rounded-2xl"
+            width={200}
+            height={80}
+            className="w-60 rounded-2xl"
           />
         </Link>
       </motion.div>
+      {/* ------------- header ------------------ */}
       <motion.div
-        className={`${space.className} hidden md:flex gap-1 sm:gap-7 items-center justify-center uppercase text-sm`}
+        className={`${space.className} hidden lg:flex gap-1 sm:gap-7 items-center justify-center uppercase text-sm`}
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
