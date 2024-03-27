@@ -8,16 +8,19 @@ export default function Datacard({
   eventName,
   imageUrl,
   clubname,
+  route,
 }: {
   eventName: string;
   imageUrl: string; 
   clubname: string;
+  route: string;
+
 
 }) {
   return (
     <Link
       className="bg-mango rounded-xl rounded-tl-none overflow-hidden p-2 hover:scale-105 transition-transform delay-75"
-      href={`event/starparty`} 
+      href={route} 
     >
       <Image
         src={imageUrl}
