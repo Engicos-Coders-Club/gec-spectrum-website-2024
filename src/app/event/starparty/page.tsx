@@ -33,7 +33,7 @@ export default function starparty() {
             <div className="flex font-bold flex-col gap-1 justify-start">
               <p className="text-sm">Date</p>{" "}
               <p className="text-lg md:text-xl font-bold text-mango">
-                10PM - 3rd April, 2024{" "}
+                8:30 PM - 3rd April, 2024{" "}
               </p>
             </div>
             <div className="flex font-bold flex-col gap-1 justify-start">
