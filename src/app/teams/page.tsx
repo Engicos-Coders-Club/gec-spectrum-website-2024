@@ -5,9 +5,9 @@ import Coming from "../components/ComingSoon";
 const page = () => {
   return (
     <div>
-      <PageHead body="MEET THE" title="TEAM" faltutext="/*" />
-      {/* <TeamsData /> */}
-      <Coming></Coming>
+      <PageHead body="MEET THE" title="DEV TEAM" faltutext="/*" />
+       <TeamsData /> 
+      {/* <Coming></Coming> */}
     </div>
   );
 };
