@@ -1,5 +1,4 @@
-import localFont from "next/font/local";
-import PageHead from "../components/PageHead";
+import PageHead from "../../app/components/PageHead";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
