@@ -80,11 +80,11 @@ export default function Accommodation() {
             <li>Total Accommodation Cost from 2nd to 5th April:</li>
             <ul className="list-square ml-6">
               <li>
-                <strong>Male:</strong> ₹500/person (Double/Triple Sharing) OR
-                ₹1000 (Individual).
+                <strong>Male:</strong> ₹250/person (Double/Triple Sharing) OR
+                ₹500 (Individual).
               </li>
               <li>
-                <strong>Female:</strong> ₹500/person (Double Sharing) OR ₹1000
+                <strong>Female:</strong> ₹250/person (Double Sharing) OR ₹500
                 (Individual).
               </li>
             </ul>
