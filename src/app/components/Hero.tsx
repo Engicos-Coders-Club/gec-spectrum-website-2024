@@ -20,7 +20,7 @@ const Hero = () => {
     <div className="h-[83svh] w-full flex flex-col items-center justify-center headerbackground">
       <div className="h-[80vh] w-screen flex flex-col items-center justify-center text-center">
         <motion.h1
-          className={`${panchang.className} xl:text-9xl text-3xl font-bold line-clamp-1 md:text-7xl sm:text-6xl lg:text-8xl`}
+          className={`${panchang.className} font-bold line-clamp-1 text-[2rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, damping: 10 }}

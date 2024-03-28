@@ -9,7 +9,7 @@ const RedirectUser = () => {
       </h3>
       <Link
         href="/competitions"
-        className="mx-auto bg-[#FFBA25] text-black text-lg my-7 w-[269px] px-3 py-2 text-center rounded-full rounded-tl-none hover:bg-yellow-600 uppercase font-bold disabled:bg-gray-500"
+        className="mx-auto bg-[#FFBA25] text-black text-lg my-7 px-8 py-2 text-center rounded-full rounded-tl-none hover:bg-yellow-600 uppercase font-bold disabled:bg-gray-500"
       >
         Go to Competitions
       </Link>

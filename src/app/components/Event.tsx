@@ -7,6 +7,7 @@ import { eventsData } from "@/assets/EventData";
 import Image from "next/image";
 import ElementSVG from "../../../public/Element.svg";
 import Link from "next/link";
+import EventsSection from "@/components/Events/EventsSection";
 
 const panchang = localFont({
   src: "../../../public/Panchang-Variable.ttf",
@@ -22,45 +23,46 @@ const space = Space_Grotesk({
 const Event = () => {
   return (
     <div
-      className={`${space.className} w-screen mt-20 relative sm:mb-80 lg:mb-5`}
+      className={`${space.className} w-screen mt-20 relative sm:mb-10 lg:mb-5`}
     >
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50">
         <div className="absolute w-full h-full bg-gradient-to-br from-[#6B46C1] via-[#5933A6] to-[#4C1D95] rounded-[6rem] filter blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50"></div>
 
         {/* <Image  hidden src={ElementSVG.src} height={ElementSVG.height} width={ElementSVG.width} alt="" className="z-0 hidden md:block" /> */}
       </div>
-      <div className="relative">
-        <motion.h1
-          className={`${panchang.className} font-bold bg-[#06050a] w-fit md:text-7xl ml-10 text-4xl`}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.2 }}
+      {/* heading */}
+      <div className="flex w-full items-center justify-center relative mt-20">
+        <div className="h-0.5 gradient-five-colors w-full absolute"></div>
+        <h2
+          className={`${panchang.className} text-3xl sm:text-5xl md:text-7xl font-bold z-10 bg-[#06050a] uppercase`}
         >
-          EVENTS
-        </motion.h1>
-        <div className="absolute gradient-five-colors h-[1px] w-screen top-1/2 -z-10"></div>
+          events
+        </h2>
       </div>
-
-      <motion.p
-        className="text-[#FFBA25] text-end flex flex-col ml-auto mr-10 mt-10 mb-2 md:mr-20"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.2, delay: 0.2 }}
-      >
-        Explore our events under each department.{" "}
-        <span>Click tile to know more.</span>
-      </motion.p>
-      <div className="md:hidden ml-auto w-fit mr-10 mt-4">
-        <a
-          title="Download Brochure"
-          className="bg-primary p-2 px-5 rounded-full rounded-tl-none font-semibold hover:bg-violet-500"
-          download={true}
-          href="/GEC- Spectrum-Brochure-2024.pdf"
-          target="_blank"
-          rel="noreferrer"
-        >
-          BROCHURE
-        </a>
+      <div className="flex justify-between flex-wrap flex-col items-center  mt-16 mx-16 gap-6 md:gap-3">
+        {/* left hand side */}
+        <p className="text-3xl uppercase tracking-wide mt-8">Competitions</p>
+        {/* right hand side */}
+        <div>
+          <motion.p
+            className="text-[#FFBA25] text-start md:flex hidden"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.2 }}
+          >
+            Explore our events under each department. Click tile to know more.
+          </motion.p>
+          <a
+            title="Download Brochure"
+            className="bg-primary p-2 px-5 rounded-full rounded-tl-none font-semibold hover:bg-violet-500 md:hidden"
+            download={true}
+            href="/GEC- Spectrum-Brochure-2024.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            BROCHURE
+          </a>
+        </div>
       </div>
       <div className="flex flex-col">
         <div className="w-screen flex flex-wrap items-center justify-center z-[10] gap-10 p-10">
@@ -117,6 +119,23 @@ const Event = () => {
           </Link>
         </motion.div>
       </div>
+      <div className="mx-16 text-center">
+        <motion.p
+          className="text-3xl uppercase tracking-wide mt-24 mb-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
+        >
+          Events
+        </motion.p>
+      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.2 }}
+      >
+        <EventsSection />
+      </motion.div>
     </div>
   );
 };
