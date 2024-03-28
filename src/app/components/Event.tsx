@@ -36,7 +36,7 @@ const Event = () => {
         <h2
           className={`${panchang.className} text-3xl sm:text-5xl md:text-7xl font-bold z-10 bg-[#06050a] uppercase`}
         >
-          events
+          activities
         </h2>
       </div>
       <div className="flex justify-between flex-wrap flex-col items-center  mt-16 mx-16 gap-6 md:gap-3">
