@@ -54,7 +54,7 @@ export default function starparty() {
                 Brochure
               </a>
 
-              <p className=" pt-3 text-sm">Registor</p>
+              <p className=" pt-3 text-sm">Register</p>
               <a
                 title="Register Online"
                 className="bg-primary p-2 px-5 rounded-full rounded-tl-none font-semibold hover:bg-violet-500 uppercase text-center"
