@@ -58,21 +58,22 @@ const Page = () => {
   }, []);
 
   useEffect(() => {
-  isAdmin && axiosInstance.get("events")
-    .then((response) => {
-      if (response.status !== 200) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.data;
-    })
-    .then((data) => {
-      console.log(data.events);
-      setEvents(data.events);
-    })
-    .catch((error) => {
-      console.log("Axios error: ", error);
-    });
-}, [isAdmin]);
+    isAdmin &&
+      axiosInstance
+        .get("events")
+        .then((response) => {
+          if (response.status !== 200) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.data;
+        })
+        .then((data) => {
+          setEvents(data.events);
+        })
+        .catch((error) => {
+          console.log("Axios error: ", error);
+        });
+  }, [isAdmin]);
 
   return (
     <div className="pt-20 sm:p-8 md:pt-20 lg:p-16 xl:p-20">
