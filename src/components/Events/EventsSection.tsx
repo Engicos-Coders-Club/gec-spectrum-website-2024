@@ -12,7 +12,7 @@ const EventsSection = () => {
         clubname="Astronomy Club"
       />
       <Datacard
-        route="/event"
+        route="/event/pronite"
         eventName="Pronite"
         imageUrl={proniteImg.src}
         clubname="DJ Evening"

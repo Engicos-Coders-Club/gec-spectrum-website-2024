@@ -48,7 +48,7 @@ const TeamsData = () => {
     //       })}
     //     </div>
     //   </div>
-    <div className={`${space.className} flex w-screen h-auto`}>
+    <div className={`${space.className} flex max-w-screen-2xl h-auto`}>
       {/* {selectedDepartment !== null && ( */}
       <div className="flex flex-wrap justify-center gap-6 mx-auto my-10">
         {Teamdata[8].people?.map((person, index) => {

@@ -163,7 +163,7 @@ export const Teamdata = [
         image: "/teamAssets/medamgreeshma.jpeg",
         links: {
           social: "https://linkedin.com/in/m-greeshma",
-          github: "https://github.com/greeshma290303",
+          github: "https://github.com/greeshma2903",
         },
       },
       {
@@ -199,7 +199,7 @@ export const Teamdata = [
         image: "/teamAssets/edgarcamelo.jpeg",
         links: {
           social: "",
-          github: "github.com/edgarAndrew",
+          github: "https://github.com/edgarAndrew",
         },
       },
       {
@@ -227,7 +227,7 @@ export const Teamdata = [
         image: "/teamAssets/harshtelang.jpeg",
         links: {
           social: "https://linkedin.com/in/harsh-telang-226a70265",
-          github: "https://github.com/Harsh-Telang",
+          github: "https://github.com/TECH-NINJA06",
         },
       },
       {
