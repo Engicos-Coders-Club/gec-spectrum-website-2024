@@ -12,35 +12,17 @@ import Organizers from "./components/Organizers";
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
-     <Suspense fallback = {<Loading/>}>
-      <Hero />
-      <Tagline />
-      <Event />
-      <Sponsors />
-      <Organizers/>
-      <ExploreTile />
-      <Footer />
-     </Suspense>
+      <Suspense fallback={<Loading />}>
+        <Hero />
+        <Sponsors />
+        <Event />
+        <Tagline />
+        <Organizers />
+        <ExploreTile />
+        <Footer />
+      </Suspense>
     </main>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Don't delete plisssss

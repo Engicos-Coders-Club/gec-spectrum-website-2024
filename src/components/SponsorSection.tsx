@@ -1,3 +1,4 @@
+"use client";
 import chetak from "@/assets/sponsors/chetak-event.svg";
 import ktm from "@/assets/sponsors/KTM-event.jpg";
 import yanni from "@/assets/sponsors/yanni-plast.jpg";
@@ -5,6 +6,7 @@ import husqvarna from "@/assets/sponsors/husqvarna-motorcycles-event.png";
 import vinsanworld from "@/assets/sponsors/vinsanworld.png";
 import dempo from "@/assets/sponsors/dempo.jpeg";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const SponsorSection = () => {
   return (
@@ -16,13 +18,18 @@ const SponsorSection = () => {
           </span>{" "}
           Title SPONSORS
         </h3>
-        <div className="md:w-3/5 flex gap-5 md:gap-10  flex-col md:flex-row flex-wrap justify-around items-center">
+        <motion.div
+          className="md:w-3/5 flex gap-5 md:gap-10 flex-col md:flex-row flex-wrap justify-around items-center"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.1 }}
+        >
           <a
             title="Vinsan World"
             href="https://vinsanworld.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className={`bg-[#fff] w-64 h-32 mx-auto md:w-96 lg:w-1/2 md:h-52 relative object-contain hover:scale-105 transition-transform duration-300 ease-in-out py-2 px-3 md:py-5 flex justify-center rounded-xl border-gray-400 border-4`}
+            className={`bg-[#fff] w-64 h-32 mx-auto md:w-96 lg:w-1/2 md:h-60 relative object-contain hover:scale-105 transition-transform duration-300 ease-in-out py-2 px-3 md:py-5 flex justify-center rounded-xl border-gray-400 border-4`}
           >
             <Image
               src={vinsanworld}
@@ -37,7 +44,7 @@ const SponsorSection = () => {
             href="https://www.dempos.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className={`bg-[#fff] w-64 h-32 mx-auto md:w-96 lg:w-1/2 md:h-52 relative object-contain hover:scale-105 transition-transform duration-300 ease-in-out py-2 px-3 md:py-5 flex justify-center rounded-xl border-sky-200 border-4`}
+            className={`bg-[#fff] w-64 h-32 mx-auto md:w-96 lg:w-1/2 md:h-60 relative object-contain hover:scale-105 transition-transform duration-300 ease-in-out py-2 px-3 md:py-5 flex justify-center rounded-xl border-sky-200 border-4`}
           >
             <Image
               src={dempo}
@@ -47,7 +54,7 @@ const SponsorSection = () => {
               className="object-contain"
             />
           </a>
-        </div>
+        </motion.div>
       </div>
       <br />
       {/* ------------ Co sponsors ------------- */}
@@ -58,13 +65,18 @@ const SponsorSection = () => {
           </span>{" "}
           Co SPONSORS
         </h3>
-        <div className="mx-auto w-full">
+        <motion.div
+          className="mx-auto w-full"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.1 }}
+        >
           <a
             title="Yanni Infra Projects"
             href="https://www.yanniinfraprojects.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className={`bg-[#fff] w-52 mx-auto h-28 md:w-72 md:h-44 relative object-contain hover:scale-105 transition-transform duration-300 ease-in-out py-2 px-3 md:py-5 flex justify-center rounded-xl border-gray-400 border-4`}
+            className={`bg-[#fff] w-52 mx-auto h-28 md:w-80 md:h-48 relative object-contain hover:scale-105 transition-transform duration-300 ease-in-out py-2 px-3 md:py-5 flex justify-center rounded-xl border-gray-400 border-4`}
           >
             <Image
               src={yanni}
@@ -74,7 +86,7 @@ const SponsorSection = () => {
               className="object-contain"
             />
           </a>
-        </div>
+        </motion.div>
       </div>
       <br />
 
@@ -86,7 +98,12 @@ const SponsorSection = () => {
           </span>{" "}
           Event SPONSORS
         </h3>
-        <div className="md:w-3/5 flex gap-5 md:gap-10  flex-col md:flex-row flex-wrap justify-around items-center">
+        <motion.div
+          className="md:w-3/5 flex gap-5 md:gap-10  flex-col md:flex-row flex-wrap justify-around items-center"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.1 }}
+        >
           <a
             href="https://www.chetak.com/"
             title="Bajaj Chetak Electric Scooters"
@@ -132,7 +149,7 @@ const SponsorSection = () => {
               className="object-contain"
             />
           </a>
-        </div>
+        </motion.div>
       </div>
     </>
   );

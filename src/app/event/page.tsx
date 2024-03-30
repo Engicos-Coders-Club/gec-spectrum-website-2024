@@ -2,7 +2,7 @@
 import PageHead from "../components/PageHead";
 import Datacard from "../../components/Events/Datacard";
 import starPartyImg from "@/assets/star party.png";
-import pronite from "@/assets/pronite.jpg";
+import pronite from "@/assets/djnight-landscape.png";
 
 export default function Events() {
   return (
@@ -23,7 +23,7 @@ export default function Events() {
               eventName="Pronite"
               imageUrl={pronite.src}
               clubname="DJ"
-              desc="Coming soon..."
+              desc="Get ready to experience an electronic night with DJ Skeletron! "
             />
             {/* <Datacard
               route="/expo"

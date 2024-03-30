@@ -1,6 +1,6 @@
 import Datacard from "./Datacard";
 import starpartyImg from "@/assets/star party.png";
-import proniteImg from "@/assets/pronite.jpg";
+import proniteImg from "@/assets/djnight-landscape.png";
 
 const EventsSection = () => {
   return (
