@@ -19,7 +19,7 @@ export default function Events() {
               desc="Discover the Cosmos: A Night of Stargazing, Stories, and Adventure!"
             />
             <Datacard
-              route="/event"
+              route="/event/pronite"
               eventName="Pronite"
               imageUrl={pronite.src}
               clubname="DJ"
