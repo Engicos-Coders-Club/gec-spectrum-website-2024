@@ -43,9 +43,9 @@ const Event = () => {
         {/* left hand side */}
         <p className="text-3xl uppercase tracking-wide mt-8">Competitions</p>
         {/* right hand side */}
-        <div>
+        <div className="flex items-center justify-center flex-col gap-2">
           <motion.p
-            className="text-[#FFBA25] text-start md:flex hidden"
+            className="text-[#FFBA25] flex"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.2 }}
@@ -54,7 +54,7 @@ const Event = () => {
           </motion.p>
           <a
             title="Download Brochure"
-            className="bg-primary p-2 px-5 rounded-full rounded-tl-none font-semibold hover:bg-violet-500 md:hidden"
+            className="bg-primary p-2 px-5 rounded-full w-fit mx-auto rounded-tl-none font-semibold hover:bg-violet-500"
             download={true}
             href="/GEC- Spectrum-Brochure-2024.pdf"
             target="_blank"
@@ -113,7 +113,7 @@ const Event = () => {
         >
           <Link
             href="/competitions"
-            className="bg-[#741CFFC9] px-5 whitespace-nowrap font-bold rounded-3xl py-2 rounded-tl-none"
+            className="bg-mango hover:bg-white text-bgDark px-5 whitespace-nowrap font-bold rounded-3xl py-2 rounded-tl-none"
           >
             BROWSE ALL COMPETITIONS
           </Link>
