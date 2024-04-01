@@ -7,6 +7,7 @@ import vinsanworld from "@/assets/sponsors/vinsanworld.png";
 import dempo from "@/assets/sponsors/dempo.jpeg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import visteon from "@/assets/sponsors/visteon.png";
 
 const SponsorSection = () => {
   return (
@@ -116,6 +117,21 @@ const SponsorSection = () => {
               height={chetak.height}
               width={chetak.width}
               alt="Bajaj Chetak Electric Scooters"
+              className="object-contain"
+            />
+          </a>
+          <a
+            title="Visteon | Spectrathon Sponsor"
+            href="https://www.visteon.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`bg-gray-50 w-44 h-20 md:w-60 md:h-32 relative object-contain hover:scale-105 transition-transform duration-300 ease-in-out py-2 px-3 md:py-5 flex justify-center rounded-xl border-orange-300 border-4`}
+          >
+            <Image
+              src={visteon}
+              height={visteon.height}
+              width={visteon.width}
+              alt="Visteon"
               className="object-contain"
             />
           </a>

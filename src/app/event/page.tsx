@@ -3,6 +3,7 @@ import PageHead from "../components/PageHead";
 import Datacard from "../../components/Events/Datacard";
 import starPartyImg from "@/assets/star party.png";
 import pronite from "@/assets/djnight-landscape.png";
+import cricketImg from "@/assets/cricket-landscape.png";
 
 export default function Events() {
   return (
@@ -25,13 +26,13 @@ export default function Events() {
               clubname="DJ"
               desc="Get ready to experience an electronic night with DJ Skeletron! "
             />
-            {/* <Datacard
-              route="/expo"
-              eventName="Expo"
-              imageUrl="https://s3-alpha-sig.figma.com/img/ae84/b1cd/ebbba823bd926ade9bac00b7d1cd9740?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oWgw-tpXQy~Mj~UuMkYcDw4sQwToCBuCIehQmO7d~Jg7bJheaqEv08xiuWFWR9ycadm2dZvHnRQ5qcaPvdDivUAx8Yi6vNQ4axxiKYzkBH2vuYVm-rY3OkZSZWV-vsSbDmzOpyqbgKoQ1usciVmtJAxG1s1WBpKG3i3Wr0Szx5aBQMYpMch6w95loMRGHFpefCMTMB0nzFg-f1zczH2Zb9oq4oJdQ4KZSgkbPr5B6FzOA0EczCfLFlYmNKEpMtWIcJRrRfhjlOFDXYzmikeEBvRbpe0V0-THFAaXCv1e92wQmLidKlVueEFlI1sAlWOoIPluWuQGikhWdxaso9weTA__"
-              clubname="student"
+            <Datacard
+              route="/event"
+              eventName="Control Cricket"
+              imageUrl={cricketImg.src}
+              clubname="Cricket Tournment"
               desc="Coming soon..."
-            /> */}
+            />
           </div>
         </section>
       </section>
