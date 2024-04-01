@@ -13,17 +13,38 @@ interface Event {
   eventName: string;
 }
 
-interface Team {
-  teamName: string;
-  leader: string;
+interface Participant {
   _id: string;
-  participants: any[];
-  paid: boolean;
-  payment_screenshot: any;
+  name: string;
+  email: string;
+  contact: string;
+  college: string;
+  verified: boolean;
+  events: string[];
+  idcard: string;
+  teams: string[];
+  __v: number;
 }
+
+interface Team {
+  _id: string;
+  teamName: string;
+  eventId: string;
+  paid: boolean;
+  payment_screenshot: string;
+  participants: string[];
+  leader: string;
+  __v: number;
+}
+
+interface TeamData {
+  team: Team;
+  participants: Participant[][];
+}
+
 let i = 1;
 const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
-  const [teams, setTeams] = useState<Team[]>([]);
+  const [teams, setTeams] = useState<TeamData[]>([]);
   const [count, setCount] = useState<number>(0);
   const [token, setToken] = useState<string | null>(null);
   const { slug } = params;
@@ -47,8 +68,8 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
     isError,
   } = useQuery({
     queryKey: ["eventTeams", slug, count],
-    queryFn: async (): Promise<Team[]> => {
-      const res = await axiosInstance.get(`events/get-teams/${slug}`, {
+    queryFn: async (): Promise<TeamData[]> => {
+      const res = await axiosInstance.get(`events/get-teams-whole/${slug}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -132,46 +153,92 @@ const Page: React.FC<{ params: { slug: string } }> = ({ params }) => {
             </thead>
             <tbody>
               {isSuccess &&
-                teamsData.map((team, index) => (
+                teamsData.map((teamData: TeamData, index: number) => (
                   <tr key={index} className="bg-white">
-                    <td className="border text-black px-2 sm:px-4 py-2">
-                      {team.teamName}
+                    <td className="border text-black  hover:font-bold px-2 sm:px-4 py-2">
+                      {teamData.team && teamData.team.teamName}
                     </td>
                     <td className="border text-black px-2 sm:px-4 py-2">
-                      {team.leader}
+                      {teamData.team && teamData.team.leader}
                     </td>
-                    <td className="border flex flex-col text-black px-2 sm:px-4 py-2">
-                      {team.participants.map(
-                        (participant: string, index: number) => (
-                          <div key={index}>{participant}</div>
-                        )
-                      )}
+                    <td className="border-t flex flex-col text-black p-1">
+                      <table className="text-sm">
+                        <thead className="bg-sky-50">
+                          <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>College</th>
+
+                            <th>ID Card</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {teamData.participants.map(
+                            (
+                              participantGroup: Participant[],
+                              groupIndex: number
+                            ) =>
+                              participantGroup.map(
+                                (
+                                  participant: Participant,
+                                  participantIndex: number
+                                ) => (
+                                  <tr
+                                    key={`${groupIndex}-${participantIndex}`}
+                                    className="hover:bg-gray-50 border-b border-sky-200"
+                                  >
+                                    <td>{participant.name}</td>
+                                    <td>{participant.email}</td>
+                                    <td className="p-3">
+                                      {participant.contact}
+                                    </td>
+                                    <td className="p-3">
+                                      {participant.college}
+                                    </td>
+
+                                    <td>
+                                      <Image
+                                        src={participant.idcard}
+                                        width={100}
+                                        height={100}
+                                        alt="idcard"
+                                      />
+                                    </td>
+                                  </tr>
+                                )
+                              )
+                          )}
+                        </tbody>
+                      </table>
                     </td>
                     <td
                       className={`border px-2 text-black sm:px-4 py-2 ${
-                        team.paid
+                        teamData.team.paid
                           ? "bg-green-300 text-black"
                           : "bg-red-300 text-black"
                       }`}
                     >
-                      {team.paid ? "Yes" : "No"}
+                      {teamData.team.paid ? "Yes" : "No"}
                     </td>
                     <td
-                      className="border text-black px-2 sm:px-4 py-2 cursor-pointer hover:bg-gray-100"
-                      onClick={() => handleModalOpen(team.payment_screenshot)}
-                      title="Click to expand image"
+                      className="border text-black px-2 sm:px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      onClick={() =>
+                        handleModalOpen(teamData.team.payment_screenshot)
+                      }
+                      title="Click to view payment screenshot"
                     >
                       <Image
-                        src={team.payment_screenshot}
+                        src={teamData.team.payment_screenshot}
                         width={100}
                         height={100}
                         alt="payment"
                       />
                     </td>
                     <td className="border text-black px-2 sm:px-4 py-2">
-                      {!team.paid && (
+                      {!teamData.team.paid && (
                         <button
-                          onClick={() => updatePaymentStatus(team._id)}
+                          onClick={() => updatePaymentStatus(teamData.team._id)}
                           className="bg-green-500 p-4 hover:bg-green-600 rounded-md"
                         >
                           Approve

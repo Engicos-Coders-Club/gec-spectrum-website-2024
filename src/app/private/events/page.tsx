@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 import { axiosInstance } from "../../../../axios-config";
+import { PiDownload } from "react-icons/pi";
 
 type Event = {
   eventId: string;
@@ -77,6 +78,7 @@ const Page = () => {
 
   return (
     <div className="pt-20 sm:p-8 md:pt-20 lg:p-16 xl:p-20">
+      <br />
       <table className="table-auto w-full justify-center items-center">
         <thead className="text-left bg-gray-800">
           <tr>
