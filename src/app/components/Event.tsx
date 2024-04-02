@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 import { PinContainer } from "./3dPin";
 import { eventsData } from "@/assets/EventData";
 import Image from "next/image";
-import ElementSVG from "../../../public/Element.svg";
 import Link from "next/link";
 import EventsSection from "@/components/Events/EventsSection";
+import { ImDownload } from "react-icons/im";
+import { MdOutlineArrowOutward } from "react-icons/md";
 
 const panchang = localFont({
   src: "../../../public/Panchang-Variable.ttf",
@@ -22,9 +23,7 @@ const space = Space_Grotesk({
 
 const Event = () => {
   return (
-    <div
-      className={`${space.className} w-screen mt-20 relative sm:mb-10 lg:mb-5`}
-    >
+    <div className={`${space.className} mt-20 relative sm:mb-10 lg:mb-5`}>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50">
         <div className="absolute w-full h-full bg-gradient-to-br from-[#6B46C1] via-[#5933A6] to-[#4C1D95] rounded-[6rem] filter blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50"></div>
 
@@ -41,11 +40,11 @@ const Event = () => {
       </div>
       <div className="flex justify-between flex-wrap flex-col items-center  mt-16 mx-16 gap-6 md:gap-3">
         {/* left hand side */}
-        <p className="text-3xl uppercase tracking-wide mt-8">Competitions</p>
+        <p className="text-2xl uppercase tracking-wide mt-8">Competitions</p>
         {/* right hand side */}
         <div className="flex items-center justify-center flex-col gap-2">
           <motion.p
-            className="text-[#FFBA25] flex"
+            className="text-mango flex text-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.2 }}
@@ -54,12 +53,13 @@ const Event = () => {
           </motion.p>
           <a
             title="Download Brochure"
-            className="bg-primary p-2 px-5 rounded-full w-fit mx-auto rounded-tl-none font-semibold hover:bg-violet-500"
+            className="bg-primary p-2 px-5 rounded-full w-fit mx-auto text-sm rounded-tl-none hover:bg-violet-500 flex gap-2 items-center"
             download={true}
             href="/GEC- Spectrum-Brochure-2024.pdf"
             target="_blank"
             rel="noreferrer"
           >
+            <ImDownload />
             BROCHURE
           </a>
         </div>
@@ -109,17 +109,17 @@ const Event = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.2 }}
-          className="w-fit mx-auto mt-10"
+          className="w-fit mx-auto mt-2 sm:mt-6"
         >
           <Link
             href="/competitions"
-            className="bg-mango hover:bg-white text-bgDark px-5 whitespace-nowrap font-bold rounded-3xl py-2 rounded-tl-none"
+            className="bg-mango hover:bg-white text-bgDark px-5 whitespace-nowrap font-bold rounded-3xl py-2 rounded-tl-none flex items-center gap-4 justify-between"
           >
-            BROWSE ALL COMPETITIONS
+            BROWSE ALL COMPETITIONS <MdOutlineArrowOutward size={18} />
           </Link>
         </motion.div>
       </div>
-      <div className="mx-16 text-center">
+      {/* <div className="mx-16 text-center">
         <motion.p
           className="text-3xl uppercase tracking-wide mt-24 mb-8"
           initial={{ opacity: 0 }}
@@ -128,8 +128,9 @@ const Event = () => {
         >
           Events
         </motion.p>
-      </div>
+      </div> */}
       <motion.div
+        className="mt-24 mb-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.2, delay: 0.2 }}

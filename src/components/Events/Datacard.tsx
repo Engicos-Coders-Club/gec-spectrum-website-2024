@@ -43,9 +43,7 @@ export default function Datacard({
           {eventName}
         </h2>
         {desc && (
-          <p className="text-sm text-white/50 mt-3 font-light hidden w-0  group-hover:w-full group-hover:block">
-            {desc}
-          </p>
+          <p className="text-sm text-white/50 mt-3 font-light">{desc}</p>
         )}
       </div>
     </Link>

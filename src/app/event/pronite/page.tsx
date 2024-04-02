@@ -1,7 +1,7 @@
 import ComingSoon from "@/app/components/ComingSoon";
 import PageHead from "@/app/components/PageHead";
 import Image from "next/image";
-import djImage from "@/assets/djnight.jpeg";
+import djImage from "@/assets/events/djnight.jpeg";
 
 const Pronite = () => {
   return (
