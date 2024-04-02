@@ -83,6 +83,12 @@ const getDateFormat = (dateString: string): string => {
   return `${day} ${monthShort} ${year}`;
 };
 
+const CTFData = (slug: string): string => {
+  if (slug === "65f5c7620197f7897ad54f65")
+    return "🚀 Get ready for the ultimate cybersecurity challenge! CTF{5P3CT4UMC7F_I5_3E5T} Capture the Flag event around. Diverse challenges, real-world scenarios, and fantastic prizes await. Don't miss out! #SpectrumCTF 🛡️🔒";
+  return "";
+};
+
 const EventPage = ({ params }: { params: { slug: string } }) => {
   const pathname = usePathname();
   const { isPending, isSuccess, isError, data } = useQuery({
@@ -166,9 +172,6 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                 <div className="flex flex-wrap items-center gap-3">
                   <button
                     onClick={() => {
-                      if (params.slug === "65f5c7620197f7897ad54f65") {
-                        alert("🚀 Get ready for the ultimate cybersecurity challenge! CTF{5P3CT4UMC7F_I5_3E5T} Capture the Flag event around. Diverse challenges, real-world scenarios, and fantastic prizes await. Don't miss out! #SpectrumCTF 🛡️🔒");
-                      }
                       if (navigator.share) {
                         navigator
                           .share({
@@ -183,6 +186,7 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                             console.log("Error sharing:", error)
                           );
                       }
+                      console.log(CTFData(params.slug));
                     }}
                     className="border flex items-center gap-2 border-gray-500 text-sm py-1 px-4 rounded-full"
                   >
