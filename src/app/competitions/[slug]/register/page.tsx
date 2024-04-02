@@ -9,6 +9,8 @@ import { getTeamData } from "@/utils/getTeamSize";
 import { useEffect } from "react";
 import { redirect } from "next/navigation";
 import RegisterForm from "@/components/Registrations/RegisterForm";
+import { FaCircleInfo } from "react-icons/fa6";
+import { MdArrowOutward } from "react-icons/md";
 
 const panchang = localFont({
   src: "../../../../../public/Panchang-Variable.ttf",
@@ -104,12 +106,37 @@ const CompetitionsRegister = ({ params }: { params: { slug: string } }) => {
                 ))}
             </div>
           </div>
-          <RegisterForm
+          <div className="py-6 bg-mango/20">
+            <div className="flex flex-col gap-2 items-center justify-center md:text-lg font-medium">
+              <p>
+                Online Registrations have closed for all Competitions. On-spot
+                registrations will be open on the day of the event.
+              </p>
+              <p>
+                Checkout our other{" "}
+                <Link
+                  href="/event"
+                  className="text-mango underline underline-offset-2"
+                >
+                  Events
+                </Link>{" "}
+                and the{" "}
+                <Link
+                  href="/schedule"
+                  className="text-mango underline underline-offset-2"
+                >
+                  Schedule
+                </Link>
+                <MdArrowOutward className="inline-block mx-1 size-5 text-tangerine" />
+              </p>
+            </div>
+          </div>
+          {/* <RegisterForm
             minTeam={data?.event.teamSize.min}
             maxTeam={data?.event.teamSize.max}
             eventId={params.slug}
             eventFee={data?.event.fee}
-          />
+          /> */}
         </>
       )}
     </div>

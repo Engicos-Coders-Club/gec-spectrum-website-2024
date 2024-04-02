@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Space_Grotesk } from "next/font/google";
 import { motion } from "framer-motion";
 import ScrollText from "./Events/Scroll";
+import { FaCircleInfo } from "react-icons/fa6";
 
 const space = Space_Grotesk({
   weight: ["700", "500"],

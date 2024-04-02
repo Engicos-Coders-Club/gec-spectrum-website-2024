@@ -212,15 +212,19 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                       RULEBOOK
                     </a>
                     {isSuccess && (
-                      <Link
-                        href={reRouteCompetitionLink(data.event._id, pathname)}
-                        target="_blank"
-                        rel="noreferrer"
+                      // <Link
+                      //   href={reRouteCompetitionLink(data.event._id, pathname)}
+                      //   target="_blank"
+                      //   rel="noreferrer"
+                      // >
+                      <button
+                        className="border border-primary rounded-full rounded-tl-none p-1.5 px-5 bg-primary hover:bg-violet-700 disabled:bg-violet-900/80 disabled:border-violet-900/80 disabled:text-white/60"
+                        disabled
+                        title="Online registrations are closed"
                       >
-                        <button className=" border border-primary rounded-full rounded-tl-none p-1.5 px-5 bg-primary hover:bg-violet-700">
-                          REGISTER
-                        </button>
-                      </Link>
+                        REGISTER
+                      </button>
+                      // </Link>
                     )}
                     {data?.event?._id === "65f5c3460197f7897ad54efa" && (
                       <Link href="https://docs.google.com/document/d/13L4HzIT0P11BKg1DkxAILj7Zgb-dKQQHr4is51iX7Zg/edit?usp=drivesdk">

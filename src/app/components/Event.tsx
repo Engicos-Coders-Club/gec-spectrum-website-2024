@@ -42,15 +42,15 @@ const Event = () => {
         {/* left hand side */}
         <p className="text-2xl uppercase tracking-wide mt-8">Competitions</p>
         {/* right hand side */}
-        <div className="flex items-center justify-center flex-col gap-2">
-          <motion.p
-            className="text-mango flex text-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.2 }}
-          >
+        <motion.div
+          className="flex items-center justify-center flex-col gap-2"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
+        >
+          <p className="text-mango flex text-center">
             Explore our events under each department. Click tile to know more.
-          </motion.p>
+          </p>
           <a
             title="Download Brochure"
             className="bg-primary p-2 px-5 rounded-full w-fit mx-auto text-sm rounded-tl-none hover:bg-violet-500 flex gap-2 items-center"
@@ -62,7 +62,7 @@ const Event = () => {
             <ImDownload />
             BROCHURE
           </a>
-        </div>
+        </motion.div>
       </div>
       <div className="flex flex-col">
         <div className="w-screen flex flex-wrap items-center justify-center z-[10] gap-10 p-10">

@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import TanstackProvider from "@/utils/TanstackProvider";
 // import Navbar from "@/components/Navbar";
 import { Toaster } from "react-hot-toast";
+import RegistrationClose from "@/components/RegistrationClose";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -50,6 +51,7 @@ export default function RootLayout({
       >
         <TanstackProvider>
           {/* <Navbar /> */}
+          <RegistrationClose />
           <Navbar />
           {children}
           <Toaster
