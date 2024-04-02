@@ -166,6 +166,9 @@ const EventPage = ({ params }: { params: { slug: string } }) => {
                 <div className="flex flex-wrap items-center gap-3">
                   <button
                     onClick={() => {
+                      if (params.slug === "65f5c7620197f7897ad54f65") {
+                        alert("🚀 Get ready for the ultimate cybersecurity challenge! CTF{5P3CT4UMC7F_I5_3E5T} Capture the Flag event around. Diverse challenges, real-world scenarios, and fantastic prizes await. Don't miss out! #SpectrumCTF 🛡️🔒");
+                      }
                       if (navigator.share) {
                         navigator
                           .share({
