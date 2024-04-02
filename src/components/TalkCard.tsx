@@ -30,7 +30,7 @@ const TalkCard = ({
             src={imageUrl}
             alt={`${talkTitle} Poster `}
             fill
-            sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, 25vw"
+            sizes="(max-width: 640px) 80vw, (max-width: 768px) 50vw, 25vw"
             className="object-contain"
           />
         </div>

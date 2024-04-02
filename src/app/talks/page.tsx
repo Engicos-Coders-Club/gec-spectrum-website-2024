@@ -21,14 +21,13 @@ const Talks = () => {
           talkTitle="Visual Attention in 3D Object Recognition and Localization"
           speaker="Dr. Shitala Prasad"
           designation="Asst. Professor, IIT Goa"
-          regLink="https://forms.gle/74SQbR8Lndoe3kPm8"
+          regLink="https://forms.gle/CiTpPLaKytbGs4Gx5"
           imageUrl={cusorTalk2}
         />
         <TalkCard
           talkTitle="20 Years as an Engico"
           speaker="Maithili Desai"
           designation="Alumni Batch 2004"
-          regLink="https://forms.gle/74SQbR8Lndoe3kPm8"
           imageUrl={engicoTalk}
         />
         <TalkCard
