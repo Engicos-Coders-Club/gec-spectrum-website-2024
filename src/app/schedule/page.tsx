@@ -9,7 +9,8 @@ const SchedulePage = () => {
     <section>
       <PageHead body="Here's our" title="schedule" faltutext="!=" />
       <br />
-      <div className="max-screen-w-lg mx-auto h-auto w-3/4 lg:w-1/2 relative">
+      <Coming />
+      {/* <div className="max-screen-w-lg mx-auto h-auto w-3/4 lg:w-1/2 relative">
         <Image
           src={day1}
           height={day1.height}
@@ -27,7 +28,7 @@ const SchedulePage = () => {
           alt="Day 2 Spectrum Schedule"
           className="object-contain"
         />
-      </div>
+      </div> */}
     </section>
   );
 };

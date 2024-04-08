@@ -44,7 +44,7 @@ export default function Competitions() {
         title="COMPETITIONS"
         faltutext={data?.events?.length || "/*"}
       />
-      <RegistrationClose />
+      {/* <RegistrationClose /> */}
       {isSuccess && dept ? (
         <h2 className="uppercase text-primary mx-auto sm:text-lg md:text-2xl text-center mt-10">
           {data?.events[0]?.deptName}
