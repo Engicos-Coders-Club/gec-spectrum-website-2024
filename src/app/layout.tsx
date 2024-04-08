@@ -51,7 +51,7 @@ export default function RootLayout({
       >
         <TanstackProvider>
           {/* <Navbar /> */}
-          <RegistrationClose />
+          {/* <RegistrationClose /> */}
           <Navbar />
           {children}
           <Toaster
